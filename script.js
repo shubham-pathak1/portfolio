@@ -1,10 +1,10 @@
 // Constants
-const DODECAHEDRON_RADIUS = 4;
+const DODECAHEDRON_RADIUS = 6; // Increased from 4 to 6
 const AURA_SCALE = 1.2;
 const CAMERA_FOV = 75;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 1000;
-const CAMERA_RADIUS = 15;
+const CAMERA_RADIUS = 20; // Increased from 15 to 20
 const AUTO_ROTATE_SPEED = 0.002;
 const STAR_PARTICLES = 100; // New star/atom particles
 const EMBER_PARTICLES = 20; // Reduced for subtlety
@@ -74,10 +74,10 @@ const dodecahedronMaterial = new THREE.ShaderMaterial({
     }
     void main() {
       float n = fbm(vUv * 8.0 + time * 0.02);
-      float glow = smoothstep(0.4, 0.8, n) * 0.4;
+      float glow = smoothstep(0.4, 0.8, n) * 0.25;
       float fresnel = pow(1.0 - dot(vNormal, normalize(cameraPosition - vPosition)), 2.5);
       float ambientOcclusion = 0.5 + 0.5 * dot(vNormal, vec3(0, 0, 1));
-      float brightness = 0.6 + 0.4 * ambientOcclusion + fresnel * 0.7 + glow; // Brighter grayscale
+      float brightness = 0.55 + 0.4 * ambientOcclusion + fresnel * 0.5 + glow;
       gl_FragColor = vec4(vec3(brightness), 1.0);
     }
   `,
@@ -116,8 +116,8 @@ const auraMaterial = new THREE.ShaderMaterial({
       vec3 viewDir = normalize(cameraPosition - vPosition);
       float fresnel = pow(1.0 - dot(vNormal, viewDir), 3.0);
       float pulse = 0.5 + 0.5 * sin(time * 1.2);
-      float glow = fresnel * pulse * 0.6;
-      gl_FragColor = vec4(vec3(0.9), glow * 0.25); // Subtle white glow
+      float glow = fresnel * pulse * 0.4;
+      gl_FragColor = vec4(vec3(0.9), glow * 0.15);
     }
   `,
   uniforms: { time: { value: 0 } },
@@ -136,7 +136,7 @@ const starSizes = [];
 for (let i = 0; i < STAR_PARTICLES; i++) {
   const theta = Math.random() * Math.PI * 2;
   const phi = Math.random() * Math.PI;
-  const radius = 10 + Math.random() * 5; // Wider orbit for background effect
+  const radius = 15 + Math.random() * 5; // Increased from 10 to 15
   const x = radius * Math.sin(phi) * Math.cos(theta);
   const y = radius * Math.sin(phi) * Math.sin(theta);
   const z = radius * Math.cos(phi);
@@ -164,7 +164,7 @@ const particleColors = [];
 for (let i = 0; i < EMBER_PARTICLES; i++) {
   const theta = Math.random() * Math.PI * 2;
   const phi = Math.random() * Math.PI;
-  const radius = 6 + Math.random() * 1.0;
+  const radius = 9 + Math.random() * 1.0; // Increased from 6 to 9
   const x = radius * Math.sin(phi) * Math.cos(theta);
   const y = radius * Math.sin(phi) * Math.sin(theta);
   const z = radius * Math.cos(phi);
@@ -189,7 +189,7 @@ const smokeColors = [];
 for (let i = 0; i < SMOKE_PARTICLES; i++) {
   const theta = Math.random() * Math.PI * 2;
   const phi = Math.random() * Math.PI;
-  const radius = 7 + Math.random() * 1.5;
+  const radius = 10.5 + Math.random() * 1.5; // Increased from 7 to 10.5
   const x = radius * Math.sin(phi) * Math.cos(theta);
   const y = radius * Math.sin(phi) * Math.sin(theta);
   const z = radius * Math.cos(phi);
@@ -281,10 +281,10 @@ function animate() {
   for (let i = 0; i < starPos.length; i += 3) {
     starPos[i] += Math.sin(time + i) * 0.005;
     starPos[i + 1] += Math.cos(time + i) * 0.005;
-    if (Math.sqrt(starPos[i] ** 2 + starPos[i + 1] ** 2 + starPos[i + 2] ** 2) > 15) {
+    if (Math.sqrt(starPos[i] ** 2 + starPos[i + 1] ** 2 + starPos[i + 2] ** 2) > 20) { // Increased from 15 to 20
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.random() * Math.PI;
-      const radius = 10;
+      const radius = 15; // Increased from 10 to 15
       starPos[i] = radius * Math.sin(phi) * Math.cos(theta);
       starPos[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
       starPos[i + 2] = radius * Math.cos(phi);
@@ -296,7 +296,7 @@ function animate() {
   const particlePos = particleGeometry.attributes.position.array;
   for (let i = 0; i < particlePos.length; i += 3) {
     particlePos[i + 1] += 0.01;
-    if (particlePos[i + 1] > 8) particlePos[i + 1] = -8;
+    if (particlePos[i + 1] > 12) particlePos[i + 1] = -12; // Increased from 8 to 12
   }
   particleGeometry.attributes.position.needsUpdate = true;
 
@@ -305,7 +305,7 @@ function animate() {
   for (let i = 0; i < smokePos.length; i += 3) {
     smokePos[i] += Math.sin(time + i) * 0.006;
     smokePos[i + 1] += 0.006;
-    if (smokePos[i + 1] > 9) smokePos[i + 1] = -9;
+    if (smokePos[i + 1] > 13.5) smokePos[i + 1] = -13.5; // Increased from 9 to 13.5
   }
   smokeGeometry.attributes.position.needsUpdate = true;
 
@@ -356,7 +356,7 @@ function setupNavigation() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = anchor.getAttribute('href').slice(1);
+      constitoria = anchor.getAttribute('href').slice(1);
       const target = document.getElementById(targetId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
@@ -432,7 +432,7 @@ function setupObserver() {
     const rect = section.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom >= 0) {
       section.classList.add('animate');
-   observer.unobserve(section);
+      observer.unobserve(section);
     }
   });
 }
@@ -472,6 +472,3 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
-
-// bring back the dodecahedron(and black and white space themed), remove the aura, and keep the other changes that u did to latest file(black and white space themed though)
