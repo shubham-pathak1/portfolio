@@ -281,10 +281,10 @@ function animate() {
   for (let i = 0; i < starPos.length; i += 3) {
     starPos[i] += Math.sin(time + i) * 0.005;
     starPos[i + 1] += Math.cos(time + i) * 0.005;
-    if (Math.sqrt(starPos[i] ** 2 + starPos[i + 1] ** 2 + starPos[i + 2] ** 2) > 20) { // Increased from 15 to 20
+    if (Math.sqrt(starPos[i] ** 2 + starPos[i + 1] ** 2 + starPos[i + 2] ** 2) > 20) {
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.random() * Math.PI;
-      const radius = 15; // Increased from 10 to 15
+      const radius = 15;
       starPos[i] = radius * Math.sin(phi) * Math.cos(theta);
       starPos[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
       starPos[i + 2] = radius * Math.cos(phi);
@@ -296,7 +296,7 @@ function animate() {
   const particlePos = particleGeometry.attributes.position.array;
   for (let i = 0; i < particlePos.length; i += 3) {
     particlePos[i + 1] += 0.01;
-    if (particlePos[i + 1] > 12) particlePos[i + 1] = -12; // Increased from 8 to 12
+    if (particlePos[i + 1] > 12) particlePos[i + 1] = -12;
   }
   particleGeometry.attributes.position.needsUpdate = true;
 
@@ -305,7 +305,7 @@ function animate() {
   for (let i = 0; i < smokePos.length; i += 3) {
     smokePos[i] += Math.sin(time + i) * 0.006;
     smokePos[i + 1] += 0.006;
-    if (smokePos[i + 1] > 13.5) smokePos[i + 1] = -13.5; // Increased from 9 to 13.5
+    if (smokePos[i + 1] > 13.5) smokePos[i + 1] = -13.5;
   }
   smokeGeometry.attributes.position.needsUpdate = true;
 
@@ -356,7 +356,7 @@ function setupNavigation() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      constitoria = anchor.getAttribute('href').slice(1);
+      const targetId = anchor.getAttribute('href').slice(1); // Fixed typo: targetitoria to targetId
       const target = document.getElementById(targetId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
