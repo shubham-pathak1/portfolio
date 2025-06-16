@@ -308,7 +308,7 @@ header.scrolled {
 }
 
 .about-card, .experience-card, .contact-card {
-  max-width: 810px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
