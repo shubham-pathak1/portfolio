@@ -1,474 +1,395 @@
 // Constants
-const DODECAHEDRON_RADIUS = 6; // Increased from 4 to 6
-const AURA_SCALE = 1.2;
 const CAMERA_FOV = 75;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 1000;
-const CAMERA_RADIUS = 20; // Increased from 15 to 20
-const AUTO_ROTATE_SPEED = 0.002;
-const STAR_PARTICLES = 100; // New star/atom particles
-const EMBER_PARTICLES = 20; // Reduced for subtlety
-const SMOKE_PARTICLES = 15; // Reduced for subtlety
-const INTERACTION_TIMEOUT = 3000;
+const CAMERA_Z = 10;
+const PARTICLE_COUNT = 500; // Reduced for dreamy, sparse effect
+const SCROLL_DRAG_FACTOR = 0.005; // Subtle effect on scroll
+const FALLING_STARS = 5; // Adjusted for subtle meteor effect
 
-// Initialize Three.js scene
-const canvas = document.querySelector('#bg');
-if (!canvas) {
-  console.error('Canvas element not found');
-  throw new Error('Canvas element not found');
-}
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  CAMERA_FOV,
-  window.innerWidth / window.innerHeight,
-  CAMERA_NEAR,
-  CAMERA_FAR
-);
-const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-
-if (!renderer.getContext()) {
-  console.error('WebGL not supported');
-  throw new Error('WebGL not supported');
-}
-
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.set(0, 0, CAMERA_RADIUS);
-
-// Dodecahedron Geometry
-const dodecahedronGeometry = new THREE.DodecahedronGeometry(DODECAHEDRON_RADIUS, 1);
-dodecahedronGeometry.computeVertexNormals();
-
-const dodecahedronMaterial = new THREE.ShaderMaterial({
-  vertexShader: `
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-    varying vec2 vUv;
-    uniform float time;
-    void main() {
-      vNormal = normalize(normalMatrix * normal);
-      vPosition = position;
-      vUv = uv;
-      vec3 pos = position;
-      float noise = sin(pos.x * 5.0 + time) * cos(pos.y * 5.0 + time) * 0.08;
-      pos += normal * noise;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
     }
-  `,
-  fragmentShader: `
-    precision lowp float;
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-    varying vec2 vUv;
-    uniform float time;
-    float noise(vec2 p) {
-      return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
-    }
-    float fbm(vec2 p) {
-      float v = 0.0;
-      for (float i = 1.0; i <= 3.0; i *= 2.0) {
-        v += noise(p * i) / i;
-      }
-      return v;
-    }
-    void main() {
-      float n = fbm(vUv * 8.0 + time * 0.02);
-      float glow = smoothstep(0.4, 0.8, n) * 0.25;
-      float fresnel = pow(1.0 - dot(vNormal, normalize(cameraPosition - vPosition)), 2.5);
-      float ambientOcclusion = 0.5 + 0.5 * dot(vNormal, vec3(0, 0, 1));
-      float brightness = 0.55 + 0.4 * ambientOcclusion + fresnel * 0.5 + glow;
-      gl_FragColor = vec4(vec3(brightness), 1.0);
-    }
-  `,
-  uniforms: { time: { value: 0 } }
 });
-const dodecahedron = new THREE.Mesh(dodecahedronGeometry, dodecahedronMaterial);
-scene.add(dodecahedron);
 
-// Aura
-const auraGeometry = dodecahedronGeometry.clone();
-const positions = auraGeometry.attributes.position.array;
-for (let i = 0; i < positions.length; i += 3) {
-  positions[i] *= AURA_SCALE;
-  positions[i + 1] *= AURA_SCALE;
-  positions[i + 2] *= AURA_SCALE;
-}
-auraGeometry.attributes.position.needsUpdate = true;
-auraGeometry.computeVertexNormals();
+// Custom Cursor
+const cursor = document.getElementById('custom-cursor');
+const cursorRing = document.querySelector('.cursor-ring');
+const cursorDot = document.querySelector('.cursor-dot');
+let trailElements = [];
 
-const auraMaterial = new THREE.ShaderMaterial({
-  vertexShader: `
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-    void main() {
-      vNormal = normalize(normalMatrix * normal);
-      vPosition = position;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    if (cursor) {
+        cursor.style.left = `${x}px`;
+        cursor.style.top = `${y}px`;
+
+        // Create trail effect
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = `${x}px`;
+        trail.style.top = `${y}px`;
+        document.body.appendChild(trail);
+        trailElements.push(trail);
+
+        if (trailElements.length > 10) {
+            const oldTrail = trailElements.shift();
+            oldTrail.remove();
+        }
     }
-  `,
-  fragmentShader: `
-    precision lowp float;
-    varying vec3 vNormal;
-    varying vec3 vPosition;
-    uniform float time;
-    void main() {
-      vec3 viewDir = normalize(cameraPosition - vPosition);
-      float fresnel = pow(1.0 - dot(vNormal, viewDir), 3.0);
-      float pulse = 0.5 + 0.5 * sin(time * 1.2);
-      float glow = fresnel * pulse * 0.4;
-      gl_FragColor = vec4(vec3(0.9), glow * 0.15);
-    }
-  `,
-  uniforms: { time: { value: 0 } },
-  transparent: true,
-  blending: THREE.AdditiveBlending,
-  side: THREE.BackSide
+
+    // Update mouse interaction
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
 });
-const aura = new THREE.Mesh(auraGeometry, auraMaterial);
-scene.add(aura);
 
-// Stars/Atoms
-const starGeometry = new THREE.BufferGeometry();
-const starPositions = [];
-const starColors = [];
-const starSizes = [];
-for (let i = 0; i < STAR_PARTICLES; i++) {
-  const theta = Math.random() * Math.PI * 2;
-  const phi = Math.random() * Math.PI;
-  const radius = 15 + Math.random() * 5; // Increased from 10 to 15
-  const x = radius * Math.sin(phi) * Math.cos(theta);
-  const y = radius * Math.sin(phi) * Math.sin(theta);
-  const z = radius * Math.cos(phi);
-  starPositions.push(x, y, z);
-  starColors.push(1.0, 1.0, 1.0); // Pure white
-  starSizes.push(0.05 + Math.random() * 0.05); // Tiny, varied sizes
-}
-starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
-starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
-starGeometry.setAttribute('size', new THREE.Float32BufferAttribute(starSizes, 1));
-const starMaterial = new THREE.PointsMaterial({
-  size: 0.1,
-  vertexColors: true,
-  transparent: true,
-  blending: THREE.AdditiveBlending,
-  sizeAttenuation: true
+document.addEventListener('mousedown', () => {
+    if (cursor) cursor.classList.add('active');
 });
-const stars = new THREE.Points(starGeometry, starMaterial);
-scene.add(stars);
 
-// Embers
-const particleGeometry = new THREE.BufferGeometry();
-const particlePositions = [];
-const particleColors = [];
-for (let i = 0; i < EMBER_PARTICLES; i++) {
-  const theta = Math.random() * Math.PI * 2;
-  const phi = Math.random() * Math.PI;
-  const radius = 9 + Math.random() * 1.0; // Increased from 6 to 9
-  const x = radius * Math.sin(phi) * Math.cos(theta);
-  const y = radius * Math.sin(phi) * Math.sin(theta);
-  const z = radius * Math.cos(phi);
-  particlePositions.push(x, y, z);
-  particleColors.push(0.8, 0.8, 0.8); // Light gray for subtlety
-}
-particleGeometry.setAttribute('position', new THREE.Float32BufferAttribute(particlePositions, 3));
-particleGeometry.setAttribute('color', new THREE.Float32BufferAttribute(particleColors, 3));
-const particleMaterial = new THREE.PointsMaterial({
-  size: 0.1,
-  vertexColors: true,
-  transparent: true,
-  blending: THREE.AdditiveBlending
+document.addEventListener('mouseup', () => {
+    if (cursor) cursor.classList.remove('active');
 });
-const particles = new THREE.Points(particleGeometry, particleMaterial);
-scene.add(particles);
-
-// Smoke
-const smokeGeometry = new THREE.BufferGeometry();
-const smokePositions = [];
-const smokeColors = [];
-for (let i = 0; i < SMOKE_PARTICLES; i++) {
-  const theta = Math.random() * Math.PI * 2;
-  const phi = Math.random() * Math.PI;
-  const radius = 10.5 + Math.random() * 1.5; // Increased from 7 to 10.5
-  const x = radius * Math.sin(phi) * Math.cos(theta);
-  const y = radius * Math.sin(phi) * Math.sin(theta);
-  const z = radius * Math.cos(phi);
-  smokePositions.push(x, y, z);
-  smokeColors.push(0.3, 0.3, 0.3); // Darker gray for subtlety
-}
-smokeGeometry.setAttribute('position', new THREE.Float32BufferAttribute(smokePositions, 3));
-smokeGeometry.setAttribute('color', new THREE.Float32BufferAttribute(smokeColors, 3));
-const smokeMaterial = new THREE.PointsMaterial({
-  size: 0.6,
-  vertexColors: true,
-  transparent: true,
-  opacity: 0.2,
-  blending: THREE.AdditiveBlending
-});
-const smoke = new THREE.Points(smokeGeometry, smokeMaterial);
-scene.add(smoke);
-
-// Lighting
-const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0); // Brighter for high contrast
-directionalLight.position.set(8, 8, 8);
-scene.add(directionalLight);
-
-const rimLight = new THREE.DirectionalLight(0xffffff, 0.8); // Neutral white rim light
-rimLight.position.set(-5, 5, -5);
-scene.add(rimLight);
-
-const ambientLight = new THREE.AmbientLight(0x333333, 0.5); // Neutral gray ambient
-scene.add(ambientLight);
-
-// Interactivity
-let isDragging = false;
-let previousMouse = new THREE.Vector2();
-let theta = 0;
-let phi = Math.PI / 2;
-let lastInteraction = Date.now();
-
-function updateMouse(e, isTouch = false) {
-  const x = isTouch ? e.touches[0].clientX : e.clientX;
-  const y = isTouch ? e.touches[0].clientY : e.clientY;
-  const mouse = new THREE.Vector2(
-    (x / window.innerWidth) * 2 - 1,
-    -(y / window.innerHeight) * 2 + 1
-  );
-  if (isDragging) {
-    const deltaX = mouse.x - previousMouse.x;
-    const deltaY = mouse.y - previousMouse.y;
-    theta -= deltaX * 1.5;
-    phi = Math.max(0.2, Math.min(Math.PI - 0.2, phi - deltaY * 1.5));
-    lastInteraction = Date.now();
-  }
-  previousMouse.copy(mouse);
-}
-
-function addEventListeners() {
-  if (!canvas) return;
-  canvas.addEventListener('mousedown', () => {
-    isDragging = true;
-    lastInteraction = Date.now();
-  });
-  canvas.addEventListener('mouseup', () => { isDragging = false; });
-  canvas.addEventListener('mousemove', updateMouse);
-  canvas.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    updateMouse(e, true);
-    lastInteraction = Date.now();
-  }, { passive: false });
-  canvas.addEventListener('touchend', () => { isDragging = false; });
-  canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    updateMouse(e, true);
-  }, { passive: false });
-}
-
-// Animation
-let time = 0;
-let animationId = null;
-
-function animate() {
-  time += 0.02;
-
-  dodecahedronMaterial.uniforms.time.value = time;
-  auraMaterial.uniforms.time.value = time;
-  dodecahedron.rotation.y += 0.003;
-  aura.rotation.y += 0.003;
-
-  // Animate stars/atoms
-  const starPos = starGeometry.attributes.position.array;
-  for (let i = 0; i < starPos.length; i += 3) {
-    starPos[i] += Math.sin(time + i) * 0.005;
-    starPos[i + 1] += Math.cos(time + i) * 0.005;
-    if (Math.sqrt(starPos[i] ** 2 + starPos[i + 1] ** 2 + starPos[i + 2] ** 2) > 20) {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.random() * Math.PI;
-      const radius = 15;
-      starPos[i] = radius * Math.sin(phi) * Math.cos(theta);
-      starPos[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
-      starPos[i + 2] = radius * Math.cos(phi);
-    }
-  }
-  starGeometry.attributes.position.needsUpdate = true;
-
-  // Animate embers
-  const particlePos = particleGeometry.attributes.position.array;
-  for (let i = 0; i < particlePos.length; i += 3) {
-    particlePos[i + 1] += 0.01;
-    if (particlePos[i + 1] > 12) particlePos[i + 1] = -12;
-  }
-  particleGeometry.attributes.position.needsUpdate = true;
-
-  // Animate smoke
-  const smokePos = smokeGeometry.attributes.position.array;
-  for (let i = 0; i < smokePos.length; i += 3) {
-    smokePos[i] += Math.sin(time + i) * 0.006;
-    smokePos[i + 1] += 0.006;
-    if (smokePos[i + 1] > 13.5) smokePos[i + 1] = -13.5;
-  }
-  smokeGeometry.attributes.position.needsUpdate = true;
-
-  if (Date.now() - lastInteraction > INTERACTION_TIMEOUT && !isDragging) {
-    theta += AUTO_ROTATE_SPEED;
-  }
-
-  camera.position.x = CAMERA_RADIUS * Math.sin(phi) * Math.cos(theta);
-  camera.position.y = CAMERA_RADIUS * Math.cos(phi);
-  camera.position.z = CAMERA_RADIUS * Math.sin(phi) * Math.sin(theta);
-  camera.lookAt(0, 0, 0);
-
-  renderer.render(scene, camera);
-  animationId = requestAnimationFrame(animate);
-}
-
-function startAnimation() {
-  if (!animationId) {
-    animationId = requestAnimationFrame(animate);
-  }
-}
-
-function stopAnimation() {
-  if (animationId) {
-    cancelAnimationFrame(animationId);
-    animationId = null;
-  }
-}
-
-// Window Events
-function onResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-window.addEventListener('resize', onResize);
 
 // Navigation
-function setupNavigation() {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if (!hamburger || !navLinks) {
-    console.warn('Navigation elements not found');
-    return;
-  }
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const mobileNav = document.querySelector('.mobile-nav');
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-link');
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = anchor.getAttribute('href').slice(1); // Fixed typo: targetitoria to targetId
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, null, `#${targetId}`);
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        anchor.classList.add('active');
-      }
+if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
     });
-  });
-
-  hamburger.addEventListener('click', () => {
-    const isActive = hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isActive);
-    document.body.style.overflow = isActive ? 'hidden' : '';
-  });
-
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
 }
 
+if (navLinks) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                if (mobileNav && mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+
+                navLinks.forEach(nav => nav.removeAttribute('data-active'));
+                link.setAttribute('data-active', 'true');
+            }
+        });
+    });
+}
+
+// Update active nav link on scroll
+window.addEventListener('scroll', () => {
+    const fromTop = window.scrollY + 100;
+
+    if (navLinks) {
+        navLinks.forEach(link => {
+            const sectionId = link.getAttribute('href').substring(1);
+            const section = document.getElementById(sectionId);
+
+            if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                navLinks.forEach(nav => nav.removeAttribute('data-active'));
+                link.setAttribute('data-active', 'true');
+            }
+        });
+    }
+});
+
+// Contact Pop-up
+const form = document.getElementById('contact-form');
+const popup = document.getElementById('contact-popup');
+const closePopup = document.querySelector('.popup-close');
+
+if (form && popup) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        popup.classList.add('active');
+        popup.setAttribute('aria-hidden', 'false');
+        gsap.fromTo('.popup-content', 
+            { opacity: 0, scale: 0.8, y: 50 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+        );
+    });
+
+    closePopup.addEventListener('click', () => {
+        gsap.to('.popup-content', {
+            opacity: 0,
+            scale: 0.8,
+            y: 50,
+            duration: 0.3,
+            ease: 'power2.in',
+            onComplete: () => {
+                popup.classList.remove('active');
+                popup.setAttribute('aria-hidden', 'true');
+                form.reset();
+            }
+        });
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            closePopup.click();
+        }
+    });
+}
+
+// Three.js Moon and Stars Background
+function createScene(canvasId) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(CAMERA_FOV, window.innerWidth / window.innerHeight, CAMERA_NEAR, CAMERA_FAR);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(canvasId), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    camera.position.z = CAMERA_Z;
+    return { scene, camera, renderer };
+}
+
+const heroMoon = createScene('earth-hero-canvas');
+const heroGeometry = new THREE.SphereGeometry(3.5, 64, 64); // Slightly bigger moon
+const heroTexture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/planets/moon_1024.jpg');
+const heroMaterial = new THREE.MeshStandardMaterial({
+    map: heroTexture,
+    color: 0x808080,
+    emissive: 0x000000,
+    metalness: 0,
+    roughness: 1
+});
+const heroSphere = new THREE.Mesh(heroGeometry, heroMaterial);
+heroMoon.scene.add(heroSphere);
+
+const atmosphereGeometry = new THREE.SphereGeometry(3.6, 64, 64); // Adjusted for new moon size
+const atmosphereMaterial = new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.05,
+    side: THREE.BackSide
+});
+const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+heroMoon.scene.add(atmosphere);
+
+const particlesGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(PARTICLE_COUNT * 3);
+for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 30; // Wider distribution for dreamy effect
+}
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+const particlesMaterial = new THREE.PointsMaterial({
+    color: 0xFFFFFF,
+    size: 0.05,
+    transparent: true,
+    opacity: 0.5
+});
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+heroMoon.scene.add(particles);
+
+// Falling Stars/Meteor Effect
+const fallingStarGeometry = new THREE.BufferGeometry();
+const fallingStarPositions = [];
+const fallingStarVelocities = [];
+const fallingStarTrails = []; // For trail effect
+
+for (let i = 0; i < FALLING_STARS; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.random() * Math.PI * 0.5;
+    const radius = 25 + Math.random() * 5;
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta) + 10;
+    const z = radius * Math.cos(phi);
+    fallingStarPositions.push(x, y, z);
+    fallingStarVelocities.push(0.15 * (1.0 + Math.random())); // Slower, varied speed
+    fallingStarTrails.push(new THREE.Vector3(x, y, z)); // Initial trail position
+}
+fallingStarGeometry.setAttribute('position', new THREE.Float32BufferAttribute(fallingStarPositions, 3));
+fallingStarGeometry.setAttribute('velocity', new THREE.Float32BufferAttribute(fallingStarVelocities, 1));
+
+const fallingStarMaterial = new THREE.ShaderMaterial({
+    vertexShader: `
+        attribute float velocity;
+        varying vec3 vPosition;
+        uniform float time;
+        void main() {
+            vPosition = position;
+            vec3 pos = position;
+            pos.y -= velocity * time * 1.5; // Slower fall
+            if (pos.y < -25.0) {
+                pos.y = 25.0;
+                pos.x = (rand(vec2(time, gl_VertexID)) - 0.5) * 30.0;
+                pos.z = (rand(vec2(time, gl_VertexID + 1.0)) - 0.5) * 30.0;
+            }
+            gl_PointSize = 0.4 * (300.0 / length(pos - cameraPosition)); // Slightly larger
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+        float rand(vec2 co) {
+            return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
+        }
+    `,
+    fragmentShader: `
+        varying vec3 vPosition;
+        void main() {
+            float intensity = 1.0 - smoothstep(0.0, 0.8, length(gl_PointCoord - vec2(0.5)));
+            vec3 color = mix(vec3(1.0, 0.9, 0.5), vec3(1.0, 0.8, 0.2), intensity); // Gradient meteor glow
+            gl_FragColor = vec4(color, intensity * 0.7);
+        }
+    `,
+    uniforms: { time: { value: 0 } },
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+});
+const fallingStars = new THREE.Points(fallingStarGeometry, fallingStarMaterial);
+heroMoon.scene.add(fallingStars);
+
+const heroLight = new THREE.PointLight(0xffffff, 1, 100);
+heroLight.position.set(10, 10, 10);
+heroMoon.scene.add(heroLight);
+const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+heroMoon.scene.add(ambientLight);
+
+let mouseX = 0;
+let mouseY = 0;
+let scrollY = 0;
+let time = 0;
+
+function animate() {
+    requestAnimationFrame(animate);
+    time += 0.02;
+
+    heroSphere.rotation.y += 0.003;
+    atmosphere.rotation.y += 0.003;
+    particles.rotation.y += 0.001;
+
+    // Subtle jiggly effect on scroll for particles
+    const scrollEffect = scrollY * SCROLL_DRAG_FACTOR;
+    const particlePos = particlesGeometry.attributes.position.array;
+    for (let i = 0; i < particlePos.length; i += 3) {
+        particlePos[i] += Math.sin(scrollEffect + i * 0.1) * 0.01; // Jiggly effect
+        particlePos[i + 2] += Math.cos(scrollEffect + i * 0.1) * 0.01; // Jiggly effect
+        if (particlePos[i] > 30) particlePos[i] -= 60;
+        if (particlePos[i] < -30) particlePos[i] += 60;
+        if (particlePos[i + 2] > 30) particlePos[i + 2] -= 60;
+        if (particlePos[i + 2] < -30) particlePos[i + 2] += 60;
+    }
+    particlesGeometry.attributes.position.needsUpdate = true;
+
+    // Update falling stars with trail-like effect
+    const fallingStarPos = fallingStarGeometry.attributes.position.array;
+    const fallingStarVel = fallingStarGeometry.attributes.velocity.array;
+    for (let i = 0; i < fallingStarPos.length; i += 3) {
+        const idx = i / 3;
+        fallingStarPos[i + 1] -= fallingStarVel[idx] * time * 1.5;
+        if (fallingStarPos[i + 1] < -25.0) {
+            fallingStarPos[i + 1] = 25.0;
+            fallingStarPos[i] = (Math.random() - 0.5) * 30;
+            fallingStarPos[i + 2] = (Math.random() - 0.5) * 30;
+            fallingStarTrails[idx].set(fallingStarPos[i], fallingStarPos[i + 1], fallingStarPos[i + 2]);
+        }
+    }
+    fallingStarGeometry.attributes.position.needsUpdate = true;
+
+    if (fallingStarMaterial.uniforms && fallingStarMaterial.uniforms.time) {
+        fallingStarMaterial.uniforms.time.value = time;
+    }
+
+    heroMoon.camera.position.x += (mouseX - heroMoon.camera.position.x) * 0.05;
+    heroMoon.camera.position.y += (-mouseY - heroMoon.camera.position.y) * 0.05;
+    heroMoon.camera.lookAt(heroMoon.scene.position);
+    heroMoon.renderer.render(heroMoon.scene, heroMoon.camera);
+}
+animate();
+
+// Resize Handler
+window.addEventListener('resize', () => {
+    heroMoon.camera.aspect = window.innerWidth / window.innerHeight;
+    heroMoon.camera.updateProjectionMatrix();
+    heroMoon.renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
 // Scroll Handling
-let lastScrollY = window.scrollY;
+let lastScrollY = 0;
 let ticking = false;
 
 function handleScroll() {
-  const currentScrollY = window.scrollY;
-  const header = document.querySelector('header');
-  if (header) {
-    header.classList.toggle('scrolled', currentScrollY > 30);
-    header.style.transform = currentScrollY > lastScrollY && currentScrollY > 80 ? 'translateY(-100%)' : 'translateY(0)';
-  }
-  lastScrollY = currentScrollY;
-  ticking = false;
+    scrollY = window.scrollY;
+    const currentScrollY = window.scrollY;
+    const header = document.querySelector('header');
+    if (header) {
+        header.classList.toggle('scrolled', currentScrollY > 30);
+        header.style.transform = currentScrollY > lastScrollY && currentScrollY > 80 ? 'translateY(-100%)' : 'translateY(0)';
+    }
+    lastScrollY = currentScrollY;
+    ticking = false;
 }
 
 function onScroll() {
-  if (!ticking) {
-    requestAnimationFrame(handleScroll);
-    ticking = true;
-  }
+    if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('touchmove', onScroll, { passive: true });
 
-// Intersection Observer
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: window.innerWidth <= 768 ? 0.15 : 0.25,
-    rootMargin: '0px 0px -10% 0px'
-  }
+// GSAP Animations with ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero Content Animation
+gsap.fromTo('.hero-content', 
+    { opacity: 0, y: 100 },
+    { opacity: 1, y: 0, duration: 1.5, ease: 'power4.out', delay: 0.5 }
 );
 
-function setupObserver() {
-  document.querySelectorAll('.work, .about, .experience, .contact').forEach(section => {
-    section.classList.add('animate-hidden');
-    observer.observe(section);
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      section.classList.add('animate');
-      observer.unobserve(section);
-    }
-  });
-}
+// Project Cards Animation with 3D Tilt
+gsap.utils.toArray('.project-card').forEach((card, i) => {
+    gsap.from(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: i * 0.3,
+        ease: 'power4.out'
+    });
 
-// Network Status
-function handleNetworkStatus() {
-  if (!navigator.onLine) {
-    stopAnimation();
-    if (window.location.pathname !== '/offline.html') {
-      window.location.href = 'offline.html';
-    }
-  } else {
-    if (window.location.pathname === '/offline.html') {
-      window.location.href = 'index.html';
-    }
-    startAnimation();
-  }
-}
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(card, {
+            rotationY: x * 0.05,
+            rotationX: -y * 0.05,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
 
-window.addEventListener('online', handleNetworkStatus);
-window.addEventListener('offline', handleNetworkStatus);
-
-// Service Worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.error('Service Worker Error:', err));
-  });
-}
-
-// Initialize
-function init() {
-  addEventListeners();
-  setupNavigation();
-  setupObserver();
-  handleNetworkStatus();
-  startAnimation();
-}
-
-document.addEventListener('DOMContentLoaded', init);
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+            rotationY: 0,
+            rotationX: 0,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+});
