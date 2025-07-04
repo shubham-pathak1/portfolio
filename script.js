@@ -4,8 +4,9 @@ const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 1000;
 const CAMERA_Z = 10;
 const PARTICLE_COUNT = 500; // Reduced for dreamy, sparse effect
-const SCROLL_DRAG_FACTOR = 0.005; // Subtle effect on scroll
+const SCROLL_DRAG_FACTOR = 0.005; // Subtle jiggly effect on scroll
 const FALLING_STARS = 5; // Adjusted for subtle meteor effect
+const MOBILE_BREAKPOINT = 768; // Typical mobile breakpoint in pixels
 
 // Preloader
 window.addEventListener('load', () => {
@@ -60,19 +61,24 @@ document.addEventListener('mouseup', () => {
 });
 
 // Navigation
-const navToggle = document.querySelector('.mobile-nav-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-link');
+const navToggle = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-if (navToggle && mobileNav) {
+if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        mobileNav.classList.toggle('active');
+        // Only toggle if in mobile view
+        if (window.innerWidth <= MOBILE_BREAKPOINT) {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
     });
 }
 
 if (navLinks) {
-    navLinks.forEach(link => {
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
@@ -84,12 +90,13 @@ if (navLinks) {
                     behavior: 'smooth'
                 });
 
-                if (mobileNav && mobileNav.classList.contains('active')) {
-                    mobileNav.classList.remove('active');
+                if (navLinks.classList.contains('active') && window.innerWidth <= MOBILE_BREAKPOINT) {
+                    navLinks.classList.remove('active');
                     navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 }
 
-                navLinks.forEach(nav => nav.removeAttribute('data-active'));
+                links.forEach(nav => nav.removeAttribute('data-active'));
                 link.setAttribute('data-active', 'true');
             }
         });
@@ -98,18 +105,29 @@ if (navLinks) {
 
 // Update active nav link on scroll
 window.addEventListener('scroll', () => {
-    const fromTop = window.scrollY + 100;
+    const fromTop = window.scrollY + 100; // Offset for better section detection
+    const links = navLinks.querySelectorAll('a');
+    let activeSectionFound = false;
 
-    if (navLinks) {
-        navLinks.forEach(link => {
+    if (navLinks && links.length) {
+        // Clear all active states first
+        links.forEach(link => link.removeAttribute('data-active'));
+
+        // Find the active section
+        links.forEach(link => {
             const sectionId = link.getAttribute('href').substring(1);
             const section = document.getElementById(sectionId);
 
             if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-                navLinks.forEach(nav => nav.removeAttribute('data-active'));
                 link.setAttribute('data-active', 'true');
+                activeSectionFound = true;
             }
         });
+
+        // If no section is active and we're near the top, activate Home
+        if (!activeSectionFound && fromTop < document.getElementById(links[0].getAttribute('href').substring(1)).offsetTop + 100) {
+            links[0].setAttribute('data-active', 'true');
+        }
     }
 });
 
@@ -204,7 +222,7 @@ heroMoon.scene.add(particles);
 const fallingStarGeometry = new THREE.BufferGeometry();
 const fallingStarPositions = [];
 const fallingStarVelocities = [];
-const fallingStarTrails = []; // For trail effect
+const fallingStarTrails = [];
 
 for (let i = 0; i < FALLING_STARS; i++) {
     const theta = Math.random() * Math.PI * 2;
@@ -214,8 +232,8 @@ for (let i = 0; i < FALLING_STARS; i++) {
     const y = radius * Math.sin(phi) * Math.sin(theta) + 10;
     const z = radius * Math.cos(phi);
     fallingStarPositions.push(x, y, z);
-    fallingStarVelocities.push(0.15 * (1.0 + Math.random())); // Slower, varied speed
-    fallingStarTrails.push(new THREE.Vector3(x, y, z)); // Initial trail position
+    fallingStarVelocities.push(0.15 * (1.0 + Math.random()));
+    fallingStarTrails.push(new THREE.Vector3(x, y, z));
 }
 fallingStarGeometry.setAttribute('position', new THREE.Float32BufferAttribute(fallingStarPositions, 3));
 fallingStarGeometry.setAttribute('velocity', new THREE.Float32BufferAttribute(fallingStarVelocities, 1));
@@ -228,13 +246,13 @@ const fallingStarMaterial = new THREE.ShaderMaterial({
         void main() {
             vPosition = position;
             vec3 pos = position;
-            pos.y -= velocity * time * 1.5; // Slower fall
+            pos.y -= velocity * time * 1.5;
             if (pos.y < -25.0) {
                 pos.y = 25.0;
                 pos.x = (rand(vec2(time, gl_VertexID)) - 0.5) * 30.0;
                 pos.z = (rand(vec2(time, gl_VertexID + 1.0)) - 0.5) * 30.0;
             }
-            gl_PointSize = 0.4 * (300.0 / length(pos - cameraPosition)); // Slightly larger
+            gl_PointSize = 0.4 * (300.0 / length(pos - cameraPosition));
             gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
         }
         float rand(vec2 co) {
@@ -245,7 +263,7 @@ const fallingStarMaterial = new THREE.ShaderMaterial({
         varying vec3 vPosition;
         void main() {
             float intensity = 1.0 - smoothstep(0.0, 0.8, length(gl_PointCoord - vec2(0.5)));
-            vec3 color = mix(vec3(1.0, 0.9, 0.5), vec3(1.0, 0.8, 0.2), intensity); // Gradient meteor glow
+            vec3 color = mix(vec3(1.0, 0.9, 0.5), vec3(1.0, 0.8, 0.2), intensity);
             gl_FragColor = vec4(color, intensity * 0.7);
         }
     `,
@@ -280,8 +298,8 @@ function animate() {
     const scrollEffect = scrollY * SCROLL_DRAG_FACTOR;
     const particlePos = particlesGeometry.attributes.position.array;
     for (let i = 0; i < particlePos.length; i += 3) {
-        particlePos[i] += Math.sin(scrollEffect + i * 0.1) * 0.01; // Jiggly effect
-        particlePos[i + 2] += Math.cos(scrollEffect + i * 0.1) * 0.01; // Jiggly effect
+        particlePos[i] += Math.sin(scrollEffect + i * 0.1) * 0.01;
+        particlePos[i + 2] += Math.cos(scrollEffect + i * 0.1) * 0.01;
         if (particlePos[i] > 30) particlePos[i] -= 60;
         if (particlePos[i] < -30) particlePos[i] += 60;
         if (particlePos[i + 2] > 30) particlePos[i + 2] -= 60;
