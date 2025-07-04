@@ -46,8 +46,8 @@ header {
   top: 0;
   width: 100%;
   padding: 1rem 3rem;
-  background: rgba(0, 0, 0, 0.8); /* Reduced opacity from 0.9 to 0.6 for subtler transparency */
-  backdrop-filter: blur(25px); /* Reduced blur from 20px to 10px for a lighter effect */
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
   z-index: 1000;
   transition: transform 0.3s ease;
   position: -webkit-sticky;
@@ -73,7 +73,6 @@ header.scrolled {
 }
 
 .logo:hover .logo-text {
-  transform: scale(1.05);
   text-shadow: 0 0 15px var(--shadow);
 }
 
@@ -110,11 +109,18 @@ header.scrolled {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::before, .nav-link:focus::before, .nav-link.active::before {
+.nav-link[data-active]::before {
   width: 100%;
 }
 
-.nav-link:hover, .nav-link:focus, .nav-link.active {
+.nav-link:hover::before,
+.nav-link:focus::before {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link[data-active] {
   transform: translateY(-2px);
   text-shadow: 0 0 10px var(--shadow);
 }
@@ -497,8 +503,13 @@ footer {
     gap: 3rem;
     justify-content: center;
     align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
   }
-  .nav-links.active { display: flex; }
+  .nav-links.active {
+    display: flex;
+    transform: translateX(0);
+  }
   .nav-link { font-size: 1.8rem; }
   .hamburger { display: flex; }
   .cyber-glitch { font-size: 3rem; }
