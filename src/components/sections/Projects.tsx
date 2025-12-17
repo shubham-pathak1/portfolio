@@ -27,8 +27,8 @@ const projects: Project[] = [
             { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
         ],
         image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
-        link: "https://github.com/shubham-pathak1/",
-        github: "https://github.com/shubham-pathak1/"
+        link: "https://github.com/shubham-pathak1/throttle-talks",
+        github: "https://github.com/shubham-pathak1/throttle-talks"
     },
     {
         id: "krishi-sangam",
@@ -41,8 +41,8 @@ const projects: Project[] = [
             { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
         image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop",
-        link: "https://github.com/shubham-pathak1/",
-        github: "https://github.com/shubham-pathak1/"
+        link: "https://github.com/shubham-pathak1/krishi-sangam",
+        github: "https://github.com/shubham-pathak1/krishi-sangam"
     }
 ];
 

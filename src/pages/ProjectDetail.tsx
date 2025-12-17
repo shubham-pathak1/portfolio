@@ -173,7 +173,9 @@ export const ProjectDetail = () => {
                                     Live Demo
                                 </a>
                                 <a
-                                    href="#"
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
                                 >
                                     <Github size={18} />

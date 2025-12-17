@@ -15,6 +15,7 @@ export interface ProjectDetail {
     impact: string[];
     futurePlans: string[];
     image: string;
+    github: string;
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -62,7 +63,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Launch iOS version (currently Android only).",
             "Partner with local tracks for exclusive event ticketing."
         ],
-        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
+        github: "https://github.com/shubham-pathak1/throttle-talks"
     },
     "krishi-sangam": {
         id: "krishi-sangam",
@@ -106,6 +108,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Voice-assisted listing for farmers who cannot type.",
             "Expansion to 3 neighboring districts."
         ],
-        image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop",
+        github: "https://github.com/shubham-pathak1/krishi-sangam"
     }
 };
