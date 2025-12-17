@@ -1,0 +1,49 @@
+import React from "react";
+import { useTheme } from "../hooks/useTheme";
+import { Dock } from "./ui/Dock";
+
+export const Layout = ({ children }: { children: React.ReactNode }) => {
+    const { theme, toggleTheme } = useTheme();
+    const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+
+    React.useEffect(() => {
+        const updateMousePosition = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener("mousemove", updateMousePosition);
+
+        return () => {
+            window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, []);
+
+    return (
+        <div className="min-h-screen relative">
+            {/* Fixed Background */}
+            <div
+                className="fixed inset-0 z-[-1] pointer-events-none transition-colors duration-500"
+                style={{
+                    backgroundImage: `
+            linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px)
+          `,
+                    backgroundSize: "30px 30px",
+                }}
+            />
+            {/* Spotlight Glow */}
+            <div
+                className="fixed inset-0 z-[-1] pointer-events-none transition-opacity duration-300"
+                style={{
+                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, var(--glow-color), transparent 40%)`
+                }}
+            />
+            <main className="max-w-[900px] mx-auto px-6 py-10 pb-32 relative z-10">
+                {children}
+            </main>
+
+            {/* Floating Dock */}
+            <Dock theme={theme} toggleTheme={toggleTheme} />
+        </div>
+    );
+};

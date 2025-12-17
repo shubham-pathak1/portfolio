@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #f4f4f5;
+    --border: #e4e4e7;
+    --text-primary: #18181b;
+    --text-secondary: #71717a;
+    --accent: #18181b;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Background Patterns */
+    --glow-color: rgba(0,0,0,0.03);
+    --grid-line-color: #f4f4f5; 
+  }
+
+  .dark {
+    --bg: #050505;
+    --surface: #0a0a0a;
+    --surface-hover: #171717;
+    --border: #27272a;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --accent: #ffffff;
+    --shadow: none;
+    --shadow-hover: 0 0 0 1px #3f3f46;
+    
+    /* Background Patterns Dark */
+    --glow-color: rgba(255,255,255,0.03);
+    --grid-line-color: #171717; 
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+@layer components {
+  .tooltip-trigger {
+    @apply relative flex items-center justify-center transition-all duration-200;
+  }
+  
+  .tooltip-trigger:hover {
+    @apply -translate-y-0.5 text-text-primary;
+  }
+
+  .tooltip-trigger::after {
+    content: attr(data-tooltip);
+    @apply absolute top-full left-1/2 -translate-x-1/2 translate-y-2 
+           bg-text-primary text-bg text-xs font-semibold px-2 py-1 rounded
+           opacity-0 pointer-events-none transition-all duration-200 z-10 whitespace-nowrap;
+  }
+
+  .tooltip-trigger:hover::after {
+    @apply opacity-100 translate-y-1;
+  }
+}
