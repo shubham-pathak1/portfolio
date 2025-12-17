@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { About } from "./components/sections/About";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
