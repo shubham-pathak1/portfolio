@@ -1,4 +1,5 @@
 import expoIcon from "../assets/expo.png";
+import krishiSangamImage from "../assets/krishi_sangam.png";
 
 export interface ProjectDetail {
     id: string;
@@ -108,7 +109,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Voice-assisted listing for farmers who cannot type.",
             "Expansion to 3 neighboring districts."
         ],
-        image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop",
+        image: krishiSangamImage,
         github: "https://github.com/shubham-pathak1/krishi-sangam"
     }
 };

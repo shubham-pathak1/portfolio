@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import expoIcon from "../../assets/expo.png";
+import krishiSangamImage from "../../assets/krishi_sangam.png";
 
 interface Project {
     id: string; // Added ID
@@ -40,7 +41,7 @@ const projects: Project[] = [
             { name: "Express", icon: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" },
             { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
-        image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop",
+        image: krishiSangamImage,
         link: "https://github.com/shubham-pathak1/krishi-sangam",
         github: "https://github.com/shubham-pathak1/krishi-sangam"
     }
