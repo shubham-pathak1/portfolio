@@ -45,10 +45,15 @@ export const Hero = () => {
                 transition={{ delay: 0.4 }}
                 className="flex gap-4 flex-wrap justify-center mb-8"
             >
-                <button className="flex items-center gap-2 px-6 py-3 rounded-xl bg-text-primary text-bg font-semibold hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-text-primary/20">
+                <a
+                    href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl bg-text-primary text-bg font-semibold hover:opacity-90 transition-transform active:scale-95 shadow-lg shadow-text-primary/20"
+                >
                     <Download size={18} />
                     Resume
-                </button>
+                </a>
             </motion.div>
 
             <motion.div
