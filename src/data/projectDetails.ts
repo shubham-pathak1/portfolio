@@ -1,5 +1,6 @@
 import expoIcon from "../assets/expo.png";
 import krishiSangamImage from "../assets/krishi_sangam.png";
+import throttleTalksImage from "../assets/throttle_talks.png";
 
 export interface ProjectDetail {
     id: string;
@@ -24,10 +25,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
         id: "throttle-talks",
         title: "Throttle Talks",
         tagline: "Automotive community platform with real-time forums",
-        timeline: "In Development Phase",
+        timeline: "3 months",
         role: "Lead Developer",
-        team: "Team of 2",
-        status: "Beta",
+        team: "Solo",
+        status: "Live",
         overview: "Throttle Talks is a high-octane community platform designed for automotive enthusiasts. It bridges the gap between casual car lovers and hardcore gearheads by providing a real-time discussion forum, news feed, and spec comparison tool. Users can engage in heated debates about engines, share modification tips, or simply show off their rides.",
         features: [
             "Real-time Forums: Instant messaging and thread updates using Firebase.",
@@ -64,7 +65,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Launch iOS version (currently Android only).",
             "Partner with local tracks for exclusive event ticketing."
         ],
-        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
+        image: throttleTalksImage,
         github: "https://github.com/shubham-pathak1/throttle-talks"
     },
     "krishi-sangam": {

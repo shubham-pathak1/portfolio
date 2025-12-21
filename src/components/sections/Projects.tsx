@@ -3,6 +3,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import expoIcon from "../../assets/expo.png";
 import krishiSangamImage from "../../assets/krishi_sangam.png";
+import throttleTalksImage from "../../assets/throttle_talks.png";
 
 interface Project {
     id: string; // Added ID
@@ -27,7 +28,7 @@ const projects: Project[] = [
             { name: "Expo", icon: expoIcon },
             { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
         ],
-        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
+        image: throttleTalksImage,
         link: "https://github.com/shubham-pathak1/throttle-talks",
         github: "https://github.com/shubham-pathak1/throttle-talks"
     },
