@@ -1,15 +1,12 @@
-
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, Activity } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
-import { Dock } from "../components/ui/Dock";
-import { useTheme } from "../hooks/useTheme";
+import { Layout } from "../components/Layout";
 
 export const ProjectDetail = () => {
     const { id } = useParams<{ id: string }>();
     const project = id ? projectDetails[id] : undefined;
-    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -17,21 +14,21 @@ export const ProjectDetail = () => {
 
     if (!project) {
         return (
-            <div className="min-h-screen flex items-center justify-center text-text-primary">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold mb-4">404</h1>
-                    <p className="mb-8">Project not found</p>
-                    <Link to="/" className="text-blue-500 hover:underline">Back to Home</Link>
+            <Layout>
+                <div className="min-h-[50vh] flex items-center justify-center text-text-primary">
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold mb-4">404</h1>
+                        <p className="mb-8 text-text-secondary">Project not found</p>
+                        <Link to="/" className="text-text-primary underline font-medium">Back to Home</Link>
+                    </div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 
     return (
-        <div className="bg-bg text-text-primary min-h-screen font-sans selection:bg-text-primary selection:text-bg">
-            <div className="fixed-bg"></div>
-
-            <main className="wrapper max-w-4xl mx-auto px-6 pt-12 pb-32 relative z-10">
+        <Layout>
+            <div className="relative z-10">
                 {/* Back Button */}
                 <Link
                     to="/"
@@ -81,7 +78,7 @@ export const ProjectDetail = () => {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full ${project.id === 'bastion' ? 'object-contain p-8' : 'object-cover'}`}
+                        className={`w-full h-full ${project.id === 'bastion' ? 'object-contain p-2' : 'object-cover'}`}
                     />
                 </div>
 
@@ -140,7 +137,7 @@ export const ProjectDetail = () => {
                         <section>
                             <h2 className="text-2xl font-bold mb-6">Future Plans</h2>
                             <ul className="list-disc pl-5 space-y-2 text-text-secondary">
-                                {project.features.map((plan, i) => (
+                                {project.futurePlans.map((plan, i) => (
                                     <li key={i}>{plan}</li>
                                 ))}
                             </ul>
@@ -191,9 +188,7 @@ export const ProjectDetail = () => {
                     <div className="mb-4 font-bold text-lg tracking-tight">Design & Developed by Shubham</div>
                     <div className="text-text-secondary text-sm">© 2025. All rights reserved.</div>
                 </footer>
-            </main>
-
-            <Dock theme={theme} toggleTheme={toggleTheme} />
-        </div>
+            </div>
+        </Layout>
     );
 };

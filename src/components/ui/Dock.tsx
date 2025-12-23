@@ -1,4 +1,4 @@
-
+import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 
 interface DockProps {
@@ -41,8 +41,15 @@ const MoonIcon = () => (
 );
 
 export const Dock = ({ theme, toggleTheme }: DockProps) => {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleHomeClick = () => {
+        if (location.pathname === "/") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            navigate("/");
+        }
     };
 
     return (
@@ -56,7 +63,7 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
                 )}
                 style={{ boxShadow: "0 10px 40px -10px rgba(0,0,0,0.1)" }}
             >
-                <DockButton onClick={scrollToTop}>
+                <DockButton onClick={handleHomeClick}>
                     <HomeIcon />
                 </DockButton>
 
