@@ -81,7 +81,7 @@ export const ProjectDetail = () => {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${project.id === 'bastion' ? 'object-contain p-8' : 'object-cover'}`}
                     />
                 </div>
 

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import expoIcon from "../../assets/expo.png";
 import krishiSangamImage from "../../assets/krishi_sangam.png";
 import throttleTalksImage from "../../assets/throttle_talks.png";
+import bastionImage from "../../assets/bastion.png";
+import rustIcon from "../../assets/rust.png";
 
 interface Project {
     id: string; // Added ID
@@ -45,6 +47,20 @@ const projects: Project[] = [
         image: krishiSangamImage,
         link: "https://github.com/shubham-pathak1/krishi-sangam",
         github: "https://github.com/shubham-pathak1/krishi-sangam"
+    },
+    {
+        id: "bastion",
+        title: "Bastion",
+        description: "Cross-platform distraction blocker with Pomodoro focus. (In Development Phase)",
+        tags: [
+            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
+            { name: "Rust", icon: rustIcon },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+        ],
+        image: bastionImage,
+        link: "https://github.com/shubham-pathak1/bastion",
+        github: "https://github.com/shubham-pathak1/bastion"
     }
 ];
 
