@@ -3,6 +3,9 @@ import krishiSangamImage from "../assets/krishi_sangam.png";
 import throttleTalksImage from "../assets/throttle_talks.png";
 import bastionImage from "../assets/bastion.png";
 import rustIcon from "../assets/rust.png";
+import firebaseAuthIcon from "../assets/firebase_auth.png";
+import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
+import firebaseStorageIcon from "../assets/firebase_storage.png";
 
 export interface ProjectDetail {
     id: string;
@@ -48,9 +51,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Expo", icon: expoIcon },
-            { name: "Firebase Auth", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-            { name: "Cloud Firestore", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-            { name: "Firebase Storage", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+            { name: "Firebase Auth", icon: firebaseAuthIcon },
+            { name: "Cloud Firestore", icon: firebaseCloudstoreIcon },
+            { name: "Firebase Storage", icon: firebaseStorageIcon },
             { name: "Google Maps API", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
         ],
