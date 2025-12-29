@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
+import profileImage from "../../assets/me.jpg";
 
 export const Hero = () => {
     return (
@@ -8,13 +9,13 @@ export const Hero = () => {
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: "spring", duration: 0.8 }}
-                className="relative w-28 h-28 mb-8"
+                className="relative w-48 h-48 mb-8"
             >
                 <div className="absolute inset-0 rounded-full border-2 border-border bg-surface shadow-lg overflow-hidden p-1">
                     <img
-                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Shubham&backgroundColor=e4e4e7"
+                        src={profileImage}
                         alt="Profile"
-                        className="w-full h-full rounded-full object-cover"
+                        className="w-full h-full rounded-full object-cover scale-125 grayscale hover:grayscale-0 transition-all duration-300"
                     />
                 </div>
                 {/* Glow behind avatar */}

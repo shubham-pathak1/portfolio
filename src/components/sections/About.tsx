@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import profileImage from "../../assets/me.jpg";
 
 export const About = () => {
     return (
@@ -15,9 +16,9 @@ export const About = () => {
             >
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-hover border border-border">
                     <img
-                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=b6e3f4"
+                        src={profileImage}
                         alt="About Avatar"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top scale-150 grayscale hover:grayscale-0 transition-all duration-300"
                     />
                 </div>
 
