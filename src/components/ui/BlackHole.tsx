@@ -1,12 +1,22 @@
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Float, PerspectiveCamera, Environment } from "@react-three/drei";
+import { useGLTF, Float, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 import blackHoleModel from "../../assets/blackhole.glb?url";
 
-const Model = () => {
+interface ModelProps {
+    onLoad?: () => void;
+}
+
+const Model = ({ onLoad }: ModelProps) => {
     const { scene } = useGLTF(blackHoleModel);
     const modelRef = useRef<THREE.Group>(null);
+
+    useEffect(() => {
+        if (scene && onLoad) {
+            onLoad();
+        }
+    }, [scene, onLoad]);
 
     useFrame((state) => {
         if (modelRef.current) {
@@ -27,29 +37,35 @@ const Model = () => {
         <primitive
             ref={modelRef}
             object={scene}
-            scale={0.55}
+            scale={0.6}
             position={[0, 0, 0]}
         />
     );
 };
 
-export const BlackHole = () => {
+export const BlackHole = ({ onLoad }: ModelProps) => {
     return (
-        <div className="w-full h-full grayscale-[1] contrast-[1.2] brightness-[1.1]">
-            <Canvas dpr={[1, 2]}>
+        <div className="w-full h-full flex items-center justify-center grayscale-[1] contrast-[1.1] brightness-[1.1] overflow-visible">
+            <Canvas
+                dpr={[1, 2]}
+                resize={{ scroll: false, offsetSize: true }}
+                style={{ pointerEvents: 'none' }}
+                className="overflow-visible"
+            >
                 <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={45} />
-                <ambientLight intensity={4} />
-                <pointLight position={[10, 10, 10]} intensity={6} />
-                <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={6} />
-                <directionalLight position={[0, 5, 5]} intensity={4} />
+                <ambientLight intensity={2} />
+                <pointLight position={[10, 10, 10]} intensity={3} />
+                <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={3} />
+                <directionalLight position={[0, 5, 5]} intensity={2} />
 
                 <Suspense fallback={null}>
                     <Float speed={1} rotationIntensity={0.2} floatIntensity={0.2}>
-                        <Model />
+                        <Model onLoad={onLoad} />
                     </Float>
-                    <Environment preset="night" />
                 </Suspense>
             </Canvas>
         </div>
     );
 };
+
+useGLTF.preload(blackHoleModel);
