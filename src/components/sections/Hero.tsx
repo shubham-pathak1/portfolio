@@ -1,25 +1,19 @@
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
-import profileImage from "../../assets/me.jpg";
+import { BlackHole } from "../ui/BlackHole";
 
 export const Hero = () => {
     return (
         <section className="flex flex-col items-center text-center mt-20 mb-28">
             <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
+                initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ type: "spring", duration: 0.8 }}
-                className="relative w-48 h-48 mb-8"
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className="relative w-full h-[300px] md:h-[400px] -mt-20 overflow-visible"
             >
-                <div className="absolute inset-0 rounded-full border-2 border-border bg-surface shadow-lg overflow-hidden p-1">
-                    <img
-                        src={profileImage}
-                        alt="Profile"
-                        className="w-full h-full rounded-full object-cover scale-125 grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                </div>
+                <BlackHole />
                 {/* Glow behind avatar */}
-                <div className="absolute -inset-4 bg-primary/20 blur-2xl -z-10 rounded-full" />
+                <div className="absolute inset-0 bg-primary/5 blur-[120px] -z-10 rounded-full" />
             </motion.div>
 
             <motion.h1
@@ -44,7 +38,7 @@ export const Hero = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="flex gap-4 flex-wrap justify-center mb-8"
+                className="flex gap-4 flex-wrap justify-center mb-4"
             >
                 <a
                     href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
@@ -62,7 +56,7 @@ export const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
             >
-                <div className="flex gap-4 mt-5">
+                <div className="flex gap-4 mt-2">
                     <a
                         href="https://github.com/shubham-pathak1"
                         target="_blank"
