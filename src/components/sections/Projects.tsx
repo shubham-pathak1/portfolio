@@ -5,6 +5,7 @@ import expoIcon from "../../assets/expo.png";
 import krishiSangamImage from "../../assets/krishi_sangam.png";
 import throttleTalksImage from "../../assets/throttle_talks.png";
 import bastionImage from "../../assets/bastion.png";
+import cielImage from "../../assets/ciel.png";
 import rustIcon from "../../assets/rust.png";
 
 interface Project {
@@ -61,6 +62,19 @@ const projects: Project[] = [
         image: bastionImage,
         link: "https://github.com/shubham-pathak1/bastion",
         github: "https://github.com/shubham-pathak1/bastion"
+    },
+    {
+        id: "ciel",
+        title: "Ciel",
+        description: "Modern download manager for HTTP and Torrent protocols. (In Development)",
+        tags: [
+            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
+            { name: "Rust", icon: rustIcon },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
+        ],
+        image: cielImage,
+        link: "https://github.com/shubham-pathak1/ciel",
+        github: "https://github.com/shubham-pathak1/ciel"
     }
 ];
 
@@ -86,7 +100,7 @@ export const Projects = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
                             />
                             <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
                                 <a href={project.github} target="_blank" className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors">

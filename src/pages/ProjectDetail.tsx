@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, Activity } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
 
@@ -66,7 +66,7 @@ export const ProjectDetail = () => {
                         </div>
                         <div>
                             <div className="text-xs font-bold uppercase tracking-wider text-text-secondary mb-1 flex items-center gap-2">
-                                <Activity size={14} /> Status
+                                <CircleDot size={14} /> Status
                             </div>
                             <div className="font-medium">{project.status}</div>
                         </div>
@@ -78,7 +78,7 @@ export const ProjectDetail = () => {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full ${project.id === 'bastion' ? 'object-contain p-2' : 'object-cover'}`}
+                        className={`${['ciel', 'bastion'].includes(project.id) ? 'w-full h-full object-cover object-top' : 'w-full h-full object-cover'}`}
                     />
                 </div>
 
@@ -162,13 +162,15 @@ export const ProjectDetail = () => {
 
                             {/* Links */}
                             <div className="flex flex-col gap-3">
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
-                                >
-                                    <ExternalLink size={18} />
-                                    Live Demo
-                                </a>
+                                {!['Under Development', 'In Development'].includes(project.status) && (
+                                    <a
+                                        href="#"
+                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
+                                    >
+                                        <ExternalLink size={18} />
+                                        Live Demo
+                                    </a>
+                                )}
                                 <a
                                     href={project.github}
                                     target="_blank"

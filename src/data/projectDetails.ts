@@ -6,6 +6,7 @@ import rustIcon from "../assets/rust.png";
 import firebaseAuthIcon from "../assets/firebase_auth.png";
 import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
 import firebaseStorageIcon from "../assets/firebase_storage.png";
+import cielImage from "../assets/ciel.png";
 
 export interface ProjectDetail {
     id: string;
@@ -33,7 +34,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "3 months",
         role: "Lead Developer",
         team: "Solo",
-        status: "Live",
+        status: "Under Development",
         overview: "Throttle Talks is a high-octane community platform designed for automotive enthusiasts. It bridges the gap between casual car lovers and hardcore gearheads by providing a real-time discussion forum, news feed, and spec comparison tool. Users can engage in heated debates about engines, share modification tips, or simply show off their rides.",
         features: [
             "Real-time Forums: Instant messaging and thread updates using Firebase.",
@@ -58,11 +59,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
         ],
         impact: [
-            "Grew to 500+ daily active users within the first month of beta.",
-            "Facilitated over 10,000 messages in community threads.",
-            "Featured in local automotive newsletters as a 'Top App for Petrolheads'.",
-            "Successfully optimized app load times by 40% using lazy loading and caching.",
-            "Solved critical data synchronization issues in real-time chat."
+            "Designed a scalable architecture capable of handling real-time data for thousands of users.",
+            "Optimized app load times by 40% using lazy loading and caching.",
+            "Solved critical data synchronization issues in real-time chat.",
+            "built a robust notification system for instant updates."
         ],
         futurePlans: [
             "Implement an AI-driven 'Mechanic Bot' for common troubleshooting.",
@@ -162,5 +162,44 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: bastionImage,
         github: "https://github.com/shubham-pathak1/bastion"
+    },
+    "ciel": {
+        id: "ciel",
+        title: "Ciel",
+        tagline: "Modern download manager for HTTP and Torrent protocols",
+        timeline: "Ongoing",
+        role: "Lead Developer",
+        team: "Solo",
+        status: "In Development",
+        overview: "Ciel is a modern, varied-connection download manager designed with a philosophy of 'minimalism meets power'. It offers a unified, clutter-free environment for handling both standard HTTP downloads and Torrent files, replacing the need for separate, bloated tools.",
+        features: [
+            "Dual-Protocol Support: Seamlessly download via HTTP URLs or Torrent/Magnet links.",
+            "Multi-connection: Accelerated downloads via parallel connections for both protocols.",
+            "Minimalist UI: A clean, distraction-free interface for managing your download queue.",
+            "High Performance: Built on Rust for near-native speed and efficiency."
+        ],
+        whyBuilt: [
+            "Existing download managers are often cluttered with ads or limited to one protocol.",
+            "Wanted a single, beautiful tool to handle all types of downloads.",
+            "To leverage Rust's concurrency for high-speed data transfer.",
+            "Creating a tool that feels distinctively 'premium' and calm."
+        ],
+        techStack: [
+            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
+            { name: "Rust", icon: rustIcon },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+        ],
+        impact: [
+            "Laying the groundwork for a new standard in lightweight download managers.",
+            "Architecting a high-throughput networking layer in Rust."
+        ],
+        futurePlans: [
+            "Implement plugin system for community extensions.",
+            "Add advanced scheduling and bandwidth management.",
+            "Release public alpha for community feedback."
+        ],
+        image: cielImage,
+        github: "https://github.com/shubham-pathak1/ciel"
     }
 };
