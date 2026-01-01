@@ -40,6 +40,26 @@
   body {
     @apply bg-bg text-text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
+
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
 }
 
 /* Custom Scrollbar */
