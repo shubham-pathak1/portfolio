@@ -32,20 +32,20 @@ export const Experience = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-2 flex-wrap mb-4">
-                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
+                        <div className="flex gap-2 flex-wrap mb-4 group/skills">
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" className="w-4 h-4" alt="HTML" />
                                 HTML
                             </span>
-                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" className="w-4 h-4" alt="CSS" />
                                 CSS
                             </span>
-                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className="w-4 h-4" alt="JS" />
                                 JavaScript
                             </span>
-                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-4 h-4" alt="React" />
                                 React
                             </span>
@@ -74,9 +74,9 @@ export const Experience = () => {
 
                 <div className="relative pl-6 border-l-2 border-border space-y-8">
                     {/* Item 1 */}
-                    <div className="relative">
-                        <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-border transition-transform hover:scale-110 hover:border-text-primary" />
-                        <div className="p-5 rounded-xl bg-surface border border-border transition-colors hover:border-text-primary">
+                    <div className="relative group">
+                        <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-border transition-all duration-300 group-hover:scale-125 group-hover:border-text-primary" />
+                        <div className="p-5 rounded-xl bg-surface border border-border">
                             <div className="font-bold text-text-primary">B.Tech in Computer Science</div>
                             <div className="text-sm text-text-secondary mb-2">Navrachana University</div>
                             <span className="text-xs font-mono px-2 py-1 rounded bg-surface-hover border border-border text-text-secondary">
@@ -86,9 +86,9 @@ export const Experience = () => {
                     </div>
 
                     {/* Item 2 */}
-                    <div className="relative">
-                        <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-border transition-transform hover:scale-110 hover:border-text-primary" />
-                        <div className="p-5 rounded-xl bg-surface border border-border transition-colors hover:border-text-primary">
+                    <div className="relative group">
+                        <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface border-4 border-border transition-all duration-300 group-hover:scale-125 group-hover:border-text-primary" />
+                        <div className="p-5 rounded-xl bg-surface border border-border">
                             <div className="font-bold text-text-primary">Diploma in Computer Engineering</div>
                             <div className="text-sm text-text-secondary mb-2">Parul University</div>
                             <span className="text-xs font-mono px-2 py-1 rounded bg-surface-hover border border-border text-text-secondary">

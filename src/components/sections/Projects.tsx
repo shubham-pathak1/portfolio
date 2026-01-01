@@ -79,7 +79,7 @@ export const Projects = () => {
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="group rounded-2xl bg-surface border border-border overflow-hidden hover:border-text-primary transition-colors duration-300 flex flex-col"
+                        className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col"
                     >
                         {/* Image Area */}
                         <div className="h-48 overflow-hidden relative bg-surface-hover">
@@ -110,7 +110,7 @@ export const Projects = () => {
                             </div>
 
                             <div className="mt-auto">
-                                <Link to={`/project/${project.id}`} className="w-full py-2.5 rounded-xl border border-border text-sm font-medium text-text-primary hover:border-text-primary hover:bg-transparent transition-colors flex items-center justify-center gap-2">
+                                <Link to={`/project/${project.id}`} className="w-full py-2.5 rounded-xl border border-border text-sm font-medium text-text-primary transition-all duration-300 group-hover:border-text-primary flex items-center justify-center gap-2">
                                     View Details
                                     <ArrowUpRight size={16} />
                                 </Link>

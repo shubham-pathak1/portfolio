@@ -13,14 +13,17 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
             infinite: false,
         });
 
+        let reqId: number;
+
         function raf(time: number) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            reqId = requestAnimationFrame(raf);
         }
 
-        requestAnimationFrame(raf);
+        reqId = requestAnimationFrame(raf);
 
         return () => {
+            cancelAnimationFrame(reqId);
             lenis.destroy();
         };
     }, []);
