@@ -126,7 +126,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         role: "Lead Developer",
         team: "Solo",
         status: "In Development",
-        overview: "Bastion is a robust, cross-platform application designed to help users eliminate digital distractions and reclaim their productivity. Built with security and privacy as core pillars, Bastion provides system-level blocking of websites and applications without compromising on user data or performance.",
+        overview: "Bastion is a robust application designed to help users eliminate digital distractions and reclaim their productivity. Currently limited to Windows, it provides system-level blocking of websites and applications without compromising on user data or performance.",
         features: [
             "Smart Blocking: Set custom blocklists for websites and desktop applications.",
             "Pomodoro Integration: Sync your blocking sessions with focus timers.",
@@ -149,14 +149,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "shadcn/ui", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" } // Placeholder for shadcn
         ],
         impact: [
-            "Initial internal testing showed a 30% increase in deep work sessions.",
-            "Successfully implemented low-level network and process interception.",
-            "Developed a unique cross-platform UI bridge between Rust and React.",
-            "Ensured zero-latency response for system-level triggers."
+            "Currently in development phase. If you are interested in testing it out or contributing, please feel free to reach out to me via mail."
         ],
         futurePlans: [
-            "Add mobile companion apps (Android/iOS) for synchronized blocking.",
-            "Implement AI-driven 'Distraction Detection' based on usage patterns.",
+            "Add mobile companion app (Android) for synchronized blocking.",
+            "Might add Linux support in future.",
             "Open-source core blocking modules for community contribution.",
             "Add team-based focus leaderboards."
         ],
