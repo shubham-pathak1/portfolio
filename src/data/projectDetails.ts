@@ -171,18 +171,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
         role: "Lead Developer",
         team: "Solo",
         status: "In Development",
-        overview: "Ciel is a modern, varied-connection download manager designed with a philosophy of 'minimalism meets power'. It offers a unified, clutter-free environment for handling both standard HTTP downloads and Torrent files, replacing the need for separate, bloated tools.",
+        overview: "Ciel is a Rust-based, lightweight alternative to present-day downloaders. Capable of handling up to 32 concurrent connections, it provides a high-performance, unified environment for both HTTP and Torrent protocols, replacing separate, bloated tools with a single efficient solution.",
         features: [
             "Dual-Protocol Support: Seamlessly download via HTTP URLs or Torrent/Magnet links.",
-            "Multi-connection: Accelerated downloads via parallel connections for both protocols.",
+            "High Concurrency: Supports up to 32 concurrent connections for accelerated speeds.",
             "Minimalist UI: A clean, distraction-free interface for managing your download queue.",
-            "High Performance: Built on Rust for near-native speed and efficiency."
+            "High Performance: Built on Rust for near-native speed and minimal resource usage."
         ],
         whyBuilt: [
-            "Existing download managers are often cluttered with ads or limited to one protocol.",
-            "Wanted a single, beautiful tool to handle all types of downloads.",
-            "To leverage Rust's concurrency for high-speed data transfer.",
-            "Creating a tool that feels distinctively 'premium' and calm."
+            "Existing download managers are often bloated and heavy on system resources.",
+            "Wanted a single tool to handle all types of downloads efficiently.",
+            "To leverage Rust's concurrency for high-speed data transfer."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -191,11 +190,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
         ],
         impact: [
-            "Laying the groundwork for a new standard in lightweight download managers.",
-            "Architecting a high-throughput networking layer in Rust."
+            "Yet to be launched as currently in development phase. If you want to test it out or contribute, please contact me via email."
         ],
         futurePlans: [
-            "Implement plugin system for community extensions.",
+            "Browser extension support for seamless download capturing.",
+            "Might increase concurrency limit (up to 128) based on community feedback.",
             "Add advanced scheduling and bandwidth management.",
             "Release public alpha for community feedback."
         ],
