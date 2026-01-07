@@ -40,6 +40,15 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             />
             <main className="max-w-[900px] mx-auto px-6 py-10 pb-32 relative z-10">
                 {children}
+
+                {/* Global Footer */}
+                <footer className="mt-32 pt-12 border-t border-border text-center">
+                    <div className="mb-4 font-bold text-lg tracking-tight">
+                        Design & Developed by{" "}
+                        <span className="text-text-primary">Shubham</span>
+                    </div>
+                    <div className="text-text-secondary text-sm">© 2026. All rights reserved.</div>
+                </footer>
             </main>
 
             {/* Floating Dock */}

@@ -185,11 +185,7 @@ export const ProjectDetail = () => {
                     </aside>
                 </div>
 
-                {/* Footer */}
-                <footer className="mt-32 pt-12 border-t border-border text-center">
-                    <div className="mb-4 font-bold text-lg tracking-tight">Design & Developed by Shubham</div>
-                    <div className="text-text-secondary text-sm">© 2025. All rights reserved.</div>
-                </footer>
+
             </div>
         </Layout>
     );
