@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, high-performance web developer portfolio built with React, TypeScript, and Vite. Designed to showcase projects and professional experience with a focus on clean aesthetics and smooth user interactions.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React + TypeScript
+- **Bundler**: Vite
+- **Styling**: Vanilla CSS (Tailwind CSS for utility-first components)
+- **Animations**: Framer Motion
+- **Interactions**: Lenis (Smooth Scroll), Lucide Icons
+- **Deployment**: Vercel
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Modern UI/UX**: Clean, minimalist design with a premium feel.
+- **Project Detail Pages**: In-depth views for key projects with detailed descriptions and tech stacks.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
+- **Performance Focused**: Minimal bundle size and optimized asset delivery via Vite.
+- **Dynamic Interactions**: Smooth kinetic scrolling and subtle hover animations.
 
-## Expanding the ESLint configuration
+## 📁 Project Highlights
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Bastion**: A privacy-first distraction blocker (Windows-only).
+- **Ciel**: A high-performance download manager for HTTP and Torrent.
+- **Krishi Sangam**: An agricultural platform for farming insights.
+- **Throttle Talks**: A blog platform for automotive enthusiasts.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Node.js (Latest LTS recommended)
+- npm or pnpm
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shubham-pathak1/portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📬 Contact
+
+Feel free to reach out for collaborations or inquiries:
+- **Email**: [shubhamxkcd@gmail.com](mailto:shubhamxkcd@gmail.com)
+- **GitHub**: [shubham-pathak1](https://github.com/shubham-pathak1)
