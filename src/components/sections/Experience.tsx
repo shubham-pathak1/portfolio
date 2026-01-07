@@ -88,39 +88,42 @@ const ExperienceItem = ({ exp }: { exp: typeof experiences[0] }) => {
                     )}
                 </div>
 
-                {/* Main Info */}
-                <div className="flex-grow pt-1">
-                    <div className="flex items-center gap-3 mb-1.5">
-                        <h3 className="text-xl font-bold text-text-primary tracking-tight">{exp.company}</h3>
-                        <div className="flex items-center gap-2.5 text-text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
-                            {exp.socials.website && (
-                                <a
-                                    href={exp.socials.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="hover:text-text-primary transition-colors"
-                                >
-                                    <Globe size={15} />
-                                </a>
-                            )}
-                            {exp.socials.twitter && <Twitter size={15} className="hover:text-text-primary transition-colors" />}
-                            {exp.socials.linkedin && <Linkedin size={15} className="hover:text-text-primary transition-colors" />}
-                            {exp.socials.github && <Github size={15} className="hover:text-text-primary transition-colors" />}
-                            <div className="ml-1 transition-transform duration-300">
-                                {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {/* Header Content Wrapper */}
+                <div className="flex-grow flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-6">
+                    {/* Main Info */}
+                    <div className="flex-grow pt-1">
+                        <div className="flex items-center gap-3 mb-1.5">
+                            <h3 className="text-xl font-bold text-text-primary tracking-tight">{exp.company}</h3>
+                            <div className="flex items-center gap-2.5 text-text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
+                                {exp.socials.website && (
+                                    <a
+                                        href={exp.socials.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="hover:text-text-primary transition-colors"
+                                    >
+                                        <Globe size={15} />
+                                    </a>
+                                )}
+                                {exp.socials.twitter && <Twitter size={15} className="hover:text-text-primary transition-colors" />}
+                                {exp.socials.linkedin && <Linkedin size={15} className="hover:text-text-primary transition-colors" />}
+                                {exp.socials.github && <Github size={15} className="hover:text-text-primary transition-colors" />}
+                                <div className="ml-1 transition-transform duration-300">
+                                    {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                                </div>
                             </div>
                         </div>
+                        <div className="text-base text-text-secondary/80 font-medium">{exp.role}</div>
                     </div>
-                    <div className="text-base text-text-secondary/80 font-medium">{exp.role}</div>
-                </div>
 
-                {/* Right Side: Date & Location */}
-                <div className="flex flex-col items-end text-right pt-2 shrink-0">
-                    <div className="text-[13px] sm:text-sm font-semibold text-text-primary/90 mb-1.5 tracking-wide">{exp.duration}</div>
-                    <div className="text-[11px] sm:text-xs text-text-secondary font-medium tracking-tight flex items-center gap-1 justify-end">
-                        <MapPin size={12} className="opacity-50" />
-                        {exp.location}
+                    {/* Right Side: Date & Location */}
+                    <div className="flex flex-col items-start sm:items-end text-left sm:text-right pt-1 sm:pt-2 shrink-0">
+                        <div className="text-[13px] sm:text-sm font-semibold text-text-primary/90 mb-1.5 tracking-wide">{exp.duration}</div>
+                        <div className="text-[11px] sm:text-xs text-text-secondary font-medium tracking-tight flex items-center gap-1 justify-start sm:justify-end">
+                            <MapPin size={12} className="opacity-50" />
+                            {exp.location}
+                        </div>
                     </div>
                 </div>
             </div>
