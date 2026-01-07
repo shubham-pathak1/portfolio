@@ -1,7 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
+    const lenisRef = useRef<Lenis | null>(null);
+    const { pathname } = useLocation();
+
     useEffect(() => {
         const lenis = new Lenis({
             duration: 1.2,
@@ -12,6 +16,8 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
             wheelMultiplier: 1,
             infinite: false,
         });
+
+        lenisRef.current = lenis;
 
         let reqId: number;
 
@@ -25,8 +31,15 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
         return () => {
             cancelAnimationFrame(reqId);
             lenis.destroy();
+            lenisRef.current = null;
         };
     }, []);
+
+    useEffect(() => {
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        }
+    }, [pathname]);
 
     return <>{children}</>;
 };

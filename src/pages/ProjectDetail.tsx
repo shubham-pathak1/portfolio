@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
@@ -7,10 +6,6 @@ import { Layout } from "../components/Layout";
 export const ProjectDetail = () => {
     const { id } = useParams<{ id: string }>();
     const project = id ? projectDetails[id] : undefined;
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [id]);
 
     if (!project) {
         return (

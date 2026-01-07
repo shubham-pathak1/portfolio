@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
-import expoIcon from "../../assets/expo.png";
+import expoIcon from "../../assets/expo.jpg";
 import krishiSangamImage from "../../assets/krishi_sangam.png";
 import throttleTalksImage from "../../assets/throttle_talks.png";
 import bastionImage from "../../assets/bastion.png";

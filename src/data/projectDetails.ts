@@ -1,4 +1,4 @@
-import expoIcon from "../assets/expo.png";
+import expoIcon from "../assets/expo.jpg";
 import krishiSangamImage from "../assets/krishi_sangam.png";
 import throttleTalksImage from "../assets/throttle_talks.png";
 import bastionImage from "../assets/bastion.png";
