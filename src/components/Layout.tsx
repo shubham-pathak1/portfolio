@@ -47,7 +47,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                         Design & Developed by{" "}
                         <span className="text-text-primary">Shubham</span>
                     </div>
-                    <div className="text-text-secondary text-sm">© 2026. All rights reserved.</div>
+                    <div className="text-text-secondary text-sm">© 2025. All rights reserved.</div>
                 </footer>
             </main>
 

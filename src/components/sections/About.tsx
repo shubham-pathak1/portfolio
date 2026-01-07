@@ -25,7 +25,7 @@ export const About = () => {
                 <div className="flex flex-col justify-center">
                     <h2 className="text-2xl font-bold text-text-primary mb-4">Shubham Pathak</h2>
                     <p className="text-text-secondary leading-relaxed mb-8">
-                        I'm a Front-End Developer and Linux Enthusiast from Vadodara, Gujarat. I love building clean, user-friendly products to solve real-world problems. Specialized in building MVPs and interactive web experiences with a focus on clean code and performance.
+                        I'm a Front-End Developer from Vadodara, Gujarat. I enjoy building interactive software experiences and experimenting with various Linux distros. My focus is on creating clean, high-performance applications that are both functional and visually engaging.
                     </p>
 
                     <div>
