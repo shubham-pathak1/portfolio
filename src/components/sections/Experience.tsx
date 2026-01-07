@@ -20,6 +20,40 @@ export const Experience = () => {
                 <div className="space-y-4">
                     <div className="p-6 rounded-2xl bg-surface border border-border hover:border-text-secondary/50 transition-colors group">
                         <div className="flex flex-col gap-1 mb-4">
+                            <h3 className="text-lg font-bold text-text-primary">MERN Stack Intern</h3>
+                            <div className="flex items-center gap-2 text-sm text-text-secondary">
+                                <span>Redspark Technologies</span>
+                                <span className="w-1 h-1 rounded-full bg-text-secondary/50" />
+                                <span>Vadodara (On-site)</span>
+                            </div>
+                            <div className="flex items-center gap-1.5 text-xs font-mono text-text-secondary bg-surface-hover w-fit px-2 py-1 rounded mt-1">
+                                <Calendar size={12} />
+                                Jan 2026 - Ongoing
+                            </div>
+                        </div>
+
+                        <div className="flex gap-2 flex-wrap group/skills">
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" className="w-4 h-4" alt="MongoDB" />
+                                MongoDB
+                            </span>
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
+                                <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" className="w-4 h-4" alt="Express" />
+                                Express.js
+                            </span>
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-4 h-4" alt="React" />
+                                React
+                            </span>
+                            <span className="tech-tool-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary transition-opacity duration-300 group-hover/skills:opacity-40 hover:!opacity-100">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" className="w-4 h-4" alt="Node" />
+                                Node.js
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-surface border border-border hover:border-text-secondary/50 transition-colors group">
+                        <div className="flex flex-col gap-1 mb-4">
                             <h3 className="text-lg font-bold text-text-primary">Front-End Developer Intern</h3>
                             <div className="flex items-center gap-2 text-sm text-text-secondary">
                                 <span>Bolt IoT</span>
