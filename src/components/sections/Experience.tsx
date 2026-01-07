@@ -7,9 +7,6 @@ import {
     ChevronDown,
     ChevronUp,
     Globe,
-    Twitter,
-    Linkedin,
-    Github,
     MapPin
 } from "lucide-react";
 
@@ -71,7 +68,7 @@ const ExperienceItem = ({ exp }: { exp: typeof experiences[0] }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="border-b border-border last:border-0 py-8 group">
+        <div className="py-5 group">
             <div
                 className="flex items-start gap-5 cursor-pointer"
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -94,23 +91,21 @@ const ExperienceItem = ({ exp }: { exp: typeof experiences[0] }) => {
                     <div className="flex-grow pt-1">
                         <div className="flex items-center gap-3 mb-1.5">
                             <h3 className="text-xl font-bold text-text-primary tracking-tight">{exp.company}</h3>
-                            <div className="flex items-center gap-2.5 text-text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
+                            <div className="flex items-center gap-0 text-text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
                                 {exp.socials.website && (
                                     <a
                                         href={exp.socials.website}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         onClick={(e) => e.stopPropagation()}
-                                        className="hover:text-text-primary transition-colors"
+                                        className="w-5 h-8 grid place-items-center rounded-lg border border-transparent hover:border-border hover:bg-surface-hover hover:text-text-primary transition-all duration-300"
+                                        title="Visit Website"
                                     >
-                                        <Globe size={15} />
+                                        <Globe size={16} />
                                     </a>
                                 )}
-                                {exp.socials.twitter && <Twitter size={15} className="hover:text-text-primary transition-colors" />}
-                                {exp.socials.linkedin && <Linkedin size={15} className="hover:text-text-primary transition-colors" />}
-                                {exp.socials.github && <Github size={15} className="hover:text-text-primary transition-colors" />}
-                                <div className="ml-1 transition-transform duration-300">
-                                    {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                                <div className="w-5 h-8 grid place-items-center transition-transform duration-300">
+                                    {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                                 </div>
                             </div>
                         </div>
@@ -159,7 +154,7 @@ const ExperienceItem = ({ exp }: { exp: typeof experiences[0] }) => {
                             <ul className="space-y-4">
                                 {exp.description.map((point, idx) => (
                                     <li key={idx} className="flex gap-4 text-[15px] text-text-secondary leading-relaxed font-medium">
-                                        <div className="mt-2 w-1.5 h-1.5 bg-text-primary shrink-0 opacity-80" />
+                                        <div className="mt-2 w-1.5 h-1.5 bg-text-primary shrink-0 opacity-80 rounded-full" />
                                         <span>{point}</span>
                                     </li>
                                 ))}
