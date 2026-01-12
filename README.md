@@ -24,7 +24,7 @@ A professional, high-performance web developer portfolio built with React, TypeS
 - **Bastion**: A privacy-first distraction blocker (Windows-only).
 - **Ciel**: A high-performance download manager for HTTP and Torrent.
 - **Krishi Sangam**: An agricultural platform for farming insights.
-- **Raphael**: A lightweight raphael alternative built using tauri.
+- **Raphael**: A lightweight raycast alternative built using tauri.
 
 ## 🛠️ Getting Started
 
