@@ -24,7 +24,7 @@ A professional, high-performance web developer portfolio built with React, TypeS
 - **Bastion**: A privacy-first distraction blocker (Windows-only).
 - **Ciel**: A high-performance download manager for HTTP and Torrent.
 - **Krishi Sangam**: An agricultural platform for farming insights.
-- **Throttle Talks**: A blog platform for automotive enthusiasts.
+- **Raphael**: A lightweight raphael alternative built using tauri.
 
 ## 🛠️ Getting Started
 
@@ -52,4 +52,4 @@ A professional, high-performance web developer portfolio built with React, TypeS
 
 Feel free to reach out for collaborations or inquiries:
 - **Email**: [shubhamxkcd@gmail.com](mailto:shubhamxkcd@gmail.com)
-- **GitHub**: [shubham-pathak1](https://github.com/shubham-pathak1)
+- **GitHub**: [shubham-pathak1](https://github.com/shubham-pathak1) 
