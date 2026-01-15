@@ -1,42 +1,29 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
     Briefcase,
     Calendar,
     GraduationCap,
-    ChevronDown,
-    ChevronUp,
-    Globe,
-    MapPin
+    Globe
 } from "lucide-react";
-
-import redsparkLogo from "../../assets/redspark.png";
-import boltLogo from "../../assets/bolt-iot.png";
 
 const experiences = [
     {
         id: "redspark",
         company: "Redspark Technologies",
         role: "MERN Stack Intern",
-        location: "Vadodara, India (On-Site)",
+        location: "Vadodara (On-site)",
         duration: "Jan 2026 - Ongoing",
-        logo: redsparkLogo,
-        socials: {
-            website: "https://redsparkinfo.com/",
-            twitter: "#",
-            linkedin: "#",
-            github: "#"
-        },
+        website: "https://redsparkinfo.com/",
         technologies: [
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Express.js", icon: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" },
+            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", isDarkIcon: true },
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }
         ],
         description: [
-            "Actively learning and implementing MERN stack solutions for various projects.",
-            "Collaborating with the development team on building scalable web applications.",
-            "Participating in code reviews and architectural discussions."
+            "Actively learning and implementing MERN stack solutions for varied client projects.",
+            "Collaborating with the development team to build and optimize scalable web applications.",
+            "Participating in daily code reviews and contributing to architectural discussions."
         ]
     },
     {
@@ -45,11 +32,7 @@ const experiences = [
         role: "Front-End Developer Intern",
         location: "Remote (India)",
         duration: "Dec 2022 - Feb 2023",
-        logo: boltLogo,
-        socials: {
-            website: "https://www.boltiot.com/",
-            github: "#"
-        },
+        website: "https://www.boltiot.com/",
         technologies: [
             { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
             { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
@@ -57,178 +40,141 @@ const experiences = [
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
         ],
         description: [
-            "Developed user-friendly interfaces, improving client interaction.",
-            "Designed responsive layouts for cross-device accessibility.",
-            "Integrated APIs for real-time data updates."
+            "Developed user-friendly, responsive interfaces to improve client interaction.",
+            "Designed and implemented cross-device compatible layouts ensuring 100% responsiveness.",
+            "Integrated RESTful APIs for real-time data updates and seamless user experience."
         ]
     }
 ];
 
-const ExperienceItem = ({ exp }: { exp: typeof experiences[0] }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
+export const Experience = () => {
     return (
-        <div className="py-5 group">
-            <div
-                className="flex items-start gap-5 cursor-pointer"
-                onClick={() => setIsExpanded(!isExpanded)}
-            >
-                {/* Logo Placeholder */}
-                <div className="w-12 h-12 rounded-xl bg-[#0a0a0a] border border-border flex-shrink-0 flex items-center justify-center overflow-hidden p-2">
-                    {exp.logo ? (
-                        <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
-                    ) : (
-                        <div className="text-text-primary/10 font-bold select-none text-[8px] leading-tight flex flex-col items-center">
-                            <Briefcase size={16} className="mb-1 opacity-20" />
-                            {exp.company.split(' ')[0]}
-                        </div>
-                    )}
-                </div>
+        <section className="flex flex-col gap-16 mb-24 pt-8">
+            {/* Experience Section */}
+            <div>
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2"
+                >
+                    <Briefcase size={16} className="text-text-primary/40" />
+                    Experience
+                </motion.div>
 
-                {/* Header Content Wrapper */}
-                <div className="flex-grow flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-6">
-                    {/* Main Info */}
-                    <div className="flex-grow pt-1">
-                        <div className="flex items-center gap-3 mb-1.5">
-                            <h3 className="text-xl font-bold text-text-primary tracking-tight">{exp.company}</h3>
-                            <div className="flex items-center gap-0 text-text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
-                                {exp.socials.website && (
-                                    <a
-                                        href={exp.socials.website}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="w-5 h-8 grid place-items-center rounded-lg border border-transparent hover:border-border hover:bg-surface-hover hover:text-text-primary transition-all duration-300"
-                                        title="Visit Website"
-                                    >
-                                        <Globe size={16} />
-                                    </a>
-                                )}
-                                <div className="w-5 h-8 grid place-items-center transition-transform duration-300">
-                                    {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                <div className="grid grid-cols-1 gap-6">
+                    {experiences.map((exp, index) => (
+                        <motion.div
+                            key={exp.id}
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="p-6 rounded-2xl bg-surface border border-border hover:border-text-secondary/50 transition-colors group relative"
+                        >
+                            {/* Header Row: Role & Duration */}
+                            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1.5">
+                                <h3 className="text-xl font-bold text-text-primary leading-tight">{exp.role}</h3>
+                                <div className="flex items-center gap-1.5 text-xs font-mono text-text-secondary bg-surface-hover px-2 py-1 rounded shrink-0 self-start sm:self-auto mt-1 sm:mt-0">
+                                    <Calendar size={12} />
+                                    {exp.duration}
                                 </div>
                             </div>
-                        </div>
-                        <div className="text-base text-text-secondary/80 font-medium">{exp.role}</div>
-                    </div>
 
-                    {/* Right Side: Date & Location */}
-                    <div className="flex flex-col items-start sm:items-end text-left sm:text-right pt-1 sm:pt-2 shrink-0">
-                        <div className="text-[13px] sm:text-sm font-semibold text-text-primary/90 mb-1.5 tracking-wide">{exp.duration}</div>
-                        <div className="text-[11px] sm:text-xs text-text-secondary font-medium tracking-tight flex items-center gap-1 justify-start sm:justify-end">
-                            <MapPin size={12} className="opacity-50" />
-                            {exp.location}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Expanded Content */}
-            <AnimatePresence>
-                {isExpanded && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                        className="overflow-hidden"
-                    >
-                        <div className="pt-8 pl-0 sm:pl-[84px]">
-                            {/* Technologies */}
-                            <div className="mb-8">
-                                <h4 className="text-base font-bold text-text-primary mb-5 tracking-tight">Technologies & Tools</h4>
-                                <div className="flex flex-wrap gap-3">
-                                    {exp.technologies.map((tech) => (
-                                        <div
-                                            key={tech.name}
-                                            className="flex items-center gap-2.5 px-4 py-2 rounded-lg border border-dashed border-border bg-surface/30 text-sm font-medium text-text-secondary/90 hover:border-text-secondary transition-colors"
-                                        >
-                                            <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
-                                            {tech.name}
-                                        </div>
-                                    ))}
-                                </div>
+                            {/* Sub-Header: Company & Location */}
+                            <div className="flex items-center gap-2 text-sm text-text-secondary mb-4 flex-wrap">
+                                <a
+                                    href={exp.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-1.5 font-medium text-text-primary hover:text-accent transition-colors transition-all"
+                                >
+                                    {exp.company}
+                                    <Globe size={12} className="opacity-40" />
+                                </a>
+                                <span className="w-1 h-1 rounded-full bg-text-secondary/40" />
+                                <span className="text-xs">{exp.location}</span>
                             </div>
 
                             {/* Description Points */}
-                            <ul className="space-y-4">
-                                {exp.description.map((point, idx) => (
-                                    <li key={idx} className="flex gap-4 text-[15px] text-text-secondary leading-relaxed font-medium">
-                                        <div className="mt-2 w-1.5 h-1.5 bg-text-primary shrink-0 opacity-80 rounded-full" />
-                                        <span>{point}</span>
+                            <ul className="space-y-2 mb-5 list-disc ml-5 marker:text-text-secondary/60">
+                                {exp.description.map((point, i) => (
+                                    <li key={i} className="text-sm text-text-secondary leading-relaxed pl-1">
+                                        {point}
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
 
-export const Experience = () => {
-    return (
-        <section className="flex flex-col gap-24 mb-32">
-            {/* Experience Column */}
-            <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-            >
-                <div className="flex items-center gap-2 mb-8 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2">
-                    <Briefcase size={16} />
-                    Experience
-                </div>
-
-                <div className="divide-y divide-border border-t border-border">
-                    {experiences.map((exp) => (
-                        <ExperienceItem key={exp.id} exp={exp} />
+                            {/* Tech Stack */}
+                            <div className="flex gap-2 flex-wrap">
+                                {exp.technologies.map((tech) => (
+                                    <span key={tech.name} className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-hover text-xs font-mono text-text-secondary/80 hover:text-text-primary transition-colors">
+                                        <img
+                                            src={tech.icon}
+                                            className={`w-3.5 h-3.5 transition-all duration-300 filter ${tech.isDarkIcon ? 'brightness-0 dark:brightness-0 dark:invert' : ''}`}
+                                            alt={tech.name}
+                                        />
+                                        {tech.name}
+                                    </span>
+                                ))}
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
 
-            {/* Education Column */}
-            <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-            >
-                <div className="flex items-center gap-2 mb-8 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2">
-                    <GraduationCap size={16} />
+            {/* Education Section */}
+            <div>
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2"
+                >
+                    <GraduationCap size={16} className="text-text-primary/40" />
                     Education
-                </div>
+                </motion.div>
 
-                <div className="relative pl-6 border-l-2 border-border space-y-12 pt-4">
-                    {/* Item 1 */}
-                    <div className="relative group">
-                        <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-bg border-4 border-border transition-all duration-300 group-hover:scale-125 group-hover:border-text-primary" />
-                        <div className="relative">
-                            <div className="font-bold text-text-primary text-lg mb-1">B.Tech in Computer Science</div>
-                            <div className="text-sm text-text-secondary mb-4">Navrachana University</div>
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
-                                <Calendar size={12} />
-                                2023 - Ongoing
+                <div className="grid grid-cols-1 gap-6">
+                    {[
+                        {
+                            degree: "B.Tech in Computer Science",
+                            school: "Navrachana University",
+                            year: "2023 - Present",
+                            location: "Vadodara"
+                        },
+                        {
+                            degree: "Diploma in Computer Engineering",
+                            school: "Parul University",
+                            year: "2020 - 2023",
+                            location: "Vadodara"
+                        }
+                    ].map((edu, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="p-6 rounded-2xl bg-surface border border-border hover:border-text-secondary/50 transition-colors group"
+                        >
+                            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-2">
+                                <h3 className="text-lg font-bold text-text-primary">{edu.degree}</h3>
+                                <div className="flex items-center gap-1.5 text-xs font-mono text-text-secondary bg-surface-hover px-2 py-1 rounded self-start sm:self-auto">
+                                    <Calendar size={12} />
+                                    {edu.year}
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* Item 2 */}
-                    <div className="relative group">
-                        <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-bg border-4 border-border transition-all duration-300 group-hover:scale-125 group-hover:border-text-primary" />
-                        <div className="relative">
-                            <div className="font-bold text-text-primary text-lg mb-1">Diploma in Computer Engineering</div>
-                            <div className="text-sm text-text-secondary mb-4">Parul University</div>
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary">
-                                <Calendar size={12} />
-                                2020 - 2023
+                            <div className="flex items-center gap-2 text-sm text-text-secondary">
+                                <span className="font-medium text-text-primary">{edu.school}</span>
+                                <span className="w-1 h-1 rounded-full bg-text-secondary/40" />
+                                <span>{edu.location}</span>
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    ))}
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 };

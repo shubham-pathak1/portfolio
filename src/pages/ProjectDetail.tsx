@@ -73,7 +73,7 @@ export const ProjectDetail = () => {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className={`${['ciel', 'bastion'].includes(project.id) ? 'w-full h-full object-cover object-top' : 'w-full h-full object-cover'}`}
+                        className={`${['ciel', 'bastion'].includes(project.id) ? 'w-full h-full object-contain bg-black' : 'w-full h-full object-cover'}`}
                     />
                 </div>
 

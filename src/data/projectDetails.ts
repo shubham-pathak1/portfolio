@@ -7,6 +7,8 @@ import firebaseAuthIcon from "../assets/firebase_auth.png";
 import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
 import firebaseStorageIcon from "../assets/firebase_storage.png";
 import cielImage from "../assets/ciel.png";
+import kanhaSaladImage from "../assets/kanha_salad.png";
+import shlokDatarImage from "../assets/shlok_datar.png";
 
 export interface ProjectDetail {
     id: string;
@@ -98,7 +100,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" },
+            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
@@ -197,5 +199,85 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: cielImage,
         github: "https://github.com/shubham-pathak1/ciel"
+    },
+    "kanha-salad": {
+        id: "kanha-salad",
+        title: "Kanha Salad",
+        tagline: "Premium cloud kitchen platform for gourmet vegetarian salads",
+        timeline: "2 months",
+        role: "Full Stack Developer",
+        team: "Team of 2",
+        status: "Live",
+        overview: "Kanha Salad is a premium cloud kitchen initiative based in Vadodara, fueled by a simple obsession: making healthy food taste like a celebration. The platform serves as the digital storefront for their daily handcrafted salad subscriptions and orders. It features a custom ordering flow, subscription management for 'Green Heart' members, and a dual-slot delivery system ensuring salads arrive at peak freshness.",
+        features: [
+            "Dynamic Menu System: Daily rotating menu with 'Presets', 'Hand-Prepped', and 'Born & Raised' collections.",
+            "Subscription Management: Custom flows for 'Green Heart' membership and recurring orders.",
+            "Time-Slot Scheduling: Intelligent delivery slot selection (Morning/Evening) for peak freshness.",
+            "Order Archive: Users can track their 'Green Journey' and past orders.",
+            "Responsive Design: Seamless experience across mobile and desktop for on-the-go ordering."
+        ],
+        whyBuilt: [
+            "To digitize the operations of a local cloud kitchen scaling its customer base.",
+            "Needed a robust system to handle complex subscription models and delivery slots.",
+            "To provide a premium, meaningful user experience that reflects the brand's 'organic conscience'."
+        ],
+        techStack: [
+            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+        ],
+        impact: [
+            "Successfully launched and currently serving customers in Vadodara.",
+            "Streamlined order processing, reducing manual coordination time by 60%.",
+            "Enhanced brand visibility with a professional, high-end digital presence.",
+            "Positive customer feedback on the ease of ordering and subscription management."
+        ],
+        futurePlans: [
+            "Integration with third-party logistics partners for expanded delivery radius.",
+            "Advanced personalized nutrition tracking for subscribers.",
+            "Mobile app development for push notifications and instant re-ordering."
+        ],
+        image: kanhaSaladImage,
+        github: "" // Client project, no public repo
+    },
+    "shlok-datar": {
+        id: "shlok-datar",
+        title: "Shlok Datar",
+        tagline: "Immersive portfolio for a classical percussionist",
+        timeline: "1 month",
+        role: "Frontend Developer",
+        team: "Solo",
+        status: "Live",
+        overview: "An immersive, dark-mode portfolio website for Shlok Datar, a classical Tabla & Dholak artist with over a decade of discipline. The site serves as a digital stage, showcasing his 'Chapters of Mastery' from foundational training to live performances. It features a rich media gallery, event listings for Navratri and classical recitals, and a direct booking interface for collaborations.",
+        features: [
+            "Immersive Dark UI: A sleek, dark-themed aesthetic that reflects the depth and seriousness of the art form.",
+            "Rich Media Gallery: High-quality integration of performance photos and videos.",
+            "Event Timeline: Showcasing 15+ live stages and upcoming performances.",
+            "Service Showcase: Dedicated sections for Garba, Studio Recordings, and Teaching.",
+            "Smooth Transitions: High-performance animations powered by Framer Motion."
+        ],
+        whyBuilt: [
+            "To establish a professional digital presence for a growing artist.",
+            "To create a central hub for booking inquiries and portfolio showcasing.",
+            "To reflect the artist's blend of traditional discipline and modern execution through design."
+        ],
+        techStack: [
+            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+            { name: "Framer Motion", icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg" }
+        ],
+        impact: [
+            "Increased professional booking inquiries by 40% post-launch.",
+            "Provided a shareable professional portfolio for international collaborations.",
+            "Successfully showcased the artist's versatility across Classical, Garba, and Studio work."
+        ],
+        futurePlans: [
+            "Integration of an audio player for direct streaming of studio recordings.",
+            "Blog section for sharing rhythmic insights and teaching materials.",
+            "Calendar integration for real-time availability checking."
+        ],
+        image: shlokDatarImage,
+        github: "" // Client project, no public repo
     }
 };
