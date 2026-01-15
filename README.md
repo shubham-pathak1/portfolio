@@ -1,55 +1,53 @@
 # Portfolio
 
-A professional, high-performance web developer portfolio built with React, TypeScript, and Vite. Designed to showcase projects and professional experience with a focus on clean aesthetics and smooth user interactions.
+A personal web portfolio developed to showcase software engineering projects and professional experience. This application is built with React and TypeScript, leveraging Vite for optimized build performance and Framer Motion for interface interactions.
 
-## 🚀 Tech Stack
+## Technical Stack
 
-- **Frontend**: React + TypeScript
-- **Bundler**: Vite
-- **Styling**: Vanilla CSS (Tailwind CSS for utility-first components)
-- **Animations**: Framer Motion
-- **Interactions**: Lenis (Smooth Scroll), Lucide Icons
-- **Deployment**: Vercel
+- **Core**: React 18, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS, CSS Modules
+- **State/Animation**: Framer Motion, Lenis (Scroll Smoothing)
+- **Routing**: React Router DOM (Client-side routing)
 
-## ✨ Key Features
+## Project Structure
 
-- **Modern UI/UX**: Clean, minimalist design with a premium feel.
-- **Project Detail Pages**: In-depth views for key projects with detailed descriptions and tech stacks.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **Performance Focused**: Minimal bundle size and optimized asset delivery via Vite.
-- **Dynamic Interactions**: Smooth kinetic scrolling and subtle hover animations.
+The codebase is organized to separate concerns between UI components, data layers, and page logic:
 
-## 📁 Project Highlights
+- `src/components`: Reusable UI elements (cards, layout wrappers, navigation).
+- `src/sections`: Logical page sections (Experience, Projects, Hero).
+- `src/data`: Static data definitions for projects and experience to decouple content from markup.
+- `src/pages`: Route-level entry points (Home, ProjectDetail).
 
-- **Bastion**: A privacy-first distraction blocker (Windows-only).
-- **Ciel**: A high-performance download manager for HTTP and Torrent.
-- **Krishi Sangam**: An agricultural platform for farming insights.
-- **Raphael**: A lightweight raycast alternative built using tauri.
+## Features
 
-## 🛠️ Getting Started
+- **Adaptive Design**: Fully responsive layout optimized for mobile, tablet, and desktop viewports.
+- **Dark Mode Support**: System-aware theme preferences with manual override.
+- **Project Detail Views**: Dedicated routes for deeper case studies of key projects.
+- **Performance Optimized**: Lazy loading of assets and route splitting to minimize initial bundle size.
 
-### Prerequisites
+## Local Development
 
-- Node.js (Latest LTS recommended)
-- npm or pnpm
-
-### Installation
+To run this project locally:
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/shubham-pathak1/portfolio.git
    ```
+
 2. Install dependencies:
    ```bash
    npm install
    ```
+
 3. Start the development server:
    ```bash
    npm run dev
    ```
 
-## 📬 Contact
+## Contact
 
-Feel free to reach out for collaborations or inquiries:
-- **Email**: [shubhamxkcd@gmail.com](mailto:shubhamxkcd@gmail.com)
-- **GitHub**: [shubham-pathak1](https://github.com/shubham-pathak1) 
+For professional inquiries or collaboration:
+
+- **Email**: shubhamxkcd@gmail.com
+- **GitHub**: https://github.com/shubham-pathak1
