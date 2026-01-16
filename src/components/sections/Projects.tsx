@@ -1,128 +1,68 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
-import expoIcon from "../../assets/expo.jpg";
-import krishiSangamImage from "../../assets/krishi_sangam.png";
-import throttleTalksImage from "../../assets/throttle_talks.png";
-import bastionImage from "../../assets/bastion.png";
-import cielImage from "../../assets/ciel.png";
-import rustIcon from "../../assets/rust.png";
+import { projectDetails } from "../../data/projectDetails";
 
-// Placeholder Images (Generated)
-import kanhaSaladImage from "../../assets/kanha_salad.png";
-import shlokDatarImage from "../../assets/shlok_datar.png";
+// Map centralized data to local format
+const projects = Object.values(projectDetails).map(p => ({
+    id: p.id,
+    title: p.title,
+    description: p.tagline, // Mapping tagline to description for the card
+    category: p.category,
+    tags: p.techStack, // Mapping techStack to tags
+    image: p.image,
+    link: p.liveLink || p.github,
+    github: p.github
+}));
 
-interface Project {
-    id: string;
-    title: string;
-    description: string;
-    category: 'personal' | 'freelance';
-    tags: Array<{
-        name: string;
-        icon: string;
-        isDarkIcon?: boolean;
-    }>;
-    image: string;
-    link: string;
-    github?: string;
-}
-
-const projects: Project[] = [
-    {
-        id: "bastion",
-        title: "Bastion",
-        description: "Cross-platform distraction blocker with Pomodoro focus. Reclaim your productivity with system-level blocking. (In Development)",
-        category: 'personal',
-        tags: [
-            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: rustIcon },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
-        ],
-        image: bastionImage,
-        link: "https://github.com/shubham-pathak1/bastion",
-        github: "https://github.com/shubham-pathak1/bastion"
-    },
-    {
-        id: "throttle-talks",
-        title: "Throttle Talks",
-        description: "Automotive community platform with real-time forums. A high-octane space for gearheads to debate, share, and connect.",
-        category: 'personal',
-        tags: [
-            { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Expo", icon: expoIcon },
-            { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
-        ],
-        image: throttleTalksImage,
-        link: "https://github.com/shubham-pathak1/throttle-talks",
-        github: "https://github.com/shubham-pathak1/throttle-talks"
-    },
-    {
-        id: "krishi-sangam",
-        title: "Krishi Sangam",
-        description: "Connecting farmers directly with buyers. eliminating middlemen to ensure fair pricing and fresh produce.",
-        category: 'personal',
-        tags: [
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", isDarkIcon: true },
-            { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
-        ],
-        image: krishiSangamImage,
-        link: "https://github.com/shubham-pathak1/krishi-sangam",
-        github: "https://github.com/shubham-pathak1/krishi-sangam"
-    },
-    {
-        id: "ciel",
-        title: "Ciel",
-        description: "Modern download manager for HTTP and Torrent protocols. High-performance, Rust-based alternative to bloated tools. (In Development)",
-        category: 'personal',
-        tags: [
-            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: rustIcon },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
-        ],
-        image: cielImage,
-        link: "https://github.com/shubham-pathak1/ciel",
-        github: "https://github.com/shubham-pathak1/ciel"
-    },
-    {
-        id: "kanha-salad",
-        title: "Kanha Salad",
-        description: "A premium cloud kitchen platform for gourmet vegetarian salads. Features a dynamic daily menu, subscription management for 'Green Heart' members, and dual-slot delivery scheduling.",
-        category: 'freelance',
-        tags: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
-        ],
-        image: kanhaSaladImage,
-        link: "https://kanhasalad.in/"
-    },
-    {
-        id: "shlok-datar",
-        title: "Shlok Datar",
-        description: "High-performance portfolio for a classical tabla artist. Showcases a decade of discipline with an immersive dark-mode UI, event listings for live stages, and a rich media gallery.",
-        category: 'freelance',
-        tags: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
-        ],
-        image: shlokDatarImage,
-        link: "https://shlokdatar.vercel.app/"
-    }
-];
 
 export const Projects = () => {
-    const [activeCategory, setActiveCategory] = useState<'personal' | 'freelance'>('personal');
+    const location = useLocation();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // 1. Initialize from URL or state, default to 'personal'
+    const [activeCategory, setActiveCategory] = useState<'personal' | 'freelance'>(() => {
+        const type = searchParams.get('type');
+        if (type === 'personal' || type === 'freelance') return type;
+        return (location.state as any)?.targetCategory || 'personal';
+    });
+
+    // 2. Sync state when URL params or location state changes (for back/forward navigation)
+    useEffect(() => {
+        const typeParam = searchParams.get('type') as 'personal' | 'freelance' | null;
+        const stateCategory = (location.state as any)?.targetCategory;
+
+        if (typeParam && ['personal', 'freelance'].includes(typeParam)) {
+            setActiveCategory(typeParam);
+        } else if (stateCategory) {
+            setActiveCategory(stateCategory);
+        }
+
+        // 3. Handle Scroll to Section
+        if (location.hash === '#projects') {
+            const element = document.getElementById('projects');
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+        }
+    }, [searchParams, location.state, location.hash]);
+
+    const handleCategoryChange = (category: 'personal' | 'freelance') => {
+        setActiveCategory(category);
+        // Silently update URL without adding to history (replace: true) 
+        // OR add to history (replace: false) - replace: true is better here 
+        // to avoid "clogging" back history with tab switches.
+        setSearchParams({ type: category }, { replace: true });
+    };
 
     const filteredProjects = projects.filter(project => project.category === activeCategory);
 
     return (
-        <section className="mb-20">
+        <section id="projects" className="mb-20">
             {/* Header + Tabs */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-border pb-2">
                 <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-text-secondary">
@@ -131,7 +71,7 @@ export const Projects = () => {
 
                 <div className="flex bg-surface border border-border rounded-lg p-1">
                     <button
-                        onClick={() => setActiveCategory('personal')}
+                        onClick={() => handleCategoryChange('personal')}
                         className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all duration-300 ${activeCategory === 'personal'
                             ? 'bg-text-primary text-bg shadow-sm'
                             : 'text-text-secondary hover:text-text-primary'
@@ -140,7 +80,7 @@ export const Projects = () => {
                         Personal Projects
                     </button>
                     <button
-                        onClick={() => setActiveCategory('freelance')}
+                        onClick={() => handleCategoryChange('freelance')}
                         className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all duration-300 ${activeCategory === 'freelance'
                             ? 'bg-text-primary text-bg shadow-sm'
                             : 'text-text-secondary hover:text-text-primary'
@@ -201,7 +141,7 @@ export const Projects = () => {
                                         <span key={tag.name} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-hover border border-border text-xs font-mono text-text-secondary">
                                             <img
                                                 src={tag.icon}
-                                                className={`w-3.5 h-3.5 object-contain transition-all duration-300 filter ${tag.isDarkIcon ? 'brightness-0 dark:brightness-0 dark:invert' : ''}`}
+                                                className={`w-3.5 h-3.5 object-contain transition-all duration-300 filter ${tag.isDarkIcon ? 'dark:invert' : ''}`}
                                                 alt={tag.name}
                                             />
                                             {tag.name}

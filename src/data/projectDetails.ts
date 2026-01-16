@@ -21,11 +21,13 @@ export interface ProjectDetail {
     overview: string;
     features: string[];
     whyBuilt: string[];
-    techStack: { name: string; icon: string }[];
+    techStack: { name: string; icon: string; isDarkIcon?: boolean }[];
     impact: string[];
     futurePlans: string[];
     image: string;
     github: string;
+    liveLink?: string;
+    category: 'personal' | 'freelance';
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -73,7 +75,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Partner with local tracks for exclusive event ticketing."
         ],
         image: throttleTalksImage,
-        github: "https://github.com/shubham-pathak1/throttle-talks"
+        github: "https://github.com/shubham-pathak1/throttle-talks",
+        category: "personal"
     },
     "krishi-sangam": {
         id: "krishi-sangam",
@@ -100,7 +103,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", isDarkIcon: true },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
@@ -118,7 +121,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Expansion to 3 neighboring districts."
         ],
         image: krishiSangamImage,
-        github: "https://github.com/shubham-pathak1/krishi-sangam"
+        github: "https://github.com/shubham-pathak1/krishi-sangam",
+        category: "personal"
     },
     "bastion": {
         id: "bastion",
@@ -160,7 +164,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Add team-based focus leaderboards."
         ],
         image: bastionImage,
-        github: "https://github.com/shubham-pathak1/bastion"
+        github: "https://github.com/shubham-pathak1/bastion",
+        category: "personal"
     },
     "ciel": {
         id: "ciel",
@@ -198,13 +203,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Release public alpha for community feedback."
         ],
         image: cielImage,
-        github: "https://github.com/shubham-pathak1/ciel"
+        github: "https://github.com/shubham-pathak1/ciel",
+        category: "personal"
     },
     "kanha-salad": {
         id: "kanha-salad",
         title: "Kanha Salad",
         tagline: "Premium cloud kitchen platform for gourmet vegetarian salads",
-        timeline: "2 months",
+        timeline: "1 month",
         role: "Full Stack Developer",
         team: "Team of 2",
         status: "Live",
@@ -222,7 +228,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To provide a premium, meaningful user experience that reflects the brand's 'organic conscience'."
         ],
         techStack: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
@@ -238,13 +244,15 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Mobile app development for push notifications and instant re-ordering."
         ],
         image: kanhaSaladImage,
-        github: "" // Client project, no public repo
+        github: "", // Client project, no public repo
+        liveLink: "https://kanhasalad.in/",
+        category: "freelance"
     },
     "shlok-datar": {
         id: "shlok-datar",
-        title: "Shlok Datar",
+        title: "Shlok Datar's Portfolio",
         tagline: "Immersive portfolio for a classical percussionist",
-        timeline: "1 month",
+        timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",
         status: "Live",
@@ -262,7 +270,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To reflect the artist's blend of traditional discipline and modern execution through design."
         ],
         techStack: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
             { name: "Framer Motion", icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg" }
@@ -278,6 +286,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Calendar integration for real-time availability checking."
         ],
         image: shlokDatarImage,
-        github: "" // Client project, no public repo
+        github: "", // Client project, no public repo
+        liveLink: "https://shlokdatar.vercel.app/",
+        category: "freelance"
     }
 };

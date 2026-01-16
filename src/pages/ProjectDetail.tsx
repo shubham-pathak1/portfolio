@@ -40,7 +40,12 @@ export const ProjectDetail = () => {
                 >
                     {/* Back Button */}
                     <Link
-                        to="/"
+                        to={{
+                            pathname: "/",
+                            hash: "#projects",
+                            search: `?type=${project.category}`
+                        }}
+                        state={{ targetCategory: project.category }}
                         className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary mb-12 transition-colors group"
                     >
                         <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
@@ -162,7 +167,11 @@ export const ProjectDetail = () => {
                                     <div className="flex flex-wrap gap-2">
                                         {project.techStack.map((tech) => (
                                             <span key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors cursor-default">
-                                                <img src={tech.icon} alt={tech.name} className="w-4 h-4 object-contain" />
+                                                <img
+                                                    src={tech.icon}
+                                                    alt={tech.name}
+                                                    className={`w-4 h-4 object-contain transition-all duration-300 filter ${tech.isDarkIcon ? 'dark:invert' : ''}`}
+                                                />
                                                 {tech.name}
                                             </span>
                                         ))}
@@ -171,24 +180,28 @@ export const ProjectDetail = () => {
 
                                 {/* Links */}
                                 <div className="flex flex-col gap-3">
-                                    {!['Under Development', 'In Development'].includes(project.status) && (
+                                    {project.liveLink && (
                                         <a
-                                            href="#"
+                                            href={project.liveLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
                                         >
                                             <ExternalLink size={18} />
                                             Live Demo
                                         </a>
                                     )}
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
-                                    >
-                                        <Github size={18} />
-                                        View Source
-                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                        >
+                                            <Github size={18} />
+                                            View Source
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </aside>

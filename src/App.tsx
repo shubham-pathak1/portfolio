@@ -14,6 +14,7 @@ import { SmoothScroll } from "./components/ui/SmoothScroll";
 function Home() {
   return (
     <Layout>
+      <SEO />
       <Hero />
       <Experience />
       <Projects />
