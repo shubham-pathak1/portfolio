@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImage from "../../assets/me.jpg";
+import profileImage from "../../assets/my_img.jpg";
 
 export const About = () => {
     return (
@@ -12,13 +12,13 @@ export const About = () => {
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-10 p-8 rounded-3xl bg-surface border border-border"
+                className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 p-8 rounded-3xl bg-surface border border-border"
             >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-hover border border-border">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-hover border border-border group">
                     <img
                         src={profileImage}
                         alt="About Avatar"
-                        className="w-full h-full object-cover object-top scale-150 grayscale hover:grayscale-0 transition-all duration-300"
+                        className="w-full h-full object-cover object-center scale-[1.8] grayscale hover:grayscale-0 transition-all duration-700 ease-out"
                     />
                 </div>
 

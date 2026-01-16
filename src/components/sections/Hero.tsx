@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
-import profileImage from "../../assets/me.jpg";
+import profileImage from "../../assets/my_img.jpg";
 
 export const Hero = () => {
     return (
-        <section className="flex flex-col items-center text-center mt-20 mb-32 min-h-[60vh] md:min-h-[70vh] justify-center">
+        <section className="flex flex-col items-center text-center mt-12 mb-32 min-h-[60vh] md:min-h-[70vh] justify-center">
             <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="relative mb-10"
             >
-                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-surface-hover shadow-2xl relative z-10">
-                    <img
-                        src={profileImage}
-                        alt="Shubham Pathak"
-                        className="w-full h-full object-cover object-top scale-110 grayscale hover:grayscale-0 transition-all duration-300"
-                    />
+                <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-surface-hover shadow-2xl relative z-10 p-1 group">
+                    <div className="w-full h-full rounded-full overflow-hidden relative">
+                        <img
+                            src={profileImage}
+                            alt="Shubham Pathak"
+                            className="w-full h-full object-cover object-center scale-[1.8] grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                        />
+                        {/* Inner glass shine */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    </div>
                 </div>
                 {/* Glow behind avatar */}
                 <div className="absolute inset-0 bg-primary/20 blur-[60px] -z-10 rounded-full scale-110" />
