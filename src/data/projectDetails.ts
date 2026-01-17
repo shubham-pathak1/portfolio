@@ -170,22 +170,23 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "ciel": {
         id: "ciel",
         title: "Ciel",
-        tagline: "Modern download manager for HTTP and Torrent protocols",
+        tagline: "An all-in-one Tauri/Rust based fast download manager with support for HTTP, Torrent, and even YT 4K/8K and HDR downloads using yt-dlp and FFmpeg as sidecars in Rust.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "In Development",
-        overview: "Ciel is a Rust-based, lightweight alternative to present-day downloaders. Capable of handling up to 32 concurrent connections, it provides a high-performance, unified environment for both HTTP and Torrent protocols, replacing separate, bloated tools with a single efficient solution.",
+        status: "v0.1.0 Alpha Released",
+        overview: "Ciel is a high-performance, open-source download manager for Windows built with Tauri and Rust. It provides a clean, bloat-free experience focused on core efficiency and ease of use, replacing separate, bulky tools with a single efficient solution.",
         features: [
-            "Dual-Protocol Support: Seamlessly download via HTTP URLs or Torrent/Magnet links.",
-            "High Concurrency: Supports up to 32 concurrent connections for accelerated speeds.",
-            "Minimalist UI: A clean, distraction-free interface for managing your download queue.",
-            "High Performance: Built on Rust for near-native speed and minimal resource usage."
+            "Parallel Downloading: Optimized multi-threaded HTTP engine with segment-based chunk management.",
+            "Video Support: Integrated yt-dlp to support high-res video and audio from thousands of platforms.",
+            "Torrent Support: Full magnet link support with content preview and metadata polling.",
+            "Clipboard Monitoring: 'Autocatch' technology detects URLs in your clipboard for seamless additions.",
+            "Smart Categorization: Automatically organizes files into Videos, Music, Archives, Software, Documents, and Other.",
+            "Auto-Muxing: Seamlessly merges high-quality video and audio streams using FFmpeg.",
+            "Download Scheduler: Plan your queue to start or pause at specific times for better bandwidth management."
         ],
         whyBuilt: [
-            "Existing download managers are often bloated and heavy on system resources.",
-            "Wanted a single tool to handle all types of downloads efficiently.",
-            "To leverage Rust's concurrency for high-speed data transfer."
+            "Existing download managers are often bloated and heavy on system resources."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -194,16 +195,20 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
         ],
         impact: [
-            "Yet to be launched as currently in development phase. If you want to test it out or contribute, please contact me via email."
+            "Successfully released v0.1.0 Alpha for public testing.",
+            "Implemented a transparent auto-muxing system for high-quality video/audio merging.",
+            "Architected a privacy-first, offline-first application with zero tracking or telemetry.",
+            "Bundled core binaries (yt-dlp/ffmpeg) for a seamless, technical-free user experience."
         ],
         futurePlans: [
-            "Browser extension support for seamless download capturing.",
-            "Might increase concurrency limit (up to 128) based on community feedback.",
-            "Add advanced scheduling and bandwidth management.",
-            "Release public alpha for community feedback."
+            "Browser extension support for seamless one-click download capturing.",
+            "Developing a 'Lite' version for users with manual binary installations.",
+            "Advanced bandwidth management and global speed limits.",
+            "Cross-platform support for Linux."
         ],
         image: cielImage,
         github: "https://github.com/shubham-pathak1/ciel",
+        liveLink: "https://ciel-app.vercel.app",
         category: "personal"
     },
     "kanha-salad": {
