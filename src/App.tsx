@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { SEO } from "./components/SEO";
@@ -37,6 +38,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Analytics />
+      <SpeedInsights />
     </SmoothScroll>
   );
 }
