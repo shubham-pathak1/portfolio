@@ -59,7 +59,9 @@ export const Projects = () => {
         setSearchParams({ type: category }, { replace: true });
     };
 
-    const filteredProjects = projects.filter(project => project.category === activeCategory);
+    const filteredProjects = projects
+        .filter(project => project.category === activeCategory)
+        .filter(project => project.id !== 'mew');
 
     return (
         <section id="projects" className="mb-20">
@@ -160,6 +162,16 @@ export const Projects = () => {
                     ))}
                 </AnimatePresence>
             </motion.div>
-        </section>
+
+            <div className="mt-12 text-center">
+                <Link
+                    to="/projects"
+                    className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-surface border border-border text-text-primary font-bold hover:bg-surface-hover hover:scale-105 transition-all duration-300 shadow-sm"
+                >
+                    View All Projects
+                    <ArrowUpRight size={18} />
+                </Link>
+            </div>
+        </section >
     );
 };

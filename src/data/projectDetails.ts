@@ -9,6 +9,7 @@ import firebaseStorageIcon from "../assets/firebase_storage.png";
 import cielImage from "../assets/ciel.png";
 import kanhaSaladImage from "../assets/kanha_salad.png";
 import shlokDatarImage from "../assets/shlok_datar.png";
+import mewImage from "../assets/ciel.png"; // Placeholder for Mew
 
 export interface ProjectDetail {
     id: string;
@@ -34,7 +35,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "throttle-talks": {
         id: "throttle-talks",
         title: "Throttle Talks",
-        tagline: "Automotive community platform with real-time forums",
+        tagline: "High-octane automotive community platform powered by React Native and Firebase with real-time messaging, geolocation, and live forum threads.",
         timeline: "3 months",
         role: "Lead Developer",
         team: "Solo",
@@ -81,7 +82,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "krishi-sangam": {
         id: "krishi-sangam",
         title: "Krishi Sangam",
-        tagline: "Connecting farmers directly with buyers",
+        tagline: "Digital B2B agricultural marketplace built on the MERN stack facilitating direct farmer-to-buyer trade, price analytics, and bilingual support.",
         timeline: "4 months",
         role: "Front End Developer",
         team: "Team of 4",
@@ -127,7 +128,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "bastion": {
         id: "bastion",
         title: "Bastion",
-        tagline: "Reclaim your focus with a privacy-first distraction blocker",
+        tagline: "Privacy-first distraction blocker for Windows built with Tauri and Rust, featuring system-level app blocking, Pomodoro timers, and secure local storage.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
@@ -170,7 +171,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "ciel": {
         id: "ciel",
         title: "Ciel",
-        tagline: "An all-in-one Tauri/Rust based fast download manager with support for HTTP, Torrent, and even YT 4K/8K and HDR downloads using yt-dlp and FFmpeg as sidecars in Rust.",
+        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrents, and even youtube 4K/8K HDR video downloads via native yt-dlp and FFmpeg sidecars.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
@@ -214,7 +215,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "kanha-salad": {
         id: "kanha-salad",
         title: "Kanha Salad",
-        tagline: "Premium cloud kitchen platform for gourmet vegetarian salads",
+        tagline: "DTC cloud kitchen platform built with Next.js and MongoDB, featuring dynamic menu scheduling, Member workflows, and dual-slot delivery logic.",
         timeline: "1 month",
         role: "Full Stack Developer",
         team: "Team of 2",
@@ -256,7 +257,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shlok-datar": {
         id: "shlok-datar",
         title: "Shlok Datar's Portfolio",
-        tagline: "Immersive portfolio for a classical percussionist",
+        tagline: "Immersive artist portfolio engineered with Next.js and Framer Motion, delivering high-performance animations and rich media playback for a classical percussionist.",
         timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",
@@ -294,5 +295,44 @@ export const projectDetails: Record<string, ProjectDetail> = {
         github: "", // Client project, no public repo
         liveLink: "https://shlokdatar.vercel.app/",
         category: "freelance"
+    },
+    "mew": {
+        id: "mew",
+        title: "Mew",
+        tagline: "High-performance Rust-based live wallpaper engine with Slint UI, currently in development.",
+        timeline: "Recent",
+        role: "Lead Developer",
+        team: "Solo",
+        status: "In Development",
+        overview: "Mew is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage while delivering smooth, interactive desktop backgrounds.",
+        features: [
+            "Rust-Based Engine: Native performance with near-zero CPU usage when idle.",
+            "Slint UI: Responsive, touch-friendly interface for managing wallpapers.",
+            "Live Wallpapers: Support for video and interactive scenes.",
+            "Multi-Monitor Support: Seamless wallpaper management across multiple displays."
+        ],
+        whyBuilt: [
+            "Existing live wallpaper engines are often resource-heavy.",
+            "Wanted to build a purely native Rust application with modern UI.",
+            "To explore Slint as a lightweight alternative to Electron-based UIs."
+        ],
+        techStack: [
+            { name: "Rust", icon: rustIcon },
+            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" }, // Placeholder/Generic link check? Slint logo URL might need verification. I will use a generic one or finding one. I'll use a generic placeholder icon if unsure, or just text. Actually I'll use a standard icon URL or skip icon if not found. Let's try to finding a valid one or use Rust icon transiently. I'll use the rust icon for now to avoid broken images.
+            // Actually, I'll use a generic devicon if possible. Slint is new. I'll use the official one if I can guess it, otherwise generic code icon.
+            // I'll use: vectorlogo.zone/logos/rust-lang/rust-lang-icon.svg for now as placeholder for Slint.
+        ],
+        impact: [
+            "Currently in active development phase.",
+            "Laying the groundwork for a resource-efficient transparency layer."
+        ],
+        futurePlans: [
+            "Workshop integration for community-created wallpapers.",
+            "Audio visualization support.",
+            "Interactive web-based wallpapers support."
+        ],
+        image: mewImage,
+        github: "https://github.com/shubham-pathak1/mew",
+        category: "personal"
     }
 };

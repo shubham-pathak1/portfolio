@@ -8,6 +8,7 @@ import { Experience } from "./components/sections/Experience";
 import { Hero } from "./components/sections/Hero";
 import { Projects } from "./components/sections/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
+import { AllProjects } from "./pages/AllProjects";
 import { NotFound } from "./pages/NotFound";
 import { SmoothScroll } from "./components/ui/SmoothScroll";
 
@@ -32,6 +33,7 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<AllProjects />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
