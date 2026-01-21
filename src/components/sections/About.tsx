@@ -39,6 +39,7 @@ export const About = () => {
                 </div>
 
                 <div className="flex flex-col items-start text-left w-full">
+                    <h1 className="sr-only">Shubham Pathak | Software Engineer & Designer</h1>
                     <div className="flex items-center gap-4 mb-4">
                         <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary opacity-50 font-mono">
                             01 — Background
@@ -46,7 +47,7 @@ export const About = () => {
                         <div className="w-1 h-1 rounded-full bg-text-secondary opacity-20" />
                         <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Available for scale.</div>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h1>
+                    <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
                         <p className="text-text-secondary text-base md:text-xl leading-relaxed">
                             I'm <span className="text-text-primary font-bold">Shubham</span>, an engineer from Vadodara focused on honest, deliberate software. While I build with <span className="text-text-primary font-bold">React</span> and <span className="text-text-primary font-bold">TypeScript</span>, my real craft is exploring the interaction between humans and machines.

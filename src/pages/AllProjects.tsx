@@ -20,6 +20,7 @@ export const AllProjects = () => {
             <SEO
                 title="All Projects"
                 description="A comprehensive list of my open-source projects, freelance work, and experiments."
+                url="https://portfolio-shubham-pathak1.vercel.app/projects"
             />
 
             <div className="pt-20 pb-20 container mx-auto px-6 min-h-screen">

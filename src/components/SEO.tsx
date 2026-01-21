@@ -6,6 +6,7 @@ interface SEOProps {
     image?: string;
     url?: string;
     type?: string;
+    children?: React.ReactNode;
 }
 
 export const SEO = ({
@@ -13,7 +14,8 @@ export const SEO = ({
     description = "A professional, high-performance web developer portfolio built with React, TypeScript, and Vite.",
     image = "/favicon.png",
     url = "https://portfolio-shubham-pathak1.vercel.app/",
-    type = "website"
+    type = "website",
+    children
 }: SEOProps) => {
     const siteTitle = title === "Shubham Pathak | Portfolio" ? title : `${title} | Shubham Pathak`;
 
@@ -22,6 +24,7 @@ export const SEO = ({
             {/* Basic Meta Tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={description} />
+            <link rel="canonical" href={url} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
@@ -57,6 +60,7 @@ export const SEO = ({
                     "image": image
                 })}
             </script>
+            {children}
         </Helmet>
     );
 };

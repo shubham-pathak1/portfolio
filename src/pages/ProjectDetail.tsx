@@ -29,7 +29,23 @@ export const ProjectDetail = () => {
                 title={project.title}
                 description={project.tagline}
                 image={project.image}
-            />
+                url={`https://portfolio-shubham-pathak1.vercel.app/project/${project.id}`}
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "SoftwareSourceCode",
+                        "name": project.title,
+                        "description": project.tagline,
+                        "codeRepository": project.github,
+                        "programmingLanguage": project.techStack.map(t => t.name),
+                        "author": {
+                            "@type": "Person",
+                            "name": "Shubham Pathak"
+                        }
+                    })}
+                </script>
+            </SEO>
             <Layout>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -7,27 +7,51 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://portfolio-shubham-pathak1.vercel.app/project/throttle-talks</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio-shubham-pathak1.vercel.app/project/krishi-sangam</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://portfolio-shubham-pathak1.vercel.app/project/bastion</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://portfolio-shubham-pathak1.vercel.app/project/ciel</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-   <url>
+  <url>
     <loc>https://portfolio-shubham-pathak1.vercel.app/project/kanha-salad</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-   <url>
+  <url>
     <loc>https://portfolio-shubham-pathak1.vercel.app/project/shlok-datar</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio-shubham-pathak1.vercel.app/project/mew</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portfolio-shubham-pathak1.vercel.app/projects</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
