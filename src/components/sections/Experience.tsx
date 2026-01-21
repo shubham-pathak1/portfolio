@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-    Briefcase,
     Calendar,
     GraduationCap,
     Globe
@@ -49,19 +48,22 @@ const experiences = [
 
 export const Experience = () => {
     return (
-        <section className="flex flex-col gap-16 mb-24 pt-8">
-            {/* Experience Section */}
-            <div>
+        <section className="mb-16">
+            {/* Experience Group */}
+            <div className="flex flex-col gap-6 mb-16">
+                {/* Narrative Header */}
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2"
                 >
-                    <Briefcase size={16} className="text-text-primary/40" />
-                    Experience
+                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary mb-4 opacity-50">
+                        02 — Experience
+                    </div>
+                    <h2 className="text-4xl font-bold text-text-primary">Professional Experience.</h2>
                 </motion.div>
 
+                {/* Experience Cards */}
                 <div className="grid grid-cols-1 gap-6">
                     {experiences.map((exp, index) => (
                         <motion.div
@@ -129,9 +131,9 @@ export const Experience = () => {
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary border-b border-border pb-2"
+                    className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary opacity-40"
                 >
-                    <GraduationCap size={16} className="text-text-primary/40" />
+                    <GraduationCap size={16} />
                     Education
                 </motion.div>
 

@@ -5,7 +5,6 @@ import { SEO } from "./components/SEO";
 import { Layout } from "./components/Layout";
 import { About } from "./components/sections/About";
 import { Experience } from "./components/sections/Experience";
-import { Hero } from "./components/sections/Hero";
 import { Projects } from "./components/sections/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { AllProjects } from "./pages/AllProjects";
@@ -16,10 +15,9 @@ function Home() {
   return (
     <Layout>
       <SEO />
-      <Hero />
+      <About />
       <Experience />
       <Projects />
-      <About />
     </Layout>
   );
 }

@@ -64,14 +64,22 @@ export const Projects = () => {
         .filter(project => project.id !== 'mew');
 
     return (
-        <section id="projects" className="mb-20">
-            {/* Header + Tabs */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-border pb-2">
-                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-text-secondary">
-                    Featured Projects
-                </div>
+        <section id="projects" className="mb-16">
+            {/* Narrative Header */}
+            {/* Header & Controls */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-border/50 pb-6">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary mb-4 opacity-50">
+                        03 — Projects
+                    </div>
+                    <h2 className="text-4xl font-bold text-text-primary">Featured Projects.</h2>
+                </motion.div>
 
-                <div className="flex bg-surface border border-border rounded-lg p-1">
+                <div className="flex bg-surface border border-border rounded-lg p-1 self-start md:self-auto">
                     <button
                         onClick={() => handleCategoryChange('personal')}
                         className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all duration-300 ${activeCategory === 'personal'
