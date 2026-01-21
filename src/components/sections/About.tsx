@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Download, Mail, Github, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin } from "lucide-react";
 import profileImage from "../../assets/my_img.jpg";
 import rustIcon from "../../assets/rust.png";
 
@@ -30,7 +30,7 @@ export const About = () => {
                             <img
                                 src={profileImage}
                                 alt="Shubham Pathak"
-                                className="w-full h-full object-cover object-center scale-110 md:scale-[1.8] grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                             />
                         </div>
                         {/* Decorative Corner Accent (Desktop Only) */}
@@ -39,7 +39,7 @@ export const About = () => {
 
                     <div className="flex md:hidden flex-col gap-1">
                         <h2 className="text-3xl font-bold text-text-primary tracking-tight">Behind the code.</h2>
-                        <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Available for scale.</div>
+                        <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-primary md:text-text-secondary uppercase opacity-60 md:opacity-40">Available for scale.</div>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@ export const About = () => {
                     </div>
                     <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
-                        <p className="text-text-secondary text-base md:text-xl leading-relaxed">
+                        <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
                             I'm <span className="text-text-primary font-bold">Shubham</span>, an engineer crafting honest, high-performance software. By bridging the gap between infrastructure and <span className="text-text-primary font-bold">interaction design</span>, I build tools that are lean, transparent, and human. My focus is on making complex systems feel simple, respectful, and deliberate.
                         </p>
                     </div>
@@ -79,9 +79,6 @@ export const About = () => {
                         </div>
                         {/* Minimal Social Row */}
                         <div className="flex items-center justify-center gap-6 w-full mt-2">
-                            <a href="https://github.com/shubham-pathak1" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
-                                <Github size={20} />
-                            </a>
                             <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
                                 <Linkedin size={20} />
                             </a>
@@ -90,7 +87,7 @@ export const About = () => {
 
                     <div className="flex flex-col gap-10 md:gap-12 w-full">
                         <div className="flex flex-col gap-4 items-start">
-                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-30">Core stack & tools</span>
+                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-primary md:text-text-secondary uppercase opacity-50 md:opacity-30">Core stack & tools</span>
                             <div className="flex flex-wrap gap-2.5 md:gap-4 items-center w-full">
                                 {skills.map((skill) => (
                                     <div key={skill.id} className="relative group/skill z-0 hover:z-[100] w-10 h-10 flex items-center justify-center">
@@ -151,7 +148,6 @@ export const About = () => {
                             </div>
 
                             <div className="flex items-center gap-4 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
-                                <a href="https://github.com/shubham-pathak1" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Github size={18} /></a>
                                 <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Linkedin size={18} /></a>
                             </div>
                         </div>
