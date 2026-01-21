@@ -1,6 +1,7 @@
 import React from "react";
 import { useTheme } from "../hooks/useTheme";
 import { Dock } from "./ui/Dock";
+import { Aurora } from "./ui/Aurora";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
     const { theme, toggleTheme } = useTheme();
@@ -20,6 +21,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="min-h-screen relative">
+            <Aurora />
             {/* Fixed Background */}
             <div
                 className="fixed inset-0 z-[-1] pointer-events-none transition-colors duration-500"

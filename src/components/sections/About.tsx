@@ -17,16 +17,16 @@ export const About = () => {
     ];
 
     return (
-        <section className="mt-12 md:mt-24 mb-20 relative">
+        <section className="mt-6 md:mt-24 mb-20 relative">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-[auto_1fr] md:grid-cols-[320px_1fr] gap-6 md:gap-12 items-start"
+                className="flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
             >
-                <div className="relative group md:mx-0 flex flex-col gap-8 items-start shrink-0">
-                    <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20">
-                        <div className="w-20 h-20 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
+                <div className="flex flex-row md:flex-col md:mx-0 gap-6 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
+                    <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
+                        <div className="w-32 h-32 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
                             <img
                                 src={profileImage}
                                 alt="Shubham Pathak"
@@ -36,57 +36,62 @@ export const About = () => {
                         {/* Decorative Corner Accent (Desktop Only) */}
                         <div className="hidden md:block absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-text-primary/20 rounded-br-[2rem] group-hover:border-text-primary/40 transition-colors duration-500" />
                     </div>
+
+                    <div className="flex md:hidden flex-col gap-1">
+                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">Behind the code.</h2>
+                        <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Available for scale.</div>
+                    </div>
                 </div>
 
                 <div className="flex flex-col items-start text-left w-full">
                     <h1 className="sr-only">Shubham Pathak | Software Engineer & Designer</h1>
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="hidden md:flex items-center gap-4 mb-4">
                         <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary opacity-50 font-mono">
                             01 — Background
                         </div>
-                        <div className="w-1 h-1 rounded-full bg-text-secondary opacity-20" />
-                        <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Available for scale.</div>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
+                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
                         <p className="text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm <span className="text-text-primary font-bold">Shubham</span>, an engineer from Vadodara focused on honest, deliberate software. While I build with <span className="text-text-primary font-bold">React</span> and <span className="text-text-primary font-bold">TypeScript</span>, my real craft is exploring the interaction between humans and machines.
-                        </p>
-                        <p className="text-text-secondary leading-relaxed opacity-80 text-base md:text-lg">
-                            A Unix enthusiast at heart, I value tools that are lean, fast, and transparent. I bridge the gap between infrastructure and <span className="text-text-primary font-bold">interaction design</span>, making complex systems feel simple, respectful, and human.
+                            I'm <span className="text-text-primary font-bold">Shubham</span>, an engineer crafting honest, high-performance software. By bridging the gap between infrastructure and <span className="text-text-primary font-bold">interaction design</span>, I build tools that are lean, transparent, and human. My focus is on making complex systems feel simple, respectful, and deliberate.
                         </p>
                     </div>
 
                     {/* Mobile-Only CTA Block (Relocated) */}
-                    <div className="flex md:hidden flex-col gap-6 w-full items-start mb-8 pb-24">
-                        <div className="flex items-center gap-3 flex-wrap">
+                    <div className="flex md:hidden flex-col gap-6 w-full items-start mb-10">
+                        <div className="flex items-center gap-3 w-full">
                             <a
                                 href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-text-primary text-bg font-bold hover:shadow-[0_0_20px_rgba(var(--text-primary-rgb),0.3)] transition-all active:scale-95 text-xs"
+                                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-text-primary text-bg font-bold active:scale-95 transition-all text-xs"
                             >
                                 <Download size={14} />
                                 Resume / CV
                             </a>
                             <a
                                 href="mailto:shubhamxkcd@gmail.com"
-                                className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border hover:border-text-primary transition-all text-text-primary font-bold text-xs"
+                                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl border border-border hover:border-text-primary active:scale-95 transition-all text-text-primary font-bold text-xs"
                             >
                                 <Mail size={14} />
                                 Contact
                             </a>
                         </div>
-                        <div className="flex items-center gap-4 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
-                            <a href="https://github.com/shubham-pathak1" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Github size={18} /></a>
-                            <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Linkedin size={18} /></a>
+                        {/* Minimal Social Row */}
+                        <div className="flex items-center justify-center gap-6 w-full mt-2">
+                            <a href="https://github.com/shubham-pathak1" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
+                                <Github size={20} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
+                                <Linkedin size={20} />
+                            </a>
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-12 w-full">
-                        <div className="flex flex-col gap-4 items-center md:items-start">
-                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Core stack & tools</span>
-                            <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
+                    <div className="flex flex-col gap-10 md:gap-12 w-full">
+                        <div className="flex flex-col gap-4 items-start">
+                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-30">Core stack & tools</span>
+                            <div className="flex flex-wrap gap-2.5 md:gap-4 items-center w-full">
                                 {skills.map((skill) => (
                                     <div key={skill.id} className="relative group/skill z-0 hover:z-[100] w-10 h-10 flex items-center justify-center">
                                         <motion.div
