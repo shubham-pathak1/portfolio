@@ -74,9 +74,6 @@ export const Projects = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary mb-4 opacity-50">
-                        03 — Projects
-                    </div>
                     <h2 className="text-4xl font-bold text-text-primary">Featured Projects.</h2>
                 </motion.div>
 
