@@ -136,7 +136,8 @@ export const Aurora = (props: AuroraProps) => {
         const renderer = new Renderer({
             alpha: true,
             premultipliedAlpha: true,
-            antialias: true
+            antialias: true,
+            dpr: Math.min(window.devicePixelRatio, 2)
         });
         const gl = renderer.gl;
         gl.clearColor(0, 0, 0, 0);
@@ -152,10 +153,18 @@ export const Aurora = (props: AuroraProps) => {
             const height = ctn.offsetHeight;
             renderer.setSize(width, height);
             if (program) {
-                program.uniforms.uResolution.value = [width, height];
+                program.uniforms.uResolution.value = [width, height]; // Pass CSS dimensions, not pixel dimensions if using internal dpr handling?
+                // Actually OGL's renderer.setSize handles the canvas width/height * dpr.
+                // We should pass the *drawable* width/height to the shader if we want pixel-perfect, 
+                // OR pass the display width/height if we want 0..1 UVs based on CSS size.
+                // Standard approach: gl.drawingBufferWidth/Height.
+                program.uniforms.uResolution.value = [gl.canvas.width, gl.canvas.height];
             }
         }
-        window.addEventListener('resize', resize);
+
+        // Use ResizeObserver for robust layout tracking
+        const resizeObserver = new ResizeObserver(() => resize());
+        resizeObserver.observe(ctn);
 
         const geometry = new Triangle(gl);
         if (geometry.attributes.uv) {
@@ -200,11 +209,12 @@ export const Aurora = (props: AuroraProps) => {
         };
         animateId = requestAnimationFrame(update);
 
+        // Initial sizing
         resize();
 
         return () => {
             cancelAnimationFrame(animateId);
-            window.removeEventListener('resize', resize);
+            resizeObserver.disconnect();
             if (ctn && gl.canvas.parentNode === ctn) {
                 ctn.removeChild(gl.canvas);
             }

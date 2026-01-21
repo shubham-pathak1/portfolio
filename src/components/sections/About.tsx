@@ -20,8 +20,9 @@ export const About = () => {
         <section className="mt-6 md:mt-24 mb-20 relative">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
             >
                 <div className="flex flex-row md:flex-col md:mx-0 gap-6 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
@@ -53,7 +54,7 @@ export const About = () => {
                     <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
                         <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm <span className="text-text-primary font-bold">Shubham</span>, an engineer crafting honest, high-performance software. By bridging the gap between infrastructure and <span className="text-text-primary font-bold">interaction design</span>, I build tools that are lean, transparent, and human. My focus is on making complex systems feel simple, respectful, and deliberate.
+                            I'm <span className="text-text-primary font-bold">Shubham</span>, a full-stack developer with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>, focusing on software that is as technical as it is human. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
                         </p>
                     </div>
 
