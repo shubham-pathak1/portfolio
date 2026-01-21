@@ -58,33 +58,7 @@ export const About = () => {
                         </p>
                     </div>
 
-                    {/* Mobile-Only CTA Block (Relocated) */}
-                    <div className="flex md:hidden flex-col gap-6 w-full items-start mb-10">
-                        <div className="flex items-center gap-3 w-full">
-                            <a
-                                href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-text-primary text-bg font-bold active:scale-95 transition-all text-xs"
-                            >
-                                <Download size={14} />
-                                Resume / CV
-                            </a>
-                            <a
-                                href="mailto:shubhamxkcd@gmail.com"
-                                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl border border-border hover:border-text-primary active:scale-95 transition-all text-text-primary font-bold text-xs"
-                            >
-                                <Mail size={14} />
-                                Contact
-                            </a>
-                        </div>
-                        {/* Minimal Social Row */}
-                        <div className="flex items-center justify-center gap-6 w-full mt-2">
-                            <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
-                                <Linkedin size={20} />
-                            </a>
-                        </div>
-                    </div>
+
 
                     <div className="flex flex-col gap-10 md:gap-12 w-full">
                         <div className="flex flex-col gap-4 items-start">
@@ -128,6 +102,29 @@ export const About = () => {
                             </div>
                         </div>
 
+                        {/* Mobile-Only CTA Block (Relocated) */}
+                        <div className="flex md:hidden items-center gap-3 w-full mb-10">
+                            <a
+                                href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-text-primary text-bg font-bold active:scale-95 transition-all text-xs"
+                            >
+                                <Download size={14} />
+                                Resume / CV
+                            </a>
+
+                            {/* Minimal Social Row */}
+                            <div className="flex items-center gap-4 px-2">
+                                <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
+                                    <Linkedin size={22} />
+                                </a>
+                                <a href="mailto:shubhamxkcd@gmail.com" className="text-text-secondary hover:text-text-primary transition-colors">
+                                    <Mail size={22} />
+                                </a>
+                            </div>
+                        </div>
+
                         <div className="hidden md:flex flex-wrap items-center justify-center md:justify-start gap-6">
                             <div className="flex items-center gap-3 flex-wrap justify-center">
                                 <a
@@ -139,17 +136,11 @@ export const About = () => {
                                     <Download size={16} />
                                     Resume / CV
                                 </a>
-                                <a
-                                    href="mailto:shubhamxkcd@gmail.com"
-                                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-border hover:border-text-primary transition-all text-text-primary font-bold text-xs"
-                                >
-                                    <Mail size={16} />
-                                    Get in touch
-                                </a>
                             </div>
 
-                            <div className="flex items-center gap-4 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
                                 <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Linkedin size={18} /></a>
+                                <a href="mailto:shubhamxkcd@gmail.com" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Mail size={18} /></a>
                             </div>
                         </div>
                     </div>

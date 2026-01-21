@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
+import { AnimatedThemeToggler } from "./animated-theme-toggler";
 
 interface DockProps {
     theme: "light" | "dark";
@@ -24,19 +25,6 @@ const MailIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
         <polyline points="22,6 12,13 2,6" />
-    </svg>
-);
-
-const SunIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <circle cx="12" cy="12" r="5" />
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-);
-
-const MoonIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
 );
 
@@ -77,9 +65,7 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
 
                 <div className="w-px bg-border mx-1 my-auto h-6" />
 
-                <DockButton onClick={toggleTheme} id="theme-toggle">
-                    {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-                </DockButton>
+                <AnimatedThemeToggler theme={theme} toggleTheme={toggleTheme} />
             </div>
         </div>
     );
