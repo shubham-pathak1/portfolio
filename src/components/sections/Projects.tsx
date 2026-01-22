@@ -74,7 +74,7 @@ export const Projects = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-4xl font-bold text-text-primary">Featured Projects.</h2>
+                    <h2 className="text-4xl font-bold text-text-primary">Featured Projects</h2>
                 </motion.div>
 
                 <div className="flex bg-surface border border-border rounded-lg p-1 self-start md:self-auto">
@@ -116,7 +116,8 @@ export const Projects = () => {
                         >
                             {/* Image Area */}
                             <div className="h-48 overflow-hidden relative bg-surface-hover">
-                                <img
+                                <motion.img
+                                    layoutId={`project-image-${project.id}`}
                                     src={project.image}
                                     alt={project.title}
                                     className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}

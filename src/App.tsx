@@ -28,7 +28,7 @@ function App() {
   return (
     <SmoothScroll>
       <SEO />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<AllProjects />} />

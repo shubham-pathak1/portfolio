@@ -104,8 +104,9 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    <div className="mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video fade-in" style={{ animationDelay: '0.1s' }}>
-                        <img
+                    <div className="mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video">
+                        <motion.img
+                            layoutId={`project-image-${project.id}`}
                             src={project.image}
                             alt={project.title}
                             className="w-full h-full object-cover"

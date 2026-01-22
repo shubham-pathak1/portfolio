@@ -39,22 +39,16 @@ export const About = () => {
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
-                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">Behind the code.</h2>
-                        <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-primary md:text-text-secondary uppercase opacity-60 md:opacity-40">Available for scale.</div>
+                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">About Me</h2>
                     </div>
                 </div>
 
                 <div className="flex flex-col items-start text-left w-full">
                     <h1 className="sr-only">Shubham Pathak | Software Engineer & Designer</h1>
-                    <div className="hidden md:flex items-center gap-4 mb-4">
-                        <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary opacity-50 font-mono">
-                            01 — Background
-                        </div>
-                    </div>
-                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">Behind the code.</h2>
+                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">About Me</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
                         <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm <span className="text-text-primary font-bold">Shubham</span>, a full-stack developer with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>, focusing on software that is as technical as it is human. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
+                            I'm <span className="text-text-primary font-bold">Shubham</span>, a <span className="text-text-primary font-bold">full-stack developer</span> with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>, focusing on software that is as technical as it is human. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
                         </p>
                     </div>
 

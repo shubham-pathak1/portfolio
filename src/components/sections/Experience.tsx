@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
     Calendar,
-    GraduationCap,
     Globe
 } from "lucide-react";
 
@@ -58,7 +57,7 @@ export const Experience = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-4xl font-bold text-text-primary">Professional Experience.</h2>
+                    <h2 className="text-4xl font-bold text-text-primary">Professional Experience</h2>
                 </motion.div>
 
                 {/* Experience Cards */}
@@ -131,7 +130,6 @@ export const Experience = () => {
                     viewport={{ once: true }}
                     className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-text-secondary opacity-40"
                 >
-                    <GraduationCap size={16} />
                     Education
                 </motion.div>
 
