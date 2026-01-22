@@ -57,8 +57,6 @@ export function AnimatedThemeToggler({
                 Math.max(top, bottom)
             );
 
-            const isDark = theme === "light"; // We just toggled to this state (because theme prop is old)
-
             // Animate the circle clip path
             document.documentElement.animate(
                 {
@@ -70,9 +68,7 @@ export function AnimatedThemeToggler({
                 {
                     duration: 500,
                     easing: "ease-in-out",
-                    pseudoElement: isDark
-                        ? "::view-transition-new(root)"
-                        : "::view-transition-old(root)",
+                    pseudoElement: "::view-transition-new(root)",
                 }
             );
         });

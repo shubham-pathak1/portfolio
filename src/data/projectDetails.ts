@@ -10,6 +10,7 @@ import cielImage from "../assets/ciel.png";
 import kanhaSaladImage from "../assets/kanha_salad.png";
 import shlokDatarImage from "../assets/shlok_datar.png";
 import mewImage from "../assets/ciel.png"; // Placeholder for Mew
+import expressIcon from "../assets/express.png";
 
 export interface ProjectDetail {
     id: string;
@@ -22,7 +23,7 @@ export interface ProjectDetail {
     overview: string;
     features: string[];
     whyBuilt: string[];
-    techStack: { name: string; icon: string; isDarkIcon?: boolean }[];
+    techStack: { name: string; icon: string; isDarkIcon?: boolean; lightIcon?: string }[];
     impact: string[];
     futurePlans: string[];
     image: string;
@@ -104,7 +105,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", isDarkIcon: true },
+            { name: "Express.js", icon: expressIcon },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],

@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 import { projectDetails } from "../../data/projectDetails";
+import { useTheme } from "../../hooks/useTheme";
 
 // Map centralized data to local format
 const projects = Object.values(projectDetails).map(p => ({
@@ -21,26 +22,22 @@ const projects = Object.values(projectDetails).map(p => ({
 export const Projects = () => {
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
+    const { theme } = useTheme();
 
-    // 1. Initialize from URL or state, default to 'personal'
-    const [activeCategory, setActiveCategory] = useState<'personal' | 'freelance'>(() => {
-        const type = searchParams.get('type');
-        if (type === 'personal' || type === 'freelance') return type;
-        return (location.state as any)?.targetCategory || 'personal';
-    });
+    // 1. Derive active category directly from URL or location state (Source of Truth)
+    // This avoids "uSeState" synchronization issues and redundant state
+    const typeParam = searchParams.get('type');
+    const stateCategory = (location.state as Record<string, unknown>)?.targetCategory;
 
-    // 2. Sync state when URL params or location state changes (for back/forward navigation)
+    let activeCategory: 'personal' | 'freelance' = 'personal';
+    if (typeParam === 'personal' || typeParam === 'freelance') {
+        activeCategory = typeParam;
+    } else if (typeof stateCategory === 'string' && (stateCategory === 'personal' || stateCategory === 'freelance')) {
+        activeCategory = stateCategory;
+    }
+
+    // 2. Handle Scroll to Section
     useEffect(() => {
-        const typeParam = searchParams.get('type') as 'personal' | 'freelance' | null;
-        const stateCategory = (location.state as any)?.targetCategory;
-
-        if (typeParam && ['personal', 'freelance'].includes(typeParam)) {
-            setActiveCategory(typeParam);
-        } else if (stateCategory) {
-            setActiveCategory(stateCategory);
-        }
-
-        // 3. Handle Scroll to Section
         if (location.hash === '#projects') {
             const element = document.getElementById('projects');
             if (element) {
@@ -49,13 +46,10 @@ export const Projects = () => {
                 }, 150);
             }
         }
-    }, [searchParams, location.state, location.hash]);
+    }, [location.hash]);
 
     const handleCategoryChange = (category: 'personal' | 'freelance') => {
-        setActiveCategory(category);
-        // Silently update URL without adding to history (replace: true) 
-        // OR add to history (replace: false) - replace: true is better here 
-        // to avoid "clogging" back history with tab switches.
+        // Update URL, which will trigger a re-render with new derived state
         setSearchParams({ type: category }, { replace: true });
     };
 
@@ -74,7 +68,7 @@ export const Projects = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-4xl font-bold text-text-primary">Featured Projects</h2>
+                    <h2 className="text-2xl font-bold text-text-primary">Featured Projects</h2>
                 </motion.div>
 
                 <div className="flex bg-surface border border-border rounded-lg p-1 self-start md:self-auto">
@@ -120,6 +114,7 @@ export const Projects = () => {
                                     layoutId={`project-image-${project.id}`}
                                     src={project.image}
                                     alt={project.title}
+                                    transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                                     className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
                                 />
                                 {project.github ? (
@@ -149,8 +144,8 @@ export const Projects = () => {
                                     {project.tags.map(tag => (
                                         <span key={tag.name} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-hover border border-border text-xs font-mono text-text-secondary">
                                             <img
-                                                src={tag.icon}
-                                                className={`w-3.5 h-3.5 object-contain transition-all duration-300 filter ${tag.isDarkIcon ? 'dark:invert' : ''}`}
+                                                src={tag.lightIcon && theme === 'light' ? tag.lightIcon : tag.icon}
+                                                className={`w-3.5 h-3.5 rounded-full object-contain transition-all duration-300 filter ${tag.isDarkIcon && !tag.lightIcon ? 'dark:invert' : ''}`}
                                                 alt={tag.name}
                                             />
                                             {tag.name}

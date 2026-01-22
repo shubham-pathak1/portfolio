@@ -43,8 +43,19 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             <main className="max-w-[900px] mx-auto px-6 py-10 pb-32 relative z-10">
                 {children}
 
+                {/* Quote Section */}
+                <div className="mt-32 py-16 relative">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-16 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    <div className="text-center max-w-2xl mx-auto px-4">
+                        <blockquote className="text-lg md:text-xl font-medium text-text-primary leading-relaxed tracking-tight">
+                            "Programs must be written for people to read, and only incidentally for machines to execute."
+                        </blockquote>
+                        <cite className="block mt-6 text-xs font-mono uppercase tracking-widest text-text-secondary/50">— Hal Abelson</cite>
+                    </div>
+                </div>
+
                 {/* Global Footer */}
-                <footer className="mt-32 pt-12 border-t border-border text-center">
+                <footer className="mt-16 pt-12 border-t border-border text-center">
                     <div className="mb-4 font-bold text-lg tracking-tight">
                         Design & Developed by{" "}
                         <span className="text-text-primary">Shubham</span>

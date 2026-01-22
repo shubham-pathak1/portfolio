@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 import { projectDetails } from "../data/projectDetails";
+import { useTheme } from "../hooks/useTheme";
 
 export const AllProjects = () => {
     // Convert projectDetails object to array
     const projects = Object.values(projectDetails);
     const [filter, setFilter] = useState<'all' | 'personal' | 'freelance'>('all');
+    const { theme } = useTheme();
 
     const filteredProjects = projects.filter(project =>
         filter === 'all' ? true : project.category === filter
@@ -122,8 +124,8 @@ export const AllProjects = () => {
                                         {project.techStack.map(tag => (
                                             <span key={tag.name} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-hover border border-border text-xs font-mono text-text-secondary">
                                                 <img
-                                                    src={tag.icon}
-                                                    className={`w-3.5 h-3.5 object-contain transition-all duration-300 filter ${tag.isDarkIcon ? 'dark:invert' : ''}`}
+                                                    src={tag.lightIcon && theme === 'light' ? tag.lightIcon : tag.icon}
+                                                    className={`w-3.5 h-3.5 rounded-full object-contain transition-all duration-300 filter ${tag.isDarkIcon && !tag.lightIcon ? 'dark:invert' : ''}`}
                                                     alt={tag.name}
                                                 />
                                                 {tag.name}

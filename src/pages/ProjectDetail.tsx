@@ -4,10 +4,12 @@ import { SEO } from "../components/SEO";
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
+import { useTheme } from "../hooks/useTheme";
 
 export const ProjectDetail = () => {
     const { id } = useParams<{ id: string }>();
     const project = id ? projectDetails[id] : undefined;
+    const { theme } = useTheme();
 
     if (!project) {
         return (
@@ -109,6 +111,7 @@ export const ProjectDetail = () => {
                             layoutId={`project-image-${project.id}`}
                             src={project.image}
                             alt={project.title}
+                            transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                             className="w-full h-full object-cover"
                         />
                     </div>
@@ -185,9 +188,9 @@ export const ProjectDetail = () => {
                                         {project.techStack.map((tech) => (
                                             <span key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors cursor-default">
                                                 <img
-                                                    src={tech.icon}
+                                                    src={tech.lightIcon && theme === 'light' ? tech.lightIcon : tech.icon}
                                                     alt={tech.name}
-                                                    className={`w-4 h-4 object-contain transition-all duration-300 filter ${tech.isDarkIcon ? 'dark:invert' : ''}`}
+                                                    className={`w-4 h-4 rounded-full object-contain transition-all duration-300 filter ${tech.isDarkIcon && !tech.lightIcon ? 'dark:invert' : ''}`}
                                                 />
                                                 {tech.name}
                                             </span>

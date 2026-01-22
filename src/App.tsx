@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { SEO } from "./components/SEO";
 import { Layout } from "./components/Layout";
 import { About } from "./components/sections/About";
@@ -28,14 +28,16 @@ function App() {
   return (
     <SmoothScroll>
       <SEO />
-      <AnimatePresence mode="popLayout">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<AllProjects />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </AnimatePresence>
+      <LayoutGroup>
+        <AnimatePresence mode="popLayout">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<AllProjects />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
+      </LayoutGroup>
       <Analytics />
     </SmoothScroll>
   );

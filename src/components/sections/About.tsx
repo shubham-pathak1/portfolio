@@ -17,7 +17,7 @@ export const About = () => {
     ];
 
     return (
-        <section className="mt-6 md:mt-24 mb-20 relative">
+        <section className="min-h-[85vh] flex flex-col justify-center mb-24 relative">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -56,7 +56,7 @@ export const About = () => {
 
                     <div className="flex flex-col gap-10 md:gap-12 w-full">
                         <div className="flex flex-col gap-4 items-start">
-                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-primary md:text-text-secondary uppercase opacity-50 md:opacity-30">Core stack & tools</span>
+                            <span className="text-sm font-medium text-text-secondary">Core stack & tools</span>
                             <div className="flex flex-wrap gap-2.5 md:gap-4 items-center w-full">
                                 {skills.map((skill) => (
                                     <div key={skill.id} className="relative group/skill z-0 hover:z-[100] w-10 h-10 flex items-center justify-center">
