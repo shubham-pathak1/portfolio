@@ -114,6 +114,8 @@ export const Projects = () => {
                                     layoutId={`project-image-${project.id}`}
                                     src={project.image}
                                     alt={project.title}
+                                    loading="lazy"
+                                    decoding="async"
                                     transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                                     className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
                                 />
@@ -147,6 +149,8 @@ export const Projects = () => {
                                                 src={tag.lightIcon && theme === 'light' ? tag.lightIcon : tag.icon}
                                                 className={`w-3.5 h-3.5 rounded-full object-contain transition-all duration-300 filter ${tag.isDarkIcon && !tag.lightIcon ? 'dark:invert' : ''}`}
                                                 alt={tag.name}
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                             {tag.name}
                                         </span>

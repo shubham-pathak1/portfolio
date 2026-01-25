@@ -127,6 +127,8 @@ export const AllProjects = () => {
                                                     src={tag.lightIcon && theme === 'light' ? tag.lightIcon : tag.icon}
                                                     className={`w-3.5 h-3.5 rounded-full object-contain transition-all duration-300 filter ${tag.isDarkIcon && !tag.lightIcon ? 'dark:invert' : ''}`}
                                                     alt={tag.name}
+                                                    loading="lazy"
+                                                    decoding="async"
                                                 />
                                                 {tag.name}
                                             </span>

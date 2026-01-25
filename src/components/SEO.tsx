@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO = ({
     title = "Shubham Pathak | Portfolio",
     description = "A professional, high-performance web developer portfolio built with React, TypeScript, and Vite.",
-    image = "/favicon.png",
+    image = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto,w_600/v1769321824/favicon_jhr5ja.png",
     url = "https://portfolio-shubham-pathak1.vercel.app/",
     type = "website",
     children

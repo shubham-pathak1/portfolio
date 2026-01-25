@@ -111,6 +111,8 @@ export const ProjectDetail = () => {
                             layoutId={`project-image-${project.id}`}
                             src={project.image}
                             alt={project.title}
+                            loading="lazy"
+                            decoding="async"
                             transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                             className="w-full h-full object-cover"
                         />

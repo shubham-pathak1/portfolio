@@ -3,12 +3,15 @@ import {
     Calendar,
     Globe
 } from "lucide-react";
-import expressIcon from "../../assets/express.png";
+const expressIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321353/express_xm5ofn.png";
+const redsparkIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321358/redspark_dmlfmx.png";
+const boltIotIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321353/bolt-iot_oy5x8w.png";
 
 const experiences = [
     {
         id: "redspark",
         company: "Redspark Technologies",
+        logo: redsparkIcon,
         role: "MERN Stack Intern",
         location: "Vadodara (On-site)",
         duration: "Jan 2026 - Ongoing",
@@ -28,6 +31,7 @@ const experiences = [
     {
         id: "bolt",
         company: "Bolt IoT",
+        logo: boltIotIcon,
         role: "Front-End Developer Intern",
         location: "Remote (India)",
         duration: "Dec 2022 - Feb 2023",
@@ -74,27 +78,32 @@ export const Experience = () => {
                                 className="p-6 rounded-2xl bg-surface border border-border hover:border-text-secondary/50 transition-colors group relative"
                             >
                                 {/* Header Row: Role & Duration */}
-                                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1.5">
-                                    <h3 className="text-xl font-bold text-text-primary leading-tight">{exp.role}</h3>
-                                    <div className="flex items-center gap-1.5 text-xs font-mono text-text-secondary bg-surface-hover px-2 py-1 rounded shrink-0 self-start sm:self-auto mt-1 sm:mt-0">
+                                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-2">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-surface border border-border overflow-hidden flex items-center justify-center shrink-0">
+                                            <img src={exp.logo} alt={exp.company} className="w-8 h-8 object-contain" loading="lazy" decoding="async" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-text-primary leading-tight">{exp.role}</h3>
+                                            <div className="flex items-center gap-2 text-sm text-text-secondary mt-1">
+                                                <a
+                                                    href={exp.website}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="font-medium text-text-primary hover:text-accent transition-colors flex items-center gap-1"
+                                                >
+                                                    {exp.company}
+                                                    <Globe size={12} className="opacity-40" />
+                                                </a>
+                                                <span className="w-1 h-1 rounded-full bg-text-secondary/40" />
+                                                <span className="text-xs">{exp.location}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-1.5 text-xs font-mono text-text-secondary bg-surface-hover px-2 py-1 rounded shrink-0 self-start sm:self-auto">
                                         <Calendar size={12} />
                                         {exp.duration}
                                     </div>
-                                </div>
-
-                                {/* Sub-Header: Company & Location */}
-                                <div className="flex items-center gap-2 text-sm text-text-secondary mb-4 flex-wrap">
-                                    <a
-                                        href={exp.website}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1.5 font-medium text-text-primary hover:text-accent transition-colors transition-all"
-                                    >
-                                        {exp.company}
-                                        <Globe size={12} className="opacity-40" />
-                                    </a>
-                                    <span className="w-1 h-1 rounded-full bg-text-secondary/40" />
-                                    <span className="text-xs">{exp.location}</span>
                                 </div>
 
                                 {/* Description Points */}
@@ -114,6 +123,8 @@ export const Experience = () => {
                                                 src={tech.icon}
                                                 className="w-4 h-4 rounded-full transition-all duration-300"
                                                 alt={tech.name}
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                             {tech.name}
                                         </span>

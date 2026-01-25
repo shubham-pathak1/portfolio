@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Download, Mail, Linkedin } from "lucide-react";
-import profileImage from "../../assets/my_img.jpg";
-import rustIcon from "../../assets/rust.png";
+const profileImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/my_img_tjddhb.jpg";
+const rustIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/rust_ruapju.png";
 
 export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -31,6 +31,8 @@ export const About = () => {
                             <img
                                 src={profileImage}
                                 alt="Shubham Pathak"
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                             />
                         </div>
@@ -75,6 +77,8 @@ export const About = () => {
                                                 src={skill.icon}
                                                 className={`w-5 h-5 transition-all duration-300 ${skill.darkInvert ? 'dark:invert' : ''} grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110`}
                                                 alt={skill.name}
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                         </motion.div>
 

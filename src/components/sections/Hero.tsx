@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
-import profileImage from "../../assets/my_img.jpg";
+const profileImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/my_img_tjddhb.jpg";
 
 export const Hero = () => {
     return (
@@ -45,6 +45,8 @@ export const Hero = () => {
                         <img
                             src={profileImage}
                             alt="Shubham Pathak"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover object-center scale-[1.8] grayscale hover:grayscale-0 transition-all duration-1000 ease-out"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent opacity-40" />

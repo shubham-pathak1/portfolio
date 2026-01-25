@@ -1,16 +1,16 @@
-import expoIcon from "../assets/expo.jpg";
-import krishiSangamImage from "../assets/krishi_sangam.png";
-import throttleTalksImage from "../assets/throttle_talks.png";
-import bastionImage from "../assets/bastion.png";
-import rustIcon from "../assets/rust.png";
-import firebaseAuthIcon from "../assets/firebase_auth.png";
-import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
-import firebaseStorageIcon from "../assets/firebase_storage.png";
-import cielImage from "../assets/ciel.png";
-import kanhaSaladImage from "../assets/kanha_salad.png";
-import shlokDatarImage from "../assets/shlok_datar.png";
-import mewImage from "../assets/ciel.png"; // Placeholder for Mew
-import expressIcon from "../assets/express.png";
+const expoIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321352/expo_a6idt9.jpg";
+const krishiSangamImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321357/krishi_sangam_vipe3f.png";
+const throttleTalksImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/throttle_talks_zlvkws.png";
+const bastionImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/bastion_pnd8m2.png";
+const rustIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321359/rust_ruapju.png";
+const firebaseAuthIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_auth_telm0i.png";
+const firebaseCloudstoreIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_cloudstore_horgaw.png";
+const firebaseStorageIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_storage_pdhqs9.png";
+const cielImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/ciel_ilwkgm.png";
+const kanhaSaladImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321356/kanha_salad_it6jw8.png";
+const shlokDatarImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/shlok_datar_nxbtrc.png";
+const mewImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/ciel_ilwkgm.png"; // Placeholder for Mew
+const expressIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/express_xm5ofn.png";
 
 export interface ProjectDetail {
     id: string;
