@@ -117,7 +117,7 @@ export const Projects = () => {
                                     loading="lazy"
                                     decoding="async"
                                     transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                                    className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
+                                    className={`w-full h-full ${['ciel', 'bastion', 'kanha-salad'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
                                 />
                                 {project.github ? (
                                     <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
