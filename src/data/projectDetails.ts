@@ -133,10 +133,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "In Development",
+        status: "v0.1-alpha Released",
         overview: "Bastion is a robust application designed to help users eliminate digital distractions and reclaim their productivity. Currently limited to Windows, it provides system-level blocking of websites and applications without compromising on user data or performance.",
         features: [
             "Smart Blocking: Set custom blocklists for websites and desktop applications.",
+            "Ghost Mode: High-efficiency background enforcement using a Rust-only process (<15MB RAM) that persists after the UI is closed.",
             "Pomodoro Integration: Sync your blocking sessions with focus timers.",
             "Schedule Mode: Automatically toggle focus mode during work hours.",
             "Deep Focus: Interactive 'hard-lock' mode to prevent bypassing blocks.",
@@ -145,8 +146,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         whyBuilt: [
             "Most existing blockers are either too easy to bypass or highly intrusive.",
             "Wanted to explore Tauri 2.0 and its capabilities for system-level integrations.",
-            "Needed a personal tool that combined focus timers with hard-blocking.",
-            "To solve the challenge of cross-platform system hooks using Rust."
+            "Needed a personal tool that combined focus timers with hard-blocking."
         ],
         techStack: [
             { name: "Tauri 2.0", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -157,16 +157,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "shadcn/ui", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" } // Placeholder for shadcn
         ],
         impact: [
-            "Currently in development phase. If you are interested in testing it out or contributing, please feel free to reach out to me via mail."
+            "v0.1-alpha has been released. Please visit the release page to download the latest setup file and share your feedback."
         ],
         futurePlans: [
-            "Add mobile companion app (Android) for synchronized blocking.",
-            "Might add Linux support in future.",
-            "Open-source core blocking modules for community contribution.",
-            "Add team-based focus leaderboards."
+            "Evaluating a migration to Slint to further reduce resource consumption by bypassing WebView instances.",
+            "Refining the core feature set to focus on ultra-lightweight website and application blocking.",
+            "Potential Linux support implementation based on community feedback."
         ],
         image: bastionImage,
         github: "https://github.com/shubham-pathak1/bastion",
+        liveLink: "https://bastion-app.vercel.app/",
         category: "personal"
     },
     "ciel": {

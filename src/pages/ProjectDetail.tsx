@@ -210,7 +210,7 @@ export const ProjectDetail = () => {
                                             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
                                         >
                                             <ExternalLink size={18} />
-                                            {project.category === 'freelance' ? 'Visit Site' : 'Live Demo'}
+                                            Visit Site
                                         </a>
                                     )}
                                     {project.github && (
