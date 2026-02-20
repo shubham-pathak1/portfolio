@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Download, Mail, Linkedin } from "lucide-react";
-const profileImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/my_img_tjddhb.jpg";
-const rustIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/rust_ruapju.png";
+import profileImage from "../../assets/my_img.jpg";
+import rustIcon from "../../assets/rust.png";
 
 export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -61,17 +61,23 @@ export const About = () => {
                             <span className="text-sm font-medium text-text-secondary">Core stack & tools</span>
                             <div className="flex flex-wrap gap-2.5 md:gap-4 items-center w-full">
                                 {skills.map((skill) => (
-                                    <div key={skill.id} className="relative group/skill z-0 hover:z-[100] w-10 h-10 flex items-center justify-center">
-                                        <motion.div
+                                    <div key={skill.id} className="relative group/skill z-0 hover:z-[100] focus-within:z-[100] w-10 h-10 flex items-center justify-center">
+                                        <motion.button
+                                            type="button"
                                             onMouseEnter={() => setHoveredSkill(skill.id)}
                                             onMouseLeave={() => setHoveredSkill(null)}
+                                            onFocus={() => setHoveredSkill(skill.id)}
+                                            onBlur={() => setHoveredSkill(null)}
+                                            onTouchStart={() => setHoveredSkill(skill.id)}
                                             whileHover={{
                                                 y: -5,
                                                 scale: 1.1,
                                                 zIndex: 50,
                                                 transition: { type: "spring", stiffness: 400, damping: 25 }
                                             }}
-                                            className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative"
+                                            aria-label={skill.name}
+                                            title={skill.name}
+                                            className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
                                             <img
                                                 src={skill.icon}
@@ -80,7 +86,7 @@ export const About = () => {
                                                 loading="lazy"
                                                 decoding="async"
                                             />
-                                        </motion.div>
+                                        </motion.button>
 
                                         <AnimatePresence>
                                             {hoveredSkill === skill.id && (
@@ -106,6 +112,7 @@ export const About = () => {
                                 href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Open resume in a new tab"
                                 className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-text-primary text-bg font-bold active:scale-95 transition-all text-xs"
                             >
                                 <Download size={14} />
@@ -114,10 +121,22 @@ export const About = () => {
 
                             {/* Minimal Social Row */}
                             <div className="flex items-center gap-4 px-2">
-                                <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-text-primary transition-colors">
+                                <a
+                                    href="https://www.linkedin.com/in/shubham-pathak-05366b272/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Open LinkedIn profile"
+                                    title="LinkedIn"
+                                    className="text-text-secondary hover:text-text-primary transition-colors"
+                                >
                                     <Linkedin size={22} />
                                 </a>
-                                <a href="mailto:shubhamxkcd@gmail.com" className="text-text-secondary hover:text-text-primary transition-colors">
+                                <a
+                                    href="mailto:shubhamxkcd@gmail.com"
+                                    aria-label="Send an email"
+                                    title="Email"
+                                    className="text-text-secondary hover:text-text-primary transition-colors"
+                                >
                                     <Mail size={22} />
                                 </a>
                             </div>
@@ -129,7 +148,8 @@ export const About = () => {
                                     href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-6 py-3 rounded-xl bg-text-primary text-bg font-bold hover:shadow-[0_0_20px_rgba(var(--text-primary-rgb),0.3)] transition-all active:scale-95 text-xs"
+                                    aria-label="Open resume in a new tab"
+                                    className="flex items-center gap-2 px-6 py-3 rounded-xl bg-text-primary text-bg font-bold hover:shadow-lg transition-all active:scale-95 text-xs"
                                 >
                                     <Download size={16} />
                                     Resume / CV
@@ -137,8 +157,24 @@ export const About = () => {
                             </div>
 
                             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
-                                <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Linkedin size={18} /></a>
-                                <a href="mailto:shubhamxkcd@gmail.com" className="text-text-secondary hover:text-text-primary transition-all p-1.5"><Mail size={18} /></a>
+                                <a
+                                    href="https://www.linkedin.com/in/shubham-pathak-05366b272/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Open LinkedIn profile"
+                                    title="LinkedIn"
+                                    className="text-text-secondary hover:text-text-primary transition-all p-1.5"
+                                >
+                                    <Linkedin size={18} />
+                                </a>
+                                <a
+                                    href="mailto:shubhamxkcd@gmail.com"
+                                    aria-label="Send an email"
+                                    title="Email"
+                                    className="text-text-secondary hover:text-text-primary transition-all p-1.5"
+                                >
+                                    <Mail size={18} />
+                                </a>
                             </div>
                         </div>
                     </div>

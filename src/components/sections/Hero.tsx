@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
-const profileImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321359/my_img_tjddhb.jpg";
+import profileImage from "../../assets/my_img.jpg";
 
 export const Hero = () => {
     return (
@@ -25,9 +25,34 @@ export const Hero = () => {
 
                     <div className="flex items-center gap-6 flex-wrap justify-center md:justify-start">
                         <div className="flex items-center gap-6 pr-4 border-r border-border">
-                            <a href="https://github.com/shubham-pathak1" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1"><Github size={22} /></a>
-                            <a href="https://www.linkedin.com/in/shubham-pathak-05366b272/" target="_blank" className="text-text-secondary hover:text-text-primary transition-all p-1"><Linkedin size={22} /></a>
-                            <a href="mailto:shubhamxkcd@gmail.com" className="text-text-secondary hover:text-text-primary transition-all p-1"><Mail size={22} /></a>
+                            <a
+                                href="https://github.com/shubham-pathak1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open GitHub profile"
+                                title="GitHub"
+                                className="text-text-secondary hover:text-text-primary transition-all p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
+                            >
+                                <Github size={22} />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/shubham-pathak-05366b272/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open LinkedIn profile"
+                                title="LinkedIn"
+                                className="text-text-secondary hover:text-text-primary transition-all p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
+                            >
+                                <Linkedin size={22} />
+                            </a>
+                            <a
+                                href="mailto:shubhamxkcd@gmail.com"
+                                aria-label="Send an email"
+                                title="Email"
+                                className="text-text-secondary hover:text-text-primary transition-all p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
+                            >
+                                <Mail size={22} />
+                            </a>
                         </div>
                         <div className="text-[10px] font-mono font-bold tracking-[0.2em] text-text-secondary uppercase opacity-40">Available for scale.</div>
                     </div>

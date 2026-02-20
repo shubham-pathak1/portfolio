@@ -1,16 +1,17 @@
-const expoIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321352/expo_a6idt9.jpg";
-const krishiSangamImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321357/krishi_sangam_vipe3f.png";
-const throttleTalksImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/throttle_talks_zlvkws.png";
-const bastionImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/bastion_pnd8m2.png";
-const rustIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321359/rust_ruapju.png";
-const firebaseAuthIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_auth_telm0i.png";
-const firebaseCloudstoreIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_cloudstore_horgaw.png";
-const firebaseStorageIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/firebase_storage_pdhqs9.png";
-const cielImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/ciel_ilwkgm.png";
-const kanhaSaladImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769410013/kanha_salad_atwliq.png";
-const shlokDatarImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321354/shlok_datar_nxbtrc.png";
-const mewImage = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/ciel_ilwkgm.png"; // Placeholder for Mew
-const expressIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto/v1769321353/express_xm5ofn.png";
+import expoIcon from "../assets/expo.jpg";
+import krishiSangamImage from "../assets/krishi_sangam.png";
+import throttleTalksImage from "../assets/throttle_talks.png";
+import bastionImage from "../assets/bastion.png";
+import rustIcon from "../assets/rust.png";
+import firebaseAuthIcon from "../assets/firebase_auth.png";
+import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
+import firebaseStorageIcon from "../assets/firebase_storage.png";
+import cielImage from "../assets/ciel.png";
+import kanhaSaladImage from "../assets/kanha_salad.png";
+import shlokDatarImage from "../assets/shlok_datar.png";
+import expressIcon from "../assets/express.png";
+
+const mewImage = cielImage;
 
 export interface ProjectDetail {
     id: string;
@@ -40,7 +41,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "3 months",
         role: "Lead Developer",
         team: "Solo",
-        status: "Under Development",
+        status: "In Development",
         overview: "Throttle Talks is a high-octane community platform designed for automotive enthusiasts. It bridges the gap between casual car lovers and hardcore gearheads by providing a real-time discussion forum, news feed, and spec comparison tool. Users can engage in heated debates about engines, share modification tips, or simply show off their rides.",
         features: [
             "Real-time Forums: Instant messaging and thread updates using Firebase.",
@@ -319,9 +320,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         techStack: [
             { name: "Rust", icon: rustIcon },
-            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" }, // Placeholder/Generic link check? Slint logo URL might need verification. I will use a generic one or finding one. I'll use a generic placeholder icon if unsure, or just text. Actually I'll use a standard icon URL or skip icon if not found. Let's try to finding a valid one or use Rust icon transiently. I'll use the rust icon for now to avoid broken images.
-            // Actually, I'll use a generic devicon if possible. Slint is new. I'll use the official one if I can guess it, otherwise generic code icon.
-            // I'll use: vectorlogo.zone/logos/rust-lang/rust-lang-icon.svg for now as placeholder for Slint.
+            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
         ],
         impact: [
             "Currently in active development phase.",

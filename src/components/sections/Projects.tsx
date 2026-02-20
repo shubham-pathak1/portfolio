@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
@@ -36,18 +35,6 @@ export const Projects = () => {
         activeCategory = stateCategory;
     }
 
-    // 2. Handle Scroll to Section
-    useEffect(() => {
-        if (location.hash === '#projects') {
-            const element = document.getElementById('projects');
-            if (element) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 150);
-            }
-        }
-    }, [location.hash]);
-
     const handleCategoryChange = (category: 'personal' | 'freelance') => {
         // Update URL, which will trigger a re-render with new derived state
         setSearchParams({ type: category }, { replace: true });
@@ -74,6 +61,7 @@ export const Projects = () => {
                 <div className="flex bg-surface border border-border rounded-lg p-1 self-start md:self-auto">
                     <button
                         onClick={() => handleCategoryChange('personal')}
+                        aria-pressed={activeCategory === "personal"}
                         className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all duration-300 ${activeCategory === 'personal'
                             ? 'bg-text-primary text-bg shadow-sm'
                             : 'text-text-secondary hover:text-text-primary'
@@ -83,6 +71,7 @@ export const Projects = () => {
                     </button>
                     <button
                         onClick={() => handleCategoryChange('freelance')}
+                        aria-pressed={activeCategory === "freelance"}
                         className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all duration-300 ${activeCategory === 'freelance'
                             ? 'bg-text-primary text-bg shadow-sm'
                             : 'text-text-secondary hover:text-text-primary'
@@ -120,17 +109,38 @@ export const Projects = () => {
                                     className={`w-full h-full ${['ciel', 'bastion', 'kanha-salad'].includes(project.id) ? 'object-cover object-top' : 'object-cover'}`}
                                 />
                                 {project.github ? (
-                                    <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                                        <a href={project.github} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors">
+                                    <div className="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 group-focus-within:translate-y-0">
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`Open ${project.title} source code`}
+                                            title="View Source"
+                                            className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors"
+                                        >
                                             <Github size={16} />
                                         </a>
-                                        <a href={project.link} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`Open ${project.title} live project`}
+                                            title="Visit Project"
+                                            className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors"
+                                        >
                                             <ExternalLink size={16} />
                                         </a>
                                     </div>
                                 ) : (
-                                    <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                                        <a href={project.link} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors">
+                                    <div className="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 group-focus-within:translate-y-0">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`Open ${project.title} live project`}
+                                            title="Visit Project"
+                                            className="p-2 rounded-full bg-black/50 text-white backdrop-blur-sm hover:bg-black/80 transition-colors"
+                                        >
                                             <ExternalLink size={16} />
                                         </a>
                                     </div>

@@ -3,9 +3,9 @@ import {
     Calendar,
     Globe
 } from "lucide-react";
-const expressIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321353/express_xm5ofn.png";
-const redsparkIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321358/redspark_dmlfmx.png";
-const boltIotIcon = "https://res.cloudinary.com/dl5gp4c77/image/upload/v1769321353/bolt-iot_oy5x8w.png";
+import expressIcon from "../../assets/express.png";
+import redsparkIcon from "../../assets/redspark.png";
+import boltIotIcon from "../../assets/bolt-iot.png";
 
 const experiences = [
     {

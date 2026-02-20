@@ -1,18 +1,20 @@
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigationType } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     const lenisRef = useRef<Lenis | null>(null);
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
+    const navigationType = useNavigationType();
 
     useEffect(() => {
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: 'vertical',
             gestureOrientation: 'vertical',
-            smoothWheel: true,
+            smoothWheel: !reducedMotion,
             wheelMultiplier: 1,
             infinite: false,
         });
@@ -36,10 +38,26 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     useEffect(() => {
-        if (lenisRef.current) {
-            lenisRef.current.scrollTo(0, { immediate: true });
+        const lenis = lenisRef.current;
+        if (!lenis) {
+            return;
         }
-    }, [pathname]);
+
+        if (hash) {
+            const targetId = decodeURIComponent(hash.slice(1));
+            requestAnimationFrame(() => {
+                const target = document.getElementById(targetId);
+                if (target) {
+                    lenis.scrollTo(target, { offset: -24 });
+                }
+            });
+            return;
+        }
+
+        if (navigationType !== "POP") {
+            lenis.scrollTo(0, { immediate: true });
+        }
+    }, [pathname, hash, navigationType]);
 
     return <>{children}</>;
 };

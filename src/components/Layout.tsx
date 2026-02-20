@@ -5,26 +5,55 @@ import { Dock } from "./ui/Dock";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
     const { theme, toggleTheme } = useTheme();
-    const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+    const pointerRef = React.useRef({ x: 0, y: 0 });
+    const rafRef = React.useRef<number | null>(null);
+    const currentYear = new Date().getFullYear();
 
     React.useEffect(() => {
-        const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+        const root = document.documentElement;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        pointerRef.current = {
+            x: Math.round(window.innerWidth / 2),
+            y: Math.round(window.innerHeight / 2)
+        };
+        root.style.setProperty("--spotlight-x", `${pointerRef.current.x}px`);
+        root.style.setProperty("--spotlight-y", `${pointerRef.current.y}px`);
+
+        if (prefersReducedMotion) {
+            return;
+        }
+
+        const paintPointerPosition = () => {
+            root.style.setProperty("--spotlight-x", `${pointerRef.current.x}px`);
+            root.style.setProperty("--spotlight-y", `${pointerRef.current.y}px`);
+            rafRef.current = null;
         };
 
-        window.addEventListener("mousemove", updateMousePosition);
+        const updatePointerPosition = (event: PointerEvent) => {
+            pointerRef.current = { x: event.clientX, y: event.clientY };
+            if (rafRef.current === null) {
+                rafRef.current = requestAnimationFrame(paintPointerPosition);
+            }
+        };
+
+        window.addEventListener("pointermove", updatePointerPosition, { passive: true });
 
         return () => {
-            window.removeEventListener("mousemove", updateMousePosition);
+            window.removeEventListener("pointermove", updatePointerPosition);
+            if (rafRef.current !== null) {
+                cancelAnimationFrame(rafRef.current);
+                rafRef.current = null;
+            }
         };
     }, []);
 
     return (
-        <div className="min-h-screen relative">
+        <div className="min-h-screen relative isolate">
 
             {/* Fixed Background */}
             <div
-                className="fixed inset-0 z-[-1] pointer-events-none transition-colors duration-500"
+                className="fixed inset-0 z-0 pointer-events-none transition-colors duration-500"
                 style={{
                     backgroundImage: `
             linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
@@ -35,9 +64,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             />
             {/* Spotlight Glow */}
             <div
-                className="fixed inset-0 z-[-1] pointer-events-none transition-opacity duration-300"
+                className="fixed inset-0 z-[1] pointer-events-none transition-opacity duration-300 motion-reduce:opacity-0"
                 style={{
-                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, var(--glow-color), transparent 40%)`
+                    background: "radial-gradient(600px circle at var(--spotlight-x) var(--spotlight-y), var(--glow-color), transparent 40%)"
                 }}
             />
             <main className="max-w-[900px] mx-auto px-6 py-10 pb-32 relative z-10">
@@ -60,7 +89,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                         Design & Developed by{" "}
                         <span className="text-text-primary">Shubham</span>
                     </div>
-                    <div className="text-text-secondary text-sm">© 2025. All rights reserved.</div>
+                    <div className="text-text-secondary text-sm">© {currentYear}. All rights reserved.</div>
                 </footer>
             </main>
 

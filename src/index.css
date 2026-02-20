@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,10 +15,12 @@
     --accent: #18181b;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --spotlight-x: 50vw;
+    --spotlight-y: 50vh;
     
     /* Background Patterns */
     --glow-color: rgba(0,0,0,0.03);
-    --grid-line-color: #f4f4f5; 
+    --grid-line-color: rgba(24, 24, 27, 0.08);
   }
 
   .dark {
@@ -34,11 +36,16 @@
     
     /* Background Patterns Dark */
     --glow-color: rgba(255,255,255,0.03);
-    --grid-line-color: #171717; 
+    --grid-line-color: rgba(244, 244, 245, 0.1);
   }
 
   body {
     @apply bg-bg text-text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300;
+  }
+
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
   }
 
   html.lenis {
@@ -81,6 +88,27 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.45s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
 }
 
 @layer components {

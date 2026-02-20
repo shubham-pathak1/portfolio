@@ -12,6 +12,7 @@ export const AllProjects = () => {
     const projects = Object.values(projectDetails);
     const [filter, setFilter] = useState<'all' | 'personal' | 'freelance'>('all');
     const { theme } = useTheme();
+    const isInDevelopmentStatus = (status: string) => status.toLowerCase().includes("development");
 
     const filteredProjects = projects.filter(project =>
         filter === 'all' ? true : project.category === filter
@@ -51,6 +52,7 @@ export const AllProjects = () => {
                                 <button
                                     key={type}
                                     onClick={() => setFilter(type)}
+                                    aria-pressed={filter === type}
                                     className="relative px-5 py-2 text-sm font-bold capitalize transition-colors"
                                 >
                                     {filter === type && (
@@ -90,22 +92,38 @@ export const AllProjects = () => {
                                     <img
                                         src={project.image}
                                         alt={project.title}
+                                        loading="lazy"
+                                        decoding="async"
                                         className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                                     />
                                     {/* Status Badge for In-Dev */}
-                                    {project.status === "In Development" && (
+                                    {isInDevelopmentStatus(project.status) && (
                                         <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-bold text-white uppercase tracking-wider">
                                             In Dev
                                         </div>
                                     )}
-                                    <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+                                    <div className="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 group-focus-within:translate-y-0">
                                         {project.github && (
-                                            <a href={project.github} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/10">
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`Open ${project.title} source code`}
+                                                title="View Source"
+                                                className="p-2 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/10"
+                                            >
                                                 <Github size={16} />
                                             </a>
                                         )}
                                         {(project.liveLink) && (
-                                            <a href={project.liveLink} target="_blank" rel="noreferrer" className="p-2 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/10">
+                                            <a
+                                                href={project.liveLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`Open ${project.title} live project`}
+                                                title="Visit Project"
+                                                className="p-2 rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/10"
+                                            >
                                                 <ExternalLink size={16} />
                                             </a>
                                         )}

@@ -51,15 +51,18 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
                 )}
                 style={{ boxShadow: "0 10px 40px -10px rgba(0,0,0,0.1)" }}
             >
-                <DockButton onClick={handleHomeClick}>
+                <DockButton
+                    onClick={handleHomeClick}
+                    label={location.pathname === "/" ? "Back to top" : "Go to home"}
+                >
                     <HomeIcon />
                 </DockButton>
 
-                <DockLink href="https://github.com/shubham-pathak1">
+                <DockLink href="https://github.com/shubham-pathak1" label="Open GitHub profile">
                     <GithubIcon />
                 </DockLink>
 
-                <DockLink href="mailto:shubhamxkcd@gmail.com">
+                <DockLink href="mailto:shubhamxkcd@gmail.com" label="Send an email">
                     <MailIcon />
                 </DockLink>
 
@@ -71,22 +74,26 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
     );
 };
 
-const DockButton = ({ children, onClick, id }: { children: React.ReactNode; onClick?: () => void; id?: string }) => (
+const DockButton = ({ children, onClick, label }: { children: React.ReactNode; onClick?: () => void; label: string }) => (
     <button
         onClick={onClick}
-        id={id}
-        className="w-11 h-11 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1"
+        type="button"
+        aria-label={label}
+        title={label}
+        className="w-11 h-11 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
     >
         {children}
     </button>
 );
 
-const DockLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
+const DockLink = ({ children, href, label }: { children: React.ReactNode; href: string; label: string }) => (
     <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-11 h-11 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1"
+        target={href.startsWith("mailto:") ? undefined : "_blank"}
+        rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+        aria-label={label}
+        title={label}
+        className="w-11 h-11 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
     >
         {children}
     </a>

@@ -3,8 +3,36 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto,w_64/v1769321824/favicon_jhr5ja.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <style>
+    html,
+    body,
+    #root {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+    }
+
+    html.dark,
+    html.dark body,
+    html.dark #root {
+      background: #050505;
+    }
+  </style>
   <title>Shubham Pathak | Portfolio</title>
   <meta name="description"
     content="A professional, high-performance web developer portfolio built with React, TypeScript, and Vite. Showcasing projects like Bastion, Ciel, and Kanha Salad." />
@@ -19,7 +47,7 @@
   <meta property="og:title" content="Shubham Pathak | Portfolio" />
   <meta property="og:description"
     content="A professional, high-performance web developer portfolio showcasing MERN stack expertise and freelance projects." />
-  <meta property="og:image" content="https://res.cloudinary.com/dl5gp4c77/image/upload/f_auto,q_auto,w_600/v1769321824/favicon_jhr5ja.png" />
+  <meta property="og:image" content="/favicon.png" />
   <meta property="og:type" content="website" />
 </head>
 
