@@ -5,7 +5,7 @@ A personal web portfolio developed to showcase software engineering projects and
 ## Technical Stack
 
 - **Core**: React 18, TypeScript
-- **Build Tool**: Vite
+- **Build Tool**: Vite 
 - **Styling**: Tailwind CSS, CSS Modules
 - **State/Animation**: Framer Motion, Lenis (Scroll Smoothing)
 - **Routing**: React Router DOM (Client-side routing)
