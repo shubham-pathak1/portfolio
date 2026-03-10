@@ -1,11 +1,11 @@
-import expoIcon from "../assets/expo.jpg";
+// import expoIcon from "../assets/expo.jpg";
 import krishiSangamImage from "../assets/krishi_sangam.png";
-import throttleTalksImage from "../assets/throttle_talks.png";
+// import throttleTalksImage from "../assets/throttle_talks.png";
 import bastionImage from "../assets/bastion.png";
 import rustIcon from "../assets/rust.png";
-import firebaseAuthIcon from "../assets/firebase_auth.png";
-import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
-import firebaseStorageIcon from "../assets/firebase_storage.png";
+// import firebaseAuthIcon from "../assets/firebase_auth.png";
+// import firebaseCloudstoreIcon from "../assets/firebase_cloudstore.png";
+// import firebaseStorageIcon from "../assets/firebase_storage.png";
 import cielImage from "../assets/ciel.png";
 import kanhaSaladImage from "../assets/kanha_salad.png";
 import shlokDatarImage from "../assets/shlok_datar.png";
@@ -34,6 +34,7 @@ export interface ProjectDetail {
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
+/*
     "throttle-talks": {
         id: "throttle-talks",
         title: "Throttle Talks",
@@ -81,6 +82,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         github: "https://github.com/shubham-pathak1/throttle-talks",
         category: "personal"
     },
+*/
     "krishi-sangam": {
         id: "krishi-sangam",
         title: "Krishi Sangam",
@@ -173,7 +175,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "ciel": {
         id: "ciel",
         title: "Ciel",
-        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrents, and even youtube 4K/8K HDR video downloads via native yt-dlp and FFmpeg sidecars.",
+        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrents, and high-quality video downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
@@ -181,11 +183,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         overview: "Ciel is a high-performance, open-source download manager for Windows built with Tauri and Rust. It provides a clean, bloat-free experience focused on core efficiency and ease of use, replacing separate, bulky tools with a single efficient solution.",
         features: [
             "Parallel Downloading: Optimized multi-threaded HTTP engine with segment-based chunk management.",
-            "Video Support: Integrated yt-dlp to support high-res video and audio from thousands of platforms.",
+            "Video Support: Integrated high-resolution video and audio downloads from thousands of platforms.",
             "Torrent Support: Full magnet link support with content preview and metadata polling.",
             "Clipboard Monitoring: 'Autocatch' technology detects URLs in your clipboard for seamless additions.",
             "Smart Categorization: Automatically organizes files into Videos, Music, Archives, Software, Documents, and Other.",
-            "Auto-Muxing: Seamlessly merges high-quality video and audio streams using FFmpeg.",
+            "Auto-Muxing: Seamlessly merges high-quality video and audio streams for premium quality.",
             "Download Scheduler: Plan your queue to start or pause at specific times for better bandwidth management."
         ],
         whyBuilt: [
@@ -201,7 +203,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Successfully released v0.1.0 Alpha for public testing.",
             "Implemented a transparent auto-muxing system for high-quality video/audio merging.",
             "Architected a privacy-first, offline-first application with zero tracking or telemetry.",
-            "Bundled core binaries (yt-dlp/ffmpeg) for a seamless, technical-free user experience."
+            "Bundled core binaries for a seamless, technical-free user experience."
         ],
         futurePlans: [
             "Browser extension support for seamless one-click download capturing.",
