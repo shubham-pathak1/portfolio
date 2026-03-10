@@ -141,7 +141,7 @@ export const Experience = () => {
                         initial={{ y: 20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8"
+                        className="mb-6"
                     >
                         <h2 className="text-2xl font-bold text-text-primary">Education</h2>
                     </motion.div>

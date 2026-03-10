@@ -340,13 +340,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     },
     "shonen": {
         id: "shonen",
-        title: "SHONEN",
+        title: "Shonen",
         tagline: "A multi-vendor marketplace designed for manga, comics, and collectible enthusiasts with dedicated Customer, Admin, and Seller dashboards.",
         timeline: "2 months",
         role: "Full Stack Developer",
         team: "Solo",
         status: "Production Ready",
-        overview: "SHONEN is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built to master the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
+        overview: "Shonen is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built for learning the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
         features: [
             "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
             "Consolidated Marketplace: Integrated platform for manga, comics, and high-end action figures.",
@@ -379,7 +379,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         futurePlans: [
             "Implementing a real-time auction system for rare collectibles.",
-            "Adding an AI-based recommendation engine for manga readers.",
             "Mobile app development for seamless on-the-go trading."
         ],
         image: shonenImage,
