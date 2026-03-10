@@ -16,7 +16,7 @@ import { PageLoader } from "./components/ui/PageLoader";
 function Home() {
   return (
     <Layout>
-      <SEO />
+      <SEO key="home-seo" />
       <About />
       <Experience />
       <Projects />

@@ -98,7 +98,7 @@ export const Projects = () => {
                             className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col"
                         >
                             {/* Image Area */}
-                            <div className="h-48 overflow-hidden relative bg-surface-hover">
+                            <div className="h-64 overflow-hidden relative bg-surface-hover">
                                 <motion.img
                                     layoutId={`project-image-${project.id}`}
                                     src={project.image}
