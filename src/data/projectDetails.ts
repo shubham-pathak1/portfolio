@@ -9,6 +9,7 @@ import rustIcon from "../assets/rust.png";
 import cielImage from "../assets/ciel.png";
 import kanhaSaladImage from "../assets/kanha_salad.png";
 import shlokDatarImage from "../assets/shlok_datar.png";
+import shonenImage from "../assets/shonen.png";
 import expressIcon from "../assets/express.png";
 
 const mewImage = cielImage;
@@ -335,6 +336,55 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: mewImage,
         github: "https://github.com/shubham-pathak1/mew",
+        category: "personal"
+    },
+    "shonen": {
+        id: "shonen",
+        title: "SHONEN",
+        tagline: "A multi-vendor marketplace designed for manga, comics, and collectible enthusiasts with dedicated Customer, Admin, and Seller dashboards.",
+        timeline: "2 months",
+        role: "Full Stack Developer",
+        team: "Solo",
+        status: "Production Ready",
+        overview: "SHONEN is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built to master the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
+        features: [
+            "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
+            "Consolidated Marketplace: Integrated platform for manga, comics, and high-end action figures.",
+            "Advanced Navigation: Optimized search and category-based filtering.",
+            "Vendor Management: Infrastructure supporting individual merchants and enterprise stores.",
+            "Dispute Module: Integrated system for handling and resolving transaction issues.",
+            "Data Integrity: Backend-synchronized cart and wishlist with cross-device persistence.",
+            "Security: Robust JWT-based authentication with role-based permissions."
+        ],
+        whyBuilt: [
+            "To build a production-grade MERN stack application from scratch.",
+            "Mastering complex multi-role authorization and dashboard architectures.",
+            "Implementing secure payment gateways and asset optimization using Cloudinary.",
+            "Creating a dedicated space for the niche collectible community."
+        ],
+        techStack: [
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "Express.js", icon: expressIcon },
+            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+            { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
+        ],
+        impact: [
+            "Architected a scalable multi-vendor system with real-time inventory management.",
+            "Implemented a secure Razorpay payment flow with automated order tracking.",
+            "Optimized media delivery using Cloudinary for high-fidelity collectible visuals.",
+            "Designed an intuitive dispute resolution system to ensure platform trust."
+        ],
+        futurePlans: [
+            "Implementing a real-time auction system for rare collectibles.",
+            "Adding an AI-based recommendation engine for manga readers.",
+            "Mobile app development for seamless on-the-go trading."
+        ],
+        image: shonenImage,
+        github: "https://github.com/shubham-pathak1/shonen",
+        liveLink: "https://shonen-app.vercel.app/",
         category: "personal"
     }
 };

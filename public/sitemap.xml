@@ -51,6 +51,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://portfolio-shubham-pathak1.vercel.app/project/shonen</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://portfolio-shubham-pathak1.vercel.app/projects</loc>
     <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
