@@ -35,55 +35,54 @@ export interface ProjectDetail {
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
-/*
-    "throttle-talks": {
-        id: "throttle-talks",
-        title: "Throttle Talks",
-        tagline: "High-octane automotive community platform powered by React Native and Firebase with real-time messaging, geolocation, and live forum threads.",
-        timeline: "3 months",
-        role: "Lead Developer",
+    "shonen": {
+        id: "shonen",
+        title: "Shonen",
+        tagline: "A multi-vendor marketplace designed for manga, comics, and collectible enthusiasts with dedicated Customer, Admin, and Seller dashboards.",
+        timeline: "2 months",
+        role: "Full Stack Developer",
         team: "Solo",
-        status: "In Development",
-        overview: "Throttle Talks is a high-octane community platform designed for automotive enthusiasts. It bridges the gap between casual car lovers and hardcore gearheads by providing a real-time discussion forum, news feed, and spec comparison tool. Users can engage in heated debates about engines, share modification tips, or simply show off their rides.",
+        status: "Production Ready",
+        overview: "Shonen is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built for learning the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
         features: [
-            "Real-time Forums: Instant messaging and thread updates using Firebase.",
-            "Garage Showcase: Users can upload and tag their vehicle mods.",
-            "Spec Wars: Compare vehicle specifications side-by-side.",
-            "Event Maps: Locate nearby car meets and track days.",
-            "Expert Corner: Verified mechanics answer technical questions."
+            "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
+            "Consolidated Marketplace: Integrated platform for manga, comics, and high-end action figures.",
+            "Advanced Navigation: Optimized search and category-based filtering.",
+            "Vendor Management: Infrastructure supporting individual merchants and enterprise stores.",
+            "Dispute Module: Integrated system for handling and resolving transaction issues.",
+            "Data Integrity: Backend-synchronized cart and wishlist with cross-device persistence.",
+            "Security: Robust JWT-based authentication with role-based permissions."
         ],
         whyBuilt: [
-            "Existing automotive forums were outdated and mobile-unfriendly.",
-            "Social media groups lacked organized technical knowledge.",
-            "I wanted to create a dedicated space where the 'signal-to-noise' ratio was high.",
-            "Needed a robust project to master React Native's ecosystem and Expo."
+            "To build a production-grade MERN stack application from scratch.",
+            "Mastering complex multi-role authorization and dashboard architectures.",
+            "Implementing secure payment gateways and asset optimization using Cloudinary.",
+            "Creating a dedicated space for the niche collectible community."
         ],
         techStack: [
-            { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Expo", icon: expoIcon },
-            { name: "Firebase Auth", icon: firebaseAuthIcon },
-            { name: "Cloud Firestore", icon: firebaseCloudstoreIcon },
-            { name: "Firebase Storage", icon: firebaseStorageIcon },
-            { name: "Google Maps API", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
-            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "Express.js", icon: expressIcon },
+            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+            { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
         ],
         impact: [
-            "Designed a scalable architecture capable of handling real-time data for thousands of users.",
-            "Optimized app load times by 40% using lazy loading and caching.",
-            "Solved critical data synchronization issues in real-time chat.",
-            "built a robust notification system for instant updates."
+            "Architected a scalable multi-vendor system with real-time inventory management.",
+            "Implemented a secure Razorpay payment flow with automated order tracking.",
+            "Optimized media delivery using Cloudinary for high-fidelity collectible visuals.",
+            "Designed an intuitive dispute resolution system to ensure platform trust."
         ],
         futurePlans: [
-            "Implement an AI-driven 'Mechanic Bot' for common troubleshooting.",
-            "Add a marketplace for aftermarket parts.",
-            "Launch iOS version (currently Android only).",
-            "Partner with local tracks for exclusive event ticketing."
+            "Implementing a real-time auction system for rare collectibles.",
+            "Mobile app development for seamless on-the-go trading."
         ],
-        image: throttleTalksImage,
-        github: "https://github.com/shubham-pathak1/throttle-talks",
+        image: shonenImage,
+        github: "https://github.com/shubham-pathak1/shonen",
+        liveLink: "https://shonen-app.vercel.app/",
         category: "personal"
     },
-*/
     "krishi-sangam": {
         id: "krishi-sangam",
         title: "Krishi Sangam",
@@ -130,49 +129,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
         github: "https://github.com/shubham-pathak1/krishi-sangam",
         category: "personal"
     },
-    "bastion": {
-        id: "bastion",
-        title: "Bastion",
-        tagline: "Privacy-first distraction blocker for Windows built with Tauri and Rust, featuring system-level app blocking, Pomodoro timers, and secure local storage.",
-        timeline: "Ongoing",
-        role: "Lead Developer",
-        team: "Solo",
-        status: "v0.1-alpha Released",
-        overview: "Bastion is a robust application designed to help users eliminate digital distractions and reclaim their productivity. Currently limited to Windows, it provides system-level blocking of websites and applications without compromising on user data or performance.",
-        features: [
-            "Smart Blocking: Set custom blocklists for websites and desktop applications.",
-            "Ghost Mode: High-efficiency background enforcement using a Rust-only process (<15MB RAM) that persists after the UI is closed.",
-            "Pomodoro Integration: Sync your blocking sessions with focus timers.",
-            "Schedule Mode: Automatically toggle focus mode during work hours.",
-            "Deep Focus: Interactive 'hard-lock' mode to prevent bypassing blocks.",
-            "Privacy First: Local-only data storage with no cloud tracking."
-        ],
-        whyBuilt: [
-            "Most existing blockers are either too easy to bypass or highly intrusive.",
-            "Wanted to explore Tauri 2.0 and its capabilities for system-level integrations.",
-            "Needed a personal tool that combined focus timers with hard-blocking."
-        ],
-        techStack: [
-            { name: "Tauri 2.0", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: rustIcon },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "shadcn/ui", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" } // Placeholder for shadcn
-        ],
-        impact: [
-            "v0.1-alpha has been released. Please visit the release page to download the latest setup file and share your feedback."
-        ],
-        futurePlans: [
-            "Evaluating a migration to Slint to further reduce resource consumption by bypassing WebView instances.",
-            "Refining the core feature set to focus on ultra-lightweight website and application blocking.",
-            "Potential Linux support implementation based on community feedback."
-        ],
-        image: bastionImage,
-        github: "https://github.com/shubham-pathak1/bastion",
-        liveLink: "https://bastion-app.vercel.app/",
-        category: "personal"
-    },
     "ciel": {
         id: "ciel",
         title: "Ciel",
@@ -215,6 +171,49 @@ export const projectDetails: Record<string, ProjectDetail> = {
         image: cielImage,
         github: "https://github.com/shubham-pathak1/ciel",
         liveLink: "https://ciel-app.vercel.app",
+        category: "personal"
+    },
+    "bastion": {
+        id: "bastion",
+        title: "Bastion",
+        tagline: "Privacy-first distraction blocker for Windows built with Tauri and Rust, featuring system-level app blocking, Pomodoro timers, and secure local storage.",
+        timeline: "Ongoing",
+        role: "Lead Developer",
+        team: "Solo",
+        status: "v0.1-alpha Released",
+        overview: "Bastion is a robust application designed to help users eliminate digital distractions and reclaim their productivity. Currently limited to Windows, it provides system-level blocking of websites and applications without compromising on user data or performance.",
+        features: [
+            "Smart Blocking: Set custom blocklists for websites and desktop applications.",
+            "Ghost Mode: High-efficiency background enforcement using a Rust-only process (<15MB RAM) that persists after the UI is closed.",
+            "Pomodoro Integration: Sync your blocking sessions with focus timers.",
+            "Schedule Mode: Automatically toggle focus mode during work hours.",
+            "Deep Focus: Interactive 'hard-lock' mode to prevent bypassing blocks.",
+            "Privacy First: Local-only data storage with no cloud tracking."
+        ],
+        whyBuilt: [
+            "Most existing blockers are either too easy to bypass or highly intrusive.",
+            "Wanted to explore Tauri 2.0 and its capabilities for system-level integrations.",
+            "Needed a personal tool that combined focus timers with hard-blocking."
+        ],
+        techStack: [
+            { name: "Tauri 2.0", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
+            { name: "Rust", icon: rustIcon },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+            { name: "shadcn/ui", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" } // Placeholder for shadcn
+        ],
+        impact: [
+            "v0.1-alpha has been released. Please visit the release page to download the latest setup file and share your feedback."
+        ],
+        futurePlans: [
+            "Evaluating a migration to Slint to further reduce resource consumption by bypassing WebView instances.",
+            "Refining the core feature set to focus on ultra-lightweight website and application blocking.",
+            "Potential Linux support implementation based on community feedback."
+        ],
+        image: bastionImage,
+        github: "https://github.com/shubham-pathak1/bastion",
+        liveLink: "https://bastion-app.vercel.app/",
         category: "personal"
     },
     "kanha-salad": {
@@ -336,54 +335,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: mewImage,
         github: "https://github.com/shubham-pathak1/mew",
-        category: "personal"
-    },
-    "shonen": {
-        id: "shonen",
-        title: "Shonen",
-        tagline: "A multi-vendor marketplace designed for manga, comics, and collectible enthusiasts with dedicated Customer, Admin, and Seller dashboards.",
-        timeline: "2 months",
-        role: "Full Stack Developer",
-        team: "Solo",
-        status: "Production Ready",
-        overview: "Shonen is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built for learning the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
-        features: [
-            "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
-            "Consolidated Marketplace: Integrated platform for manga, comics, and high-end action figures.",
-            "Advanced Navigation: Optimized search and category-based filtering.",
-            "Vendor Management: Infrastructure supporting individual merchants and enterprise stores.",
-            "Dispute Module: Integrated system for handling and resolving transaction issues.",
-            "Data Integrity: Backend-synchronized cart and wishlist with cross-device persistence.",
-            "Security: Robust JWT-based authentication with role-based permissions."
-        ],
-        whyBuilt: [
-            "To build a production-grade MERN stack application from scratch.",
-            "Mastering complex multi-role authorization and dashboard architectures.",
-            "Implementing secure payment gateways and asset optimization using Cloudinary.",
-            "Creating a dedicated space for the niche collectible community."
-        ],
-        techStack: [
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: expressIcon },
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
-        ],
-        impact: [
-            "Architected a scalable multi-vendor system with real-time inventory management.",
-            "Implemented a secure Razorpay payment flow with automated order tracking.",
-            "Optimized media delivery using Cloudinary for high-fidelity collectible visuals.",
-            "Designed an intuitive dispute resolution system to ensure platform trust."
-        ],
-        futurePlans: [
-            "Implementing a real-time auction system for rare collectibles.",
-            "Mobile app development for seamless on-the-go trading."
-        ],
-        image: shonenImage,
-        github: "https://github.com/shubham-pathak1/shonen",
-        liveLink: "https://shonen-app.vercel.app/",
         category: "personal"
     }
 };
