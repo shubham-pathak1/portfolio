@@ -88,7 +88,7 @@ export const AllProjects = () => {
                                 className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col h-full hover:border-text-secondary/30"
                             >
                                 {/* Image */}
-                                <div className="h-48 overflow-hidden relative bg-surface-hover">
+                                <div className="h-64 overflow-hidden relative bg-surface-hover">
                                     <img
                                         src={project.image}
                                         alt={project.title}
