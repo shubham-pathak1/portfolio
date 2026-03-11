@@ -90,7 +90,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To challenge myself with building a complex B2B marketplace architecture."
         ],
         techStack: [
-            { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "React.js", icon: "https://cdn.jsdelivr.gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
             { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png" },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
@@ -152,7 +152,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Advanced bandwidth management and global speed limits.",
             "Cross-platform support for Linux."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/initial.gif",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png",
         github: "https://github.com/shubham-pathak1/ciel",
         liveLink: "https://ciel-app.vercel.app",
         category: "personal"
