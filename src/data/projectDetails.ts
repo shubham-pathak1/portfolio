@@ -12,7 +12,7 @@ import shlokDatarImage from "../assets/shlok_datar.png";
 import shonenImage from "../assets/shonen.png";
 import expressIcon from "../assets/express.png";
 
-const mewImage = cielImage;
+const mewImage = ""; // No image for mew, rendered differently in UI
 
 export interface ProjectDetail {
     id: string;

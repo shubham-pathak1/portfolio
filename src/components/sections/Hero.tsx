@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
-import profileImage from "../../assets/my_img.jpg";
+
+const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/my_img.jpg?updatedAt=1773242378312";
 
 export const Hero = () => {
     return (
