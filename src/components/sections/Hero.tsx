@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
-
-const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/my_img.jpg?updatedAt=1773242378312";
-
+// Conflict resolved
 export const Hero = () => {
     return (
         <section className="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-12 mt-12 mb-32 min-h-[50vh] md:min-h-[60vh] py-12">
@@ -69,7 +67,7 @@ export const Hero = () => {
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-border/50 relative z-10 p-1 group">
                     <div className="w-full h-full rounded-2xl overflow-hidden relative bg-surface">
                         <img
-                            src={profileImage}
+                            src="https://ik.imagekit.io/shubhampathak/portfolio/my_img.jpg?tr=w-800,q-100"
                             alt="Shubham Pathak"
                             loading="lazy"
                             decoding="async"
