@@ -60,15 +60,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
             linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px)
           `,
                     backgroundSize: "30px 30px",
-                    maskImage: "radial-gradient(500px circle at var(--spotlight-x) var(--spotlight-y), black, transparent 80%)",
-                    WebkitMaskImage: "radial-gradient(500px circle at var(--spotlight-x) var(--spotlight-y), black, transparent 80%)",
                 }}
             />
             {/* Spotlight Glow */}
             <div
                 className="fixed inset-0 z-[1] pointer-events-none transition-opacity duration-300 motion-reduce:opacity-0"
                 style={{
-                    background: "radial-gradient(800px circle at var(--spotlight-x) var(--spotlight-y), var(--glow-color), transparent 60%)"
+                    background: "radial-gradient(600px circle at var(--spotlight-x) var(--spotlight-y), var(--glow-color), transparent 40%)"
                 }}
             />
             <main className="max-w-[900px] mx-auto px-6 py-10 pb-32 relative z-10">

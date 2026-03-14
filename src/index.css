@@ -19,8 +19,8 @@
     --spotlight-y: 50vh;
     
     /* Background Patterns */
-    --glow-color: rgba(0,0,0,0.06);
-    --grid-line-color: rgba(24, 24, 27, 0.12);
+    --glow-color: rgba(0,0,0,0.03);
+    --grid-line-color: rgba(24, 24, 27, 0.08);
   }
 
   .dark {
@@ -35,8 +35,8 @@
     --shadow-hover: 0 0 0 1px #3f3f46;
     
     /* Background Patterns Dark */
-    --glow-color: rgba(255,255,255,0.08);
-    --grid-line-color: rgba(244, 244, 245, 0.15);
+    --glow-color: rgba(255,255,255,0.03);
+    --grid-line-color: rgba(244, 244, 245, 0.1);
   }
 
   body {
