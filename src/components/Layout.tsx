@@ -51,15 +51,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="min-h-screen relative isolate">
 
-            {/* Fixed Background */}
+            {/* Pixel/Dot Background */}
             <div
                 className="fixed inset-0 z-0 pointer-events-none transition-colors duration-500"
                 style={{
-                    backgroundImage: `
-            linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px)
-          `,
-                    backgroundSize: "30px 30px",
+                    backgroundImage: "radial-gradient(var(--grid-line-color) 1px, transparent 1px)",
+                    backgroundSize: "20px 20px",
                 }}
             />
             {/* Spotlight Glow */}
