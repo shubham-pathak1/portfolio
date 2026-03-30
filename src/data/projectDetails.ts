@@ -48,10 +48,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png" },
+            { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/firebase_auth.png" }
+            { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/firebase_auth.png?tr=f-auto,lo-true" }
         ],
         impact: [
             "Architected a scalable multi-vendor system with real-time inventory management.",
@@ -63,7 +63,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Implementing a real-time auction system for rare collectibles.",
             "Mobile app development for seamless on-the-go trading."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/shonen.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/shonen.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/shonen",
         liveLink: "https://shonen-app.vercel.app/",
         category: "personal"
@@ -93,7 +93,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "React.js", icon: "https://cdn.jsdelivr.gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png" },
+            { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
             { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
         ],
@@ -110,7 +110,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Voice-assisted listing for farmers who cannot type.",
             "Expansion to 3 neighboring districts."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/krishi_sangam.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/krishi_sangam.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/krishi-sangam",
         category: "personal"
     },
@@ -137,7 +137,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png" },
+            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
         ],
@@ -153,7 +153,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Advanced bandwidth management and global speed limits.",
             "Cross-platform support for Linux."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/ciel",
         liveLink: "https://ciel-app.vercel.app",
         category: "personal"
@@ -182,7 +182,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         techStack: [
             { name: "Tauri 2.0", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png" },
+            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
             { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
@@ -196,7 +196,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Refining the core feature set to focus on ultra-lightweight website and application blocking.",
             "Potential Linux support implementation based on community feedback."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/bastion.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/bastion.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/bastion",
         liveLink: "https://bastion-app.vercel.app/",
         category: "personal"
@@ -238,7 +238,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Advanced personalized nutrition tracking for subscribers.",
             "Mobile app development for push notifications and instant re-ordering."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/kanha_salad.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/kanha_salad.png?tr=f-auto,lo-true",
         github: "", // Client project, no public repo
         liveLink: "https://kanhasalad.in/",
         category: "freelance"
@@ -280,7 +280,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Blog section for sharing rhythmic insights and teaching materials.",
             "Calendar integration for real-time availability checking."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar.png",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar.png?tr=f-auto,lo-true",
         github: "", // Client project, no public repo
         liveLink: "https://shlokdatar.vercel.app/",
         category: "freelance"
@@ -306,7 +306,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To explore Slint as a lightweight alternative to Electron-based UIs."
         ],
         techStack: [
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png" },
+            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
         ],
         impact: [
@@ -318,7 +318,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Audio visualization support.",
             "Interactive web-based wallpapers support."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/initial.gif",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/initial.gif?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/mew",
         category: "personal"
     }

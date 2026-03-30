@@ -67,7 +67,7 @@ export const Hero = () => {
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-border/50 relative z-10 p-1 group">
                     <div className="w-full h-full rounded-2xl overflow-hidden relative bg-surface">
                         <img
-                            src="https://ik.imagekit.io/shubhampathak/portfolio/my_img.jpg?updatedAt=1773242378312&tr=w-800,q-100"
+                            src="https://ik.imagekit.io/shubhampathak/portfolio/my_img.jpg?updatedAt=1773242378312&tr=w-800,q-100,f-auto,lo-true"
                             alt="Shubham Pathak"
                             loading="lazy"
                             decoding="async"
