@@ -88,13 +88,13 @@ export const AllProjects = () => {
                                 className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col h-full hover:border-text-secondary/30"
                             >
                                 {/* Image */}
-                                <div className="h-64 overflow-hidden relative bg-surface-hover">
+                                <div className={`h-64 overflow-hidden relative bg-surface-hover ${project.id === 'fenrir' ? 'p-12' : ''}`}>
                                     <img
                                         src={project.image}
                                         alt={project.title}
                                         loading="lazy"
                                         decoding="async"
-                                className={`w-full h-full ${['ciel', 'bastion', 'fenrir'].includes(project.id) ? 'object-cover object-top' : 'object-cover'} transition-transform duration-500`}
+                                className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : project.id === 'fenrir' ? 'object-contain' : 'object-cover'} transition-transform duration-500`}
                                     />
                                     {/* Status Badge for In-Dev */}
                                     {isInDevelopmentStatus(project.status) && (

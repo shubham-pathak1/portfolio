@@ -16,6 +16,7 @@ export interface ProjectDetail {
     image: string;
     github: string;
     liveLink?: string;
+    ctaLabel?: string;
     category: 'personal' | 'freelance';
 }
 
@@ -318,9 +319,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Audio visualization support.",
             "Interactive web-based wallpapers support."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/initial.gif?tr=f-auto,lo-true",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/fenrir_logo.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/fenrir",
         liveLink: "https://github.com/shubham-pathak1/fenrir/releases/tag/v0.1.0-alpha.1",
+        ctaLabel: "Download Release",
         category: "personal"
     }
 };

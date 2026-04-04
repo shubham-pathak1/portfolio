@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SEO } from "../components/SEO";
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
 import { useTheme } from "../hooks/useTheme";
@@ -106,7 +106,7 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    <div className="mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video">
+                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video ${project.id === 'fenrir' ? 'p-12 md:p-24' : ''}`}>
                         <motion.img
                             layoutId={`project-image-${project.id}`}
                             src={project.image}
@@ -114,7 +114,7 @@ export const ProjectDetail = () => {
                             loading="lazy"
                             decoding="async"
                             transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full ${project.id === 'fenrir' ? 'object-contain' : 'object-cover'}`}
                         />
                     </div>
 
@@ -209,8 +209,12 @@ export const ProjectDetail = () => {
                                             rel="noopener noreferrer"
                                             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
                                         >
-                                            <ExternalLink size={18} />
-                                            Visit Site
+                                            {project.ctaLabel?.includes("Download") ? (
+                                                <Download size={18} />
+                                            ) : (
+                                                <ExternalLink size={18} />
+                                            )}
+                                            {project.ctaLabel || "Visit Site"}
                                         </a>
                                     )}
                                     {project.github && (
