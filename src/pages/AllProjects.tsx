@@ -94,7 +94,7 @@ export const AllProjects = () => {
                                         alt={project.title}
                                         loading="lazy"
                                         decoding="async"
-                                        className={`w-full h-full ${['ciel', 'bastion'].includes(project.id) ? 'object-cover object-top' : 'object-cover'} transition-transform duration-500`}
+                                className={`w-full h-full ${['ciel', 'bastion', 'fenrir'].includes(project.id) ? 'object-cover object-top' : 'object-cover'} transition-transform duration-500`}
                                     />
                                     {/* Status Badge for In-Dev */}
                                     {isInDevelopmentStatus(project.status) && (

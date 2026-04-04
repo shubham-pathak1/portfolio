@@ -285,15 +285,15 @@ export const projectDetails: Record<string, ProjectDetail> = {
         liveLink: "https://shlokdatar.vercel.app/",
         category: "freelance"
     },
-    "mew": {
-        id: "mew",
-        title: "Mew",
-        tagline: "High-performance Rust-based live wallpaper engine with Slint UI, currently in development.",
+    "fenrir": {
+        id: "fenrir",
+        title: "Fenrir",
+        tagline: "High-performance Rust-based live wallpaper engine with Slint UI, optimized for minimal resource impact.",
         timeline: "Recent",
         role: "Lead Developer",
         team: "Solo",
-        status: "In Development",
-        overview: "Mew is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage while delivering smooth, interactive desktop backgrounds.",
+        status: "v0.1.0-alpha.1 Released",
+        overview: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage while delivering smooth, interactive desktop backgrounds.",
         features: [
             "Rust-Based Engine: Native performance with near-zero CPU usage when idle.",
             "Slint UI: Responsive, touch-friendly interface for managing wallpapers.",
@@ -310,7 +310,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
         ],
         impact: [
-            "Currently in active development phase.",
+            "v0.1.0-alpha.1 release is now available for public testing.",
             "Laying the groundwork for a resource-efficient transparency layer."
         ],
         futurePlans: [
@@ -319,7 +319,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Interactive web-based wallpapers support."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/initial.gif?tr=f-auto,lo-true",
-        github: "https://github.com/shubham-pathak1/mew",
+        github: "https://github.com/shubham-pathak1/fenrir",
+        liveLink: "https://github.com/shubham-pathak1/fenrir/releases/tag/v0.1.0-alpha.1",
         category: "personal"
     }
 };

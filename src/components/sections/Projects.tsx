@@ -97,14 +97,6 @@ export const Projects = () => {
                             className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col"
                         >
                             <div className="h-64 overflow-hidden relative bg-surface-hover/50 flex flex-col items-center justify-end pt-6 px-6">
-                                {project.id === 'mew' ? (
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-surface to-bg opacity-80 backdrop-blur-3xl" />
-                                        <div className="relative z-10 px-6 py-3 rounded-full bg-surface border border-border/50 text-text-primary font-mono text-sm tracking-widest uppercase shadow-xl">
-                                            Case Study Coming Soon
-                                        </div>
-                                    </div>
-                                ) : (
                                     <motion.img
                                         layoutId={`project-image-${project.id}`}
                                         src={project.image}
@@ -114,9 +106,8 @@ export const Projects = () => {
                                         transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                                         className={`w-full h-full object-cover object-top rounded-t-lg shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-500 group-hover:translate-y-[-8px]`}
                                     />
-                                )}
                                 
-                                {project.github && project.id !== 'mew' ? (
+                                {project.github ? (
                                     <div className="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 group-focus-within:translate-y-0 z-20">
                                         <a
                                             href={project.github}
@@ -139,7 +130,7 @@ export const Projects = () => {
                                             <ExternalLink size={16} />
                                         </a>
                                     </div>
-                                ) : project.link && project.id !== 'mew' ? (
+                                ) : project.link ? (
                                     <div className="absolute top-3 right-3 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 group-focus-within:translate-y-0 z-20">
                                         <a
                                             href={project.link}
