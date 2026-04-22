@@ -96,7 +96,7 @@ export const Projects = () => {
                             transition={{ duration: 0.3 }}
                             className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col"
                         >
-                            <div className={`h-64 overflow-hidden relative bg-surface-hover/50 flex flex-col items-center justify-end ${project.id === 'fenrir' ? 'pt-16 px-16' : 'pt-6 px-6'}`}>
+                            <div className={`h-64 overflow-hidden relative bg-surface-hover/50 flex flex-col items-center justify-end ${['fenrir', 'orca'].includes(project.id) ? 'pt-16 px-16' : 'pt-6 px-6'}`}>
                                     <motion.img
                                         layoutId={`project-image-${project.id}`}
                                         src={project.image}
@@ -104,7 +104,7 @@ export const Projects = () => {
                                         loading="lazy"
                                         decoding="async"
                                         transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                                        className={`w-full h-full ${project.id === 'fenrir' ? 'object-contain' : 'object-cover'} object-top rounded-t-lg shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-500 group-hover:translate-y-[-8px]`}
+                                        className={`w-full h-full ${['ciel'].includes(project.id) ? 'object-cover object-top' : ['fenrir', 'orca'].includes(project.id) ? 'object-contain' : 'object-cover'} rounded-t-lg shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-500 group-hover:translate-y-[-8px]`}
                                     />
                                 
                                 {project.github ? (

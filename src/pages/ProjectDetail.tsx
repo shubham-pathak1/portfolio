@@ -106,7 +106,7 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video ${project.id === 'fenrir' ? 'p-12 md:p-24' : ''}`}>
+                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video ${['fenrir', 'orca'].includes(project.id) ? 'p-12 md:p-24' : ''}`}>
                         <motion.img
                             layoutId={`project-image-${project.id}`}
                             src={project.image}
@@ -114,7 +114,7 @@ export const ProjectDetail = () => {
                             loading="lazy"
                             decoding="async"
                             transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                            className={`w-full h-full ${project.id === 'fenrir' ? 'object-contain' : 'object-cover'}`}
+                            className={`w-full h-full ${['fenrir', 'orca'].includes(project.id) ? 'object-contain' : 'object-cover'}`}
                         />
                     </div>
 
@@ -145,6 +145,26 @@ export const ProjectDetail = () => {
                                     ))}
                                 </ul>
                             </section>
+
+                            {/* Screenshots Gallery (if available) */}
+                            {project.screenshots && project.screenshots.length > 0 && (
+                                <section>
+                                    <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                                    <div className="grid gap-8">
+                                        {project.screenshots.map((screenshot, i) => (
+                                            <div key={i} className="rounded-2xl overflow-hidden border border-border bg-surface-hover shadow-sm">
+                                                <img
+                                                    src={screenshot}
+                                                    alt={`${project.title} Screenshot ${i + 1}`}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    className="w-full h-auto object-cover"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
                             <section>
                                 <h2 className="text-2xl font-bold mb-6">Why I Built This</h2>

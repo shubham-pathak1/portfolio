@@ -17,6 +17,7 @@ export interface ProjectDetail {
     github: string;
     liveLink?: string;
     ctaLabel?: string;
+    screenshots?: string[];
     category: 'personal' | 'freelance';
 }
 
@@ -28,7 +29,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "2 months",
         role: "Full Stack Developer",
         team: "Solo",
-        status: "Production Ready",
+        status: "Live",
         overview: "Shonen is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built for learning the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
         features: [
             "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
@@ -118,23 +119,22 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "ciel": {
         id: "ciel",
         title: "Ciel",
-        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrents, and high-quality video downloads.",
+        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrent downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
         status: "v0.1.0 Alpha Released",
-        overview: "Ciel is a high-performance, open-source download manager for Windows built with Tauri and Rust. It provides a clean, bloat-free experience focused on core efficiency and ease of use, replacing separate, bulky tools with a single efficient solution.",
+        overview: "Ciel is a high-performance, open-source download manager for Windows built with Tauri and Rust.",
         features: [
             "Parallel Downloading: Optimized multi-threaded HTTP engine with segment-based chunk management.",
-            "Video Support: Integrated high-resolution video and audio downloads from thousands of platforms.",
             "Torrent Support: Full magnet link support with content preview and metadata polling.",
-            "Clipboard Monitoring: 'Autocatch' technology detects URLs in your clipboard for seamless additions.",
+            "Clipboard Monitoring: Autocatches links from clipboard.",
             "Smart Categorization: Automatically organizes files into Videos, Music, Archives, Software, Documents, and Other.",
-            "Auto-Muxing: Seamlessly merges high-quality video and audio streams for premium quality.",
             "Download Scheduler: Plan your queue to start or pause at specific times for better bandwidth management."
         ],
         whyBuilt: [
-            "Existing download managers are often bloated and heavy on system resources."
+            "I wanted to build a download manager that is lightweight, fast, and has a good UI/UX.",
+            "I also wanted to be it open-source and free to use and support torrent downloads as well."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -144,62 +144,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         impact: [
             "Successfully released v0.1.0 Alpha for public testing.",
-            "Implemented a transparent auto-muxing system for high-quality video/audio merging.",
-            "Architected a privacy-first, offline-first application with zero tracking or telemetry.",
-            "Bundled core binaries for a seamless, technical-free user experience."
         ],
         futurePlans: [
             "Browser extension support for seamless one-click download capturing.",
-            "Developing a 'Lite' version for users with manual binary installations.",
+            "Developing a 'Lite' version for users with manual binary installations.(might release a small tui utility for it)",
             "Advanced bandwidth management and global speed limits.",
             "Cross-platform support for Linux."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/ciel",
         liveLink: "https://ciel-app.vercel.app",
-        category: "personal"
-    },
-    "bastion": {
-        id: "bastion",
-        title: "Bastion",
-        tagline: "Privacy-first distraction blocker for Windows built with Tauri and Rust, featuring system-level app blocking, Pomodoro timers, and secure local storage.",
-        timeline: "Ongoing",
-        role: "Lead Developer",
-        team: "Solo",
-        status: "v0.1-alpha Released",
-        overview: "Bastion is a robust application designed to help users eliminate digital distractions and reclaim their productivity. Currently limited to Windows, it provides system-level blocking of websites and applications without compromising on user data or performance.",
-        features: [
-            "Smart Blocking: Set custom blocklists for websites and desktop applications.",
-            "Ghost Mode: High-efficiency background enforcement using a Rust-only process (<15MB RAM) that persists after the UI is closed.",
-            "Pomodoro Integration: Sync your blocking sessions with focus timers.",
-            "Schedule Mode: Automatically toggle focus mode during work hours.",
-            "Deep Focus: Interactive 'hard-lock' mode to prevent bypassing blocks.",
-            "Privacy First: Local-only data storage with no cloud tracking."
-        ],
-        whyBuilt: [
-            "Most existing blockers are either too easy to bypass or highly intrusive.",
-            "Wanted to explore Tauri 2.0 and its capabilities for system-level integrations.",
-            "Needed a personal tool that combined focus timers with hard-blocking."
-        ],
-        techStack: [
-            { name: "Tauri 2.0", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "shadcn/ui", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" } // Placeholder for shadcn
-        ],
-        impact: [
-            "v0.1-alpha has been released. Please visit the release page to download the latest setup file and share your feedback."
-        ],
-        futurePlans: [
-            "Evaluating a migration to Slint to further reduce resource consumption by bypassing WebView instances.",
-            "Refining the core feature set to focus on ultra-lightweight website and application blocking.",
-            "Potential Linux support implementation based on community feedback."
-        ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/bastion.png?tr=f-auto,lo-true",
-        github: "https://github.com/shubham-pathak1/bastion",
-        liveLink: "https://bastion-app.vercel.app/",
         category: "personal"
     },
     "kanha-salad": {
@@ -247,23 +201,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shlok-datar": {
         id: "shlok-datar",
         title: "Shlok Datar's Portfolio",
-        tagline: "Immersive artist portfolio engineered with Next.js and Framer Motion, delivering high-performance animations and rich media playback for a classical percussionist.",
+        tagline: "A portfolio website for a classical percussionist.",
         timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",
         status: "Live",
-        overview: "An immersive, dark-mode portfolio website for Shlok Datar, a classical Tabla & Dholak artist with over a decade of discipline. The site serves as a digital stage, showcasing his 'Chapters of Mastery' from foundational training to live performances. It features a rich media gallery, event listings for Navratri and classical recitals, and a direct booking interface for collaborations.",
+        overview: "A portfolio website for Shlok Datar, a classical Tabla & Dholak artist. The site serves as a digital portfolio, showcasing his journey and skills. It features a media gallery, event listings.",
         features: [
-            "Immersive Dark UI: A sleek, dark-themed aesthetic that reflects the depth and seriousness of the art form.",
-            "Rich Media Gallery: High-quality integration of performance photos and videos.",
-            "Event Timeline: Showcasing 15+ live stages and upcoming performances.",
-            "Service Showcase: Dedicated sections for Garba, Studio Recordings, and Teaching.",
-            "Smooth Transitions: High-performance animations powered by Framer Motion."
+            "Properly showcases his journey and skills.",
         ],
         whyBuilt: [
-            "To establish a professional digital presence for a growing artist.",
-            "To create a central hub for booking inquiries and portfolio showcasing.",
-            "To reflect the artist's blend of traditional discipline and modern execution through design."
+            "To establish a digital presence for an artist.",
         ],
         techStack: [
             { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
@@ -272,13 +220,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Framer Motion", icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg" }
         ],
         impact: [
-            "Increased professional booking inquiries by 40% post-launch.",
-            "Provided a shareable professional portfolio for international collaborations.",
+            "Increased booking inquiries post-launch.",
+            "Provided a shareable portfolio for collaborations.",
             "Successfully showcased the artist's versatility across Classical, Garba, and Studio work."
         ],
         futurePlans: [
             "Integration of an audio player for direct streaming of studio recordings.",
-            "Blog section for sharing rhythmic insights and teaching materials.",
+            "Blog section for sharing indie music.",
             "Calendar integration for real-time availability checking."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar.png?tr=f-auto,lo-true",
@@ -289,40 +237,80 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "fenrir": {
         id: "fenrir",
         title: "Fenrir",
-        tagline: "High-performance Rust-based live wallpaper engine with Slint UI, optimized for minimal resource impact.",
+        tagline: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust, utilizing Slint for a lightweight cross-platform UI.",
         timeline: "Recent",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.0-alpha.1 Released",
-        overview: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage while delivering smooth, interactive desktop backgrounds.",
+        status: "v0.1.0-alphaReleased",
+        overview: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage.",
         features: [
-            "Rust-Based Engine: Native performance with near-zero CPU usage when idle.",
+            "Rust-Based Engine: Native performance with lower CPU usage comapared to currently available live wallpaper engines.",
             "Slint UI: Responsive, touch-friendly interface for managing wallpapers.",
             "Live Wallpapers: Support for video and interactive scenes.",
-            "Multi-Monitor Support: Seamless wallpaper management across multiple displays."
         ],
         whyBuilt: [
-            "Existing live wallpaper engines are often resource-heavy.",
-            "Wanted to build a purely native Rust application with modern UI.",
-            "To explore Slint as a lightweight alternative to Electron-based UIs."
+            "Existing live wallpaper engines are kinda bloated and resource heavy.",
+            "Wanted to build a purely native Rust application whilst also leveraging slint for making a true cross platform and lightweight UI.",
         ],
         techStack: [
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
         ],
         impact: [
-            "v0.1.0-alpha.1 release is now available for public testing.",
-            "Laying the groundwork for a resource-efficient transparency layer."
+            "v0.1.0-alpha release is now available for public testing.",
         ],
         futurePlans: [
             "Workshop integration for community-created wallpapers.",
-            "Audio visualization support.",
-            "Interactive web-based wallpapers support."
+            "Adding web support(for yt videos)",
+            "Adding linux support"
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/fenrir_logo.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/fenrir",
         liveLink: "https://github.com/shubham-pathak1/fenrir/releases/tag/v0.1.0-alpha.1",
         ctaLabel: "Download Release",
+        category: "personal"
+    },
+    "orca": {
+        id: "orca",
+        title: "Orca",
+        tagline: "A lightweight, performant desktop music player for local files, built with Rust and the Slint.",
+        timeline: "Ongoing",
+        role: "Lead Developer",
+        team: "Solo",
+        status: "Alpha 0.1.0 in Development",
+        overview: "Orca is a high-performance desktop music player designed for audiophiles who value both quality and efficiency. Built with Rust, it features an ultra-low resource 'Phantom Mode' that minimizes system impact (<1% CPU) while hidden.",
+        features: [
+            "Phantom Mode: Extreme resource optimization (<1% CPU, <15MB RAM) when minimized to tray.",
+            "Hi-Fi Support: Native playback of lossless formats including FLAC, WAV, ALAC, and AIFF.",
+            "Lyrics Engine: Integrated support for synced (.lrc) and static text lyrics.",
+            "Advanced Metadata: Real-time display of audio sample rates, bitrates, and bit depths.",
+            "Global Shortcuts: System-wide playback and window management controls.",
+            "Fast Indexing: Fast library scanning for large local music collections."
+        ],
+        whyBuilt: [
+            "To solve the excessive resource consumption of modern Electron/Tauri based music players and making something which is lightweight but doesnt compromise on features or uiux.",
+            "To provide a high-fidelity, native audio experience on Windows using Rust's safety and speed."
+        ],
+        techStack: [
+            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
+            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
+            { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
+            { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
+        ],
+        impact: [
+            "to be launched, current under development"
+        ],
+        futurePlans: [
+            "Advanced EQ and DSP filter implementation.",
+            "Cloud metadata enrichment and album art fetching.",
+            "Playlist management and library organization tools."
+        ],
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
+        screenshots: [
+            "https://ik.imagekit.io/shubhampathak/portfolio/main_screen.png?tr=f-auto,lo-true",
+            "https://ik.imagekit.io/shubhampathak/portfolio/main_player.png?tr=f-auto,lo-true"
+        ],
+        github: "https://github.com/shubham-pathak1/orca",
         category: "personal"
     }
 };
