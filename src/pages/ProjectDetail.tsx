@@ -106,7 +106,7 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border bg-surface-hover aspect-video ${['fenrir', 'orca'].includes(project.id) ? 'p-12 md:p-24' : ''}`}>
+                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border aspect-video ${['fenrir', 'orca'].includes(project.id) ? 'bg-zinc-950 p-12 md:p-24' : 'bg-surface-hover'}`}>
                         <motion.img
                             layoutId={`project-image-${project.id}`}
                             src={project.image}

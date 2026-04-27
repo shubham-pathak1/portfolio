@@ -96,7 +96,7 @@ export const Projects = () => {
                             transition={{ duration: 0.3 }}
                             className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col"
                         >
-                            <div className={`h-64 overflow-hidden relative bg-surface-hover/50 flex flex-col items-center justify-end ${['fenrir', 'orca'].includes(project.id) ? 'pt-16 px-16' : 'pt-6 px-6'}`}>
+                            <div className={`h-64 overflow-hidden relative ${['fenrir', 'orca'].includes(project.id) ? 'bg-zinc-950 pt-16 px-16' : 'bg-surface-hover/50 pt-6 px-6'} flex flex-col items-center justify-end`}>
                                     <motion.img
                                         layoutId={`project-image-${project.id}`}
                                         src={project.image}

@@ -88,7 +88,7 @@ export const AllProjects = () => {
                                 className="group rounded-2xl bg-surface border border-border overflow-hidden transition-colors duration-300 flex flex-col h-full hover:border-text-secondary/30"
                             >
                                 {/* Image */}
-                                <div className={`h-64 overflow-hidden relative bg-surface-hover ${['fenrir', 'orca'].includes(project.id) ? 'p-12' : ''}`}>
+                                <div className={`h-64 overflow-hidden relative ${['fenrir', 'orca'].includes(project.id) ? 'bg-zinc-950 p-12' : 'bg-surface-hover'}`}>
                                     <img
                                         src={project.image}
                                         alt={project.title}
