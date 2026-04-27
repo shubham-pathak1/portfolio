@@ -71,7 +71,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Quote Section */}
                 <div className="mt-32 py-16 relative">
-                    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-16 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                     <div className="text-center max-w-2xl mx-auto px-4">
                         <blockquote className="text-lg md:text-xl font-medium text-text-primary leading-relaxed tracking-tight">
                             "Programs must be written for people to read, and only incidentally for machines to execute."
