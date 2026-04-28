@@ -94,7 +94,7 @@ export const About = () => {
                                             ) : (
                                                 <img
                                                     src={skill.icon}
-                                                    className={`w-5 h-5 transition-all duration-300 ${skill.darkInvert ? 'dark:invert' : ''} grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110`}
+                                                    className="w-5 h-5 transition-all duration-300 grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110"
                                                     alt={skill.name}
                                                     loading="lazy"
                                                     decoding="async"
