@@ -10,7 +10,7 @@ export const About = () => {
     const skills = [
         { id: "react", name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { id: "typescript", name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { id: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", darkInvert: true },
+        { id: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
         { id: "nodejs", name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { id: "rust", name: "Rust", icon: rustIcon },
         { id: "linux", name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
@@ -76,16 +76,30 @@ export const About = () => {
                                                 transition: { type: "spring", stiffness: 400, damping: 25 }
                                             }}
                                             aria-label={skill.name}
-                                            title={skill.name}
                                             className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
-                                            <img
-                                                src={skill.icon}
-                                                className={`w-5 h-5 transition-all duration-300 ${skill.darkInvert ? 'dark:invert' : ''} grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110`}
-                                                alt={skill.name}
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
+                                            {skill.id === 'nextjs' ? (
+                                                <>
+                                                    <img 
+                                                        src="https://cdn.simpleicons.org/nextdotjs/000000" 
+                                                        alt={skill.name} 
+                                                        className="w-5 h-5 object-contain transition-all duration-300 dark:hidden grayscale group-hover/skill:grayscale-0" 
+                                                    />
+                                                    <img 
+                                                        src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" 
+                                                        alt={skill.name} 
+                                                        className="w-5 h-5 object-contain transition-all duration-300 hidden dark:block grayscale group-hover/skill:grayscale-0" 
+                                                    />
+                                                </>
+                                            ) : (
+                                                <img
+                                                    src={skill.icon}
+                                                    className={`w-5 h-5 transition-all duration-300 ${skill.darkInvert ? 'dark:invert' : ''} grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110`}
+                                                    alt={skill.name}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                />
+                                            )}
                                         </motion.button>
 
                                         <AnimatePresence>
@@ -126,7 +140,6 @@ export const About = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Open LinkedIn profile"
-                                    title="LinkedIn"
                                     className="text-text-secondary hover:text-text-primary transition-colors"
                                 >
                                     <Linkedin size={22} />
@@ -134,7 +147,6 @@ export const About = () => {
                                 <a
                                     href="mailto:shubhamxkcd@gmail.com"
                                     aria-label="Send an email"
-                                    title="Email"
                                     className="text-text-secondary hover:text-text-primary transition-colors"
                                 >
                                     <Mail size={22} />
@@ -162,7 +174,6 @@ export const About = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Open LinkedIn profile"
-                                    title="LinkedIn"
                                     className="text-text-secondary hover:text-text-primary transition-all p-1.5"
                                 >
                                     <Linkedin size={18} />
@@ -170,7 +181,6 @@ export const About = () => {
                                 <a
                                     href="mailto:shubhamxkcd@gmail.com"
                                     aria-label="Send an email"
-                                    title="Email"
                                     className="text-text-secondary hover:text-text-primary transition-all p-1.5"
                                 >
                                     <Mail size={18} />

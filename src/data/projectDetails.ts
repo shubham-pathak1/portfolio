@@ -298,7 +298,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "to be launched, current under development"
+            "to be launched, currently under development"
         ],
         futurePlans: [
             "Advanced EQ and DSP filter implementation.",
