@@ -47,12 +47,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Creating a dedicated space for the niche collectible community."
         ],
         techStack: [
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "Redux", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/redux-original.svg" },
+            { name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
             { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+            { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" },
+            { name: "Razorpay", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/razorpay.png" },
             { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/firebase_auth.png?tr=f-auto,lo-true" }
         ],
         impact: [
@@ -93,11 +94,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To challenge myself with building a complex B2B marketplace architecture."
         ],
         techStack: [
-            { name: "React.js", icon: "https://cdn.jsdelivr.gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "React.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
             { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+            { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" }
         ],
         impact: [
             "Onboarded 50+ local farmers during the pilot phase.",
@@ -139,8 +140,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" }
         ],
         impact: [
             "Successfully released v0.1.0 Alpha for public testing.",
@@ -178,9 +179,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To provide a premium, meaningful user experience that reflects the brand's 'organic conscience'."
         ],
         techStack: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+            { name: "Next.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nextjs-original.svg", isDarkIcon: true },
+            { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
+            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" }
         ],
         impact: [
             "Successfully launched and currently serving customers in Vadodara.",
@@ -214,10 +215,10 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "To establish a digital presence for an artist.",
         ],
         techStack: [
-            { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", isDarkIcon: true },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "Framer Motion", icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg" }
+            { name: "Next.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nextjs-original.svg", isDarkIcon: true },
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" },
+            { name: "Framer Motion", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/framer-icon.svg" }
         ],
         impact: [
             "Increased booking inquiries post-launch.",
@@ -254,7 +255,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         techStack: [
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
+            { name: "Slint", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/slint-logo-square-light.svg" },
         ],
         impact: [
             "v0.1.0-alpha release is now available for public testing.",
@@ -293,7 +294,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         techStack: [
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Slint", icon: "https://slint.dev/logo/slint-logo-square-light.svg" },
+            { name: "Slint", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/slint-logo-square-light.svg" },
             { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],

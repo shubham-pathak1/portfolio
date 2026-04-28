@@ -8,12 +8,12 @@ export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     const skills = [
-        { id: "react", name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { id: "typescript", name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { id: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { id: "nodejs", name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { id: "react", name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+        { id: "typescript", name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
+        { id: "nextjs", name: "Next.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nextjs-original.svg" },
+        { id: "nodejs", name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
         { id: "rust", name: "Rust", icon: rustIcon },
-        { id: "linux", name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
+        { id: "linux", name: "Linux", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/linux-original.svg" }
     ];
 
     return (
@@ -79,18 +79,11 @@ export const About = () => {
                                             className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
                                             {skill.id === 'nextjs' ? (
-                                                <>
-                                                    <img 
-                                                        src="https://cdn.simpleicons.org/nextdotjs/000000" 
-                                                        alt={skill.name} 
-                                                        className="w-5 h-5 object-contain transition-all duration-300 dark:hidden grayscale group-hover/skill:grayscale-0" 
-                                                    />
-                                                    <img 
-                                                        src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" 
-                                                        alt={skill.name} 
-                                                        className="w-5 h-5 object-contain transition-all duration-300 hidden dark:block grayscale group-hover/skill:grayscale-0" 
-                                                    />
-                                                </>
+                                                <img 
+                                                    src={skill.icon} 
+                                                    alt={skill.name} 
+                                                    className="w-5 h-5 object-contain transition-all duration-300 dark:invert grayscale group-hover/skill:grayscale-0" 
+                                                />
                                             ) : (
                                                 <img
                                                     src={skill.icon}

@@ -19,15 +19,16 @@ const experiences = [
         website: "https://redsparkinfo.com/",
         isCurrent: true,
         technologies: [
-            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
             { name: "Express.js", icon: expressIcon },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-            { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-            { name: "Vercel", icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" },
-            { name: "Bun", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bun/bun-original.svg" },
-            { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
+            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" },
+            { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/firebase-plain.svg" },
+            { name: "Vercel", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/vercel-icon.svg" },
+            { name: "Bun", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/bun-original.svg" },
+            { name: "Postman", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/postman-original.svg" },
+            { name: "Razorpay", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/razorpay.png" }
         ],
         description: [
             "Optimizing website and application performance, resulting in improved user experience and system efficiency.",
@@ -45,10 +46,10 @@ const experiences = [
         website: "https://www.boltiot.com/",
         isCurrent: false,
         technologies: [
-            { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-            { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
+            { name: "HTML5", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/html5-original.svg" },
+            { name: "CSS3", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/css3-original.svg" },
+            { name: "JavaScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/javascript-original.svg" },
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" }
         ],
         description: [
             "Architected and developed complex frontend infrastructure for the platform, ensuring maximum maintainability and scalability.",
@@ -171,7 +172,7 @@ export const Experience = () => {
                                                                 )}
                                                             </motion.button>
 
-                                                            <AnimatePresence mode="wait">
+                                                            <AnimatePresence>
                                                                 {hoveredTech === `${exp.id}-${tech.name}` && (
                                                                     <motion.div
                                                                         initial={{ opacity: 0, y: 10, x: "-50%" }}
