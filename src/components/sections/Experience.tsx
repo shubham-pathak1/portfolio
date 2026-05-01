@@ -73,7 +73,7 @@ export const Experience = () => {
     const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
     return (
-        <section className="mb-8">
+        <section className="mb-20">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
