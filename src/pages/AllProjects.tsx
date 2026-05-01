@@ -20,7 +20,7 @@ export const AllProjects = () => {
         <Layout>
             <SEO
                 title="All Projects"
-                description="A comprehensive list of my open-source projects, freelance work, and experiments."
+                description="A full list of things I've built—from large-scale tools to late-night experiments."
                 url="https://portfolio-shubham-pathak1.vercel.app/projects"
             />
 
@@ -36,11 +36,11 @@ export const AllProjects = () => {
                     </Link>
                     <div className="flex flex-col gap-8 items-center text-center mt-4">
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary">
-                                All Projects
+                            <h1 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
+                                Projects
                             </h1>
-                            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-                                A complete archive of my engineering journey, featuring open-source tools, freelance products, and experimental engines.
+                            <p className="mt-4 text-text-secondary text-sm max-w-2xl mx-auto leading-relaxed">
+                                A full list of things I've built—from large-scale tools to late-night experiments.
                             </p>
                         </div>
 

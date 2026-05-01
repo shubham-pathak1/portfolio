@@ -41,6 +41,10 @@
 
   body {
     @apply bg-bg text-text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
   }
 
   :where(a, button, input, textarea, select, [tabindex]):focus-visible {

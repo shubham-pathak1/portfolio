@@ -20,7 +20,7 @@ export const Projects = () => {
     const isInDevelopmentStatus = (status: string) => status.toLowerCase().includes("development");
 
     return (
-        <section id="projects" className="mb-32">
+        <section id="projects" className="mb-8">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}

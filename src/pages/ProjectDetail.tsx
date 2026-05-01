@@ -180,11 +180,11 @@ export const ProjectDetail = () => {
 
                             <section>
                                 <h2 className="text-2xl font-bold mb-6">After Launch & Impact</h2>
-                                <div className="grid gap-4">
+                                <div className="space-y-4 text-text-secondary leading-relaxed">
                                     {project.impact.map((item, i) => (
-                                        <div key={i} className="p-5 rounded-xl bg-surface-hover/50 border border-border flex gap-4 items-center">
-                                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                                            <p className="text-text-secondary font-medium">{item}</p>
+                                        <div key={i} className="flex gap-3 items-start">
+                                            <span className="text-text-primary text-xl leading-none">•</span>
+                                            <p>{item}</p>
                                         </div>
                                     ))}
                                 </div>

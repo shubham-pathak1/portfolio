@@ -73,7 +73,7 @@ export const Experience = () => {
     const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
     return (
-        <section className="mb-32">
+        <section className="mb-8">
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -84,7 +84,7 @@ export const Experience = () => {
                 <h2 className="text-2xl font-bold text-text-primary mb-2 tracking-tight">Experience</h2>
             </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-0">
                 {displayedExperiences.map((exp, index) => {
                     const isExpanded = expandedJobs.includes(exp.id);
                     return (
@@ -94,51 +94,55 @@ export const Experience = () => {
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            className="group"
+                            className={`group py-4 transition-all ${isExpanded ? 'bg-surface/30 px-6 -mx-6 rounded-xl' : ''}`}
                         >
                             {/* Header Row */}
                             <div 
-                                className="flex flex-col md:flex-row md:items-start justify-between gap-2 cursor-pointer"
+                                className="flex justify-between items-start gap-4 cursor-pointer"
                                 onClick={() => toggleJob(exp.id)}
                             >
-                                <div className="space-y-1">
-                                    <div className="flex items-center gap-3">
-                                        <h3 className="text-xl font-bold text-text-primary tracking-tight group-hover:text-text-primary transition-colors">
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-0.5">
+                                        <h3 className="text-lg font-bold text-text-primary tracking-tight">
                                             {exp.company}
                                         </h3>
+                                        
                                         {exp.isCurrent && (
-                                            <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] font-bold text-text-primary uppercase tracking-wider">
+                                            <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold text-text-primary uppercase tracking-wider">
                                                 Working
                                             </span>
                                         )}
-                                        <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/60 transition-all duration-300 pointer-events-none">
-                                            {isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+
+                                        {/* Desktop Arrow */}
+                                        <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/40 transition-all duration-300">
+                                            {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                                         </div>
+
+                                        {/* Mobile Arrow */}
                                         <div className="md:hidden">
                                             <motion.div 
                                                 variants={{
                                                     initial: { opacity: 0, x: -2 },
-                                                    view: { 
-                                                        opacity: 0.7,
-                                                        x: 0,
-                                                        transition: { duration: 0.4 }
-                                                    }
+                                                    view: { opacity: 0.4, x: 0 }
                                                 }}
                                                 initial="initial"
                                                 whileInView="view"
                                                 viewport={{ once: false, amount: 0.4 }}
-                                                className="text-text-secondary/60 transition-all duration-300 pointer-events-none"
+                                                className="text-text-secondary/40"
                                             >
-                                                {isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+                                                {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                                             </motion.div>
                                         </div>
                                     </div>
-                                    <div className="text-sm text-text-primary font-medium">
+                                    <div className="text-xs text-text-secondary font-medium">
                                         {exp.role}
                                     </div>
                                 </div>
-                                <div className="flex flex-col md:items-end text-left md:text-right">
-                                    <div className="text-sm text-text-primary font-medium">{exp.duration}</div>
+
+                                <div className="text-right flex-shrink-0 pt-0.5">
+                                    <div className="text-xs text-text-primary font-medium tracking-tight">
+                                        {exp.duration}
+                                    </div>
                                     <div className="text-xs text-text-secondary font-medium">
                                         {exp.location}
                                     </div>
