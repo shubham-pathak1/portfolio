@@ -1,8 +1,8 @@
 # Shubham Pathak
 
-Personal engineering archive and portfolio. 
+Personal engineering portfolio. 
 
-## Stack
+## Tech Stack
 - **Core:** React, TypeScript, Rust, Tauri, Go
 - **UI/UX:** Framer Motion, Tailwind CSS, Figma
 - **Database:** PostgreSQL, MongoDB, SQLite, Firebase
@@ -14,7 +14,7 @@ bun install
 bun run dev
 ```
 
-## Engineering Projects
+## Things i've built
 - **Shonen**: E-commerce ecosystem with modular admin, seller, and consumer dashboards. (MERN)
 - **Ciel**: Rust-based download manager (Tauri). Native HTTP and Torrent support.
 - **Zeno**: Cross-platform LAN file transfer (Go/Kotlin). Desktop tray, Android app, and Web UI.
@@ -23,7 +23,7 @@ bun run dev
 ## Contact
 - **Email:** shubhamxkcd@gmail.com
 - **LinkedIn:** [linkedin.com/in/shubham-pathak-05366b272](https://www.linkedin.com/in/shubham-pathak-05366b272/)
-- **Site:** [shubham-pathak.vercel.app](https://shubham-pathak.vercel.app)
+- **Site:** [shubham-pathak.vercel.app](https://shubhampathak.vercel.app)
 
 ---
 *Open to collaborating on systems that solve actual problems.*
