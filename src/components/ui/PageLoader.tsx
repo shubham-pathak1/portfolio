@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import loaderAnimation from "../../assets/initial.gif";
+
 
 interface PageLoaderProps {
     visible: boolean;
@@ -29,7 +29,7 @@ export const PageLoader = ({ visible }: PageLoaderProps) => {
                             className="flex flex-col items-center gap-3"
                         >
                             <motion.img
-                                src={loaderAnimation}
+                                src="https://ik.imagekit.io/shubhampathak/portfolio/initial.gif"
                                 alt="Loading"
                                 initial={{ scale: 0.95, opacity: 0.88 }}
                                 animate={{ scale: 1, opacity: 1 }}
