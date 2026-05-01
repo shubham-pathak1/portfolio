@@ -10,21 +10,21 @@ interface SEOProps {
 }
 
 export const SEO = ({
-    title = "Shubham Pathak | Software Engineer & Freelance Developer Vadodara",
-    description = "Full-stack developer and freelancer based in Vadodara, Gujarat. Specialized in Front-end (React) and Back-end (Rust/Node.js). Hire for high-performance software systems.",
+    title = "Shubham Pathak | Full Stack Developer",
+    description = "Software Engineer and Full-stack Developer based in Vadodara, Gujarat. Specialized in React, TypeScript, and Rust. Engineering high-performance software systems.",
     image = "/favicon.png",
     url = "https://shubhampathak.vercel.app/",
     type = "website",
     children
 }: SEOProps) => {
-    const siteTitle = title === "Shubham Pathak | Software Engineer & Freelance Developer Vadodara" ? title : `${title} | Shubham Pathak`;
+    const siteTitle = title === "Shubham Pathak | Full Stack Developer" ? title : `${title} | Shubham Pathak`;
 
     return (
         <Helmet>
             {/* Basic Meta Tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={description} />
-            <meta name="keywords" content="Shubham Pathak, Software Engineer Vadodara, Full Stack Developer India, Front End Developer Gujarat, Freelance Web Developer, Hire Developer Vadodara, React Specialist, Rust Engineer" />
+            <meta name="keywords" content="Shubham Pathak, Software Engineer Vadodara, Full Stack Developer India, Freelance Web Developer, Hire Developer Vadodara, React Specialist, Rust Engineer" />
             <link rel="canonical" href={url} />
 
             {/* Open Graph / Facebook */}
