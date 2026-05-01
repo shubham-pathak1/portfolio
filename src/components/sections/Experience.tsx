@@ -79,7 +79,7 @@ export const Experience = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="mb-8"
+                className="mb-2"
             >
                 <h2 className="text-2xl font-bold text-text-primary mb-2 tracking-tight">Experience</h2>
             </motion.div>
