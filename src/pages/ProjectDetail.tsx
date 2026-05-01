@@ -31,7 +31,7 @@ export const ProjectDetail = () => {
                 title={project.title}
                 description={project.tagline}
                 image={project.image}
-                url={`https://portfolio-shubham-pathak1.vercel.app/project/${project.id}`}
+                url={`https://shubhampathak.vercel.app/project/${project.id}`}
             >
                 <script type="application/ld+json">
                     {JSON.stringify({

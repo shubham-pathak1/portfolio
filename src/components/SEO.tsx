@@ -10,20 +10,21 @@ interface SEOProps {
 }
 
 export const SEO = ({
-    title = "Shubham Pathak | Portfolio",
-    description = "A professional, high-performance web developer portfolio built with React, TypeScript, and Vite.",
+    title = "Shubham Pathak | Software Engineer & Freelance Developer Vadodara",
+    description = "Full-stack developer and freelancer based in Vadodara, Gujarat. Specialized in Front-end (React) and Back-end (Rust/Node.js). Hire for high-performance software systems.",
     image = "/favicon.png",
-    url = "https://portfolio-shubham-pathak1.vercel.app/",
+    url = "https://shubhampathak.vercel.app/",
     type = "website",
     children
 }: SEOProps) => {
-    const siteTitle = title === "Shubham Pathak | Portfolio" ? title : `${title} | Shubham Pathak`;
+    const siteTitle = title === "Shubham Pathak | Software Engineer & Freelance Developer Vadodara" ? title : `${title} | Shubham Pathak`;
 
     return (
         <Helmet>
             {/* Basic Meta Tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={description} />
+            <meta name="keywords" content="Shubham Pathak, Software Engineer Vadodara, Full Stack Developer India, Front End Developer Gujarat, Freelance Web Developer, Hire Developer Vadodara, React Specialist, Rust Engineer" />
             <link rel="canonical" href={url} />
 
             {/* Open Graph / Facebook */}
@@ -46,11 +47,20 @@ export const SEO = ({
                     "@context": "https://schema.org",
                     "@type": "Person",
                     "name": "Shubham Pathak",
-                    "url": "https://portfolio-shubham-pathak1.vercel.app/",
-                    "jobTitle": "Software Engineer",
+                    "url": "https://shubhampathak.vercel.app/",
+                    "jobTitle": "Full Stack Developer",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Vadodara",
+                        "addressRegion": "Gujarat",
+                        "addressCountry": "India"
+                    },
                     "sameAs": [
                         "https://github.com/shubham-pathak1",
                         "https://www.linkedin.com/in/shubham-pathak-05366b272/"
+                    ],
+                    "knowsAbout": [
+                        "Full Stack Development", "Front End Development", "React", "TypeScript", "Rust", "Node.js", "Interaction Design"
                     ],
                     "worksFor": {
                         "@type": "Organization",

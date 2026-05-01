@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-shubham-pathak1.vercel.app/sitemap.xml
+Sitemap: https://shubhampathak.vercel.app/sitemap.xml
