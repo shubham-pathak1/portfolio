@@ -51,7 +51,27 @@ export const Projects = () => {
                                     {isInDevelopmentStatus(project.status) && (
                                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/5 border border-white/10 text-text-primary uppercase tracking-widest">In Dev</span>
                                     )}
-                                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                                    <div className="hidden md:flex opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
+                                        <ArrowUpRight size={14} className="transition-all" />
+                                    </div>
+                                    <div className="md:hidden">
+                                        <motion.div
+                                            variants={{
+                                                initial: { opacity: 0, x: -2 },
+                                                view: { 
+                                                    opacity: 0.7,
+                                                    x: 0,
+                                                    transition: { duration: 0.4 }
+                                                }
+                                            }}
+                                            initial="initial"
+                                            whileInView="view"
+                                            viewport={{ once: false, amount: 0.4 }}
+                                            className="transition-all pointer-events-none"
+                                        >
+                                            <ArrowUpRight size={14} className="transition-all" />
+                                        </motion.div>
+                                    </div>
                                 </h3>
                                 <p className="text-sm text-text-secondary leading-relaxed max-w-2xl">
                                     {project.description}

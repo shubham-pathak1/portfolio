@@ -102,7 +102,6 @@ export const AllProjects = () => {
                                             </p>
                                         </div>
                                         <div className="flex items-center gap-4 text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <span className="text-xs font-mono">{project.id}.archive</span>
                                             <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center">
                                                 <ExternalLink size={14} />
                                             </div>

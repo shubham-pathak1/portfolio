@@ -111,8 +111,26 @@ export const Experience = () => {
                                                 Working
                                             </span>
                                         )}
-                                        <div className={`text-text-secondary/20 group-hover:text-text-secondary/60 transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                                        <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/60 transition-all duration-300 pointer-events-none">
                                             {isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+                                        </div>
+                                        <div className="md:hidden">
+                                            <motion.div 
+                                                variants={{
+                                                    initial: { opacity: 0, x: -2 },
+                                                    view: { 
+                                                        opacity: 0.7,
+                                                        x: 0,
+                                                        transition: { duration: 0.4 }
+                                                    }
+                                                }}
+                                                initial="initial"
+                                                whileInView="view"
+                                                viewport={{ once: false, amount: 0.4 }}
+                                                className="text-text-secondary/60 transition-all duration-300 pointer-events-none"
+                                            >
+                                                {isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+                                            </motion.div>
                                         </div>
                                     </div>
                                     <div className="text-sm text-text-primary font-medium">
