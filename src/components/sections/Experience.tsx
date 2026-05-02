@@ -102,44 +102,46 @@ export const Experience = () => {
                                 onClick={() => toggleJob(exp.id)}
                             >
                                 <div className="flex-1 min-w-0">
-                                    <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-0.5">
-                                        <h3 className="text-lg font-bold text-text-primary tracking-tight">
-                                            {exp.company}
-                                        </h3>
+                                    <div className="flex items-center gap-x-2 mb-0.5">
+                                        <div className="flex items-center gap-2 min-w-0">
+                                            <h3 className="text-lg font-bold text-text-primary tracking-tight truncate">
+                                                {exp.company}
+                                            </h3>
+                                            
+                                            {/* Desktop Arrow */}
+                                            <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/40 transition-all duration-300 shrink-0">
+                                                {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                                            </div>
+
+                                            {/* Mobile Arrow */}
+                                            <div className="md:hidden shrink-0">
+                                                <motion.div 
+                                                    variants={{
+                                                        initial: { opacity: 0, x: -2 },
+                                                        view: { opacity: 0.4, x: 0 }
+                                                    }}
+                                                    initial="initial"
+                                                    whileInView="view"
+                                                    viewport={{ once: false, amount: 0.4 }}
+                                                    className="text-text-secondary/40"
+                                                >
+                                                    {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                                                </motion.div>
+                                            </div>
+                                        </div>
                                         
                                         {exp.isCurrent && (
-                                            <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold text-text-primary uppercase tracking-wider">
+                                            <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold text-text-primary uppercase tracking-wider shrink-0">
                                                 Working
                                             </span>
                                         )}
-
-                                        {/* Desktop Arrow */}
-                                        <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/40 transition-all duration-300">
-                                            {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                                        </div>
-
-                                        {/* Mobile Arrow */}
-                                        <div className="md:hidden">
-                                            <motion.div 
-                                                variants={{
-                                                    initial: { opacity: 0, x: -2 },
-                                                    view: { opacity: 0.4, x: 0 }
-                                                }}
-                                                initial="initial"
-                                                whileInView="view"
-                                                viewport={{ once: false, amount: 0.4 }}
-                                                className="text-text-secondary/40"
-                                            >
-                                                {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                                            </motion.div>
-                                        </div>
                                     </div>
                                     <div className="text-xs text-text-secondary font-medium">
                                         {exp.role}
                                     </div>
                                 </div>
 
-                                <div className="text-right flex-shrink-0 pt-0.5">
+                                <div className="text-right shrink-0">
                                     <div className="text-xs text-text-primary font-medium tracking-tight">
                                         {exp.duration}
                                     </div>

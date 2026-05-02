@@ -50,7 +50,7 @@ export const About = () => {
                     <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">About Me</h2>
                     <div className="space-y-6 mb-8 md:mb-10">
                         <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm <span className="text-text-primary font-bold">Shubham</span>, a <span className="text-text-primary font-bold">full-stack developer</span> based in <span className="text-text-primary font-bold">Vadodara, Gujarat</span> with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
+                            I'm <span className="text-text-primary font-bold">Shubham</span>, a <span className="text-text-primary font-bold">full-stack developer</span> with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
                         </p>
                     </div>
 
