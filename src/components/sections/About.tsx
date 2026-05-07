@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Download, Mail, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin, Github } from "lucide-react";
 import profileImage from "../../assets/my_img.jpg";
 import rustIcon from "../../assets/rust.png";
 
@@ -16,6 +16,24 @@ export const About = () => {
         { id: "linux", name: "Linux", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/linux-original.svg" }
     ];
 
+    const socials = [
+        {
+            href: "https://www.linkedin.com/in/shubham-pathak-05366b272/",
+            label: "Open LinkedIn profile",
+            icon: Linkedin
+        },
+        {
+            href: "mailto:shubhamxkcd@gmail.com",
+            label: "Send an email",
+            icon: Mail
+        },
+        {
+            href: "https://github.com/shubham-pathak1",
+            label: "Open GitHub profile",
+            icon: Github
+        }
+    ];
+
     return (
         <section className="min-h-[85vh] flex flex-col justify-center mb-24 relative">
             <motion.div
@@ -23,7 +41,7 @@ export const About = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
+                className="group flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
             >
                 <div className="flex flex-row md:flex-col md:mx-0 gap-6 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
                     <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
@@ -33,35 +51,75 @@ export const About = () => {
                                 alt="Shubham Pathak"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale transition-all duration-700 ease-out"
                             />
                         </div>
-                        {/* Decorative Corner Accent (Desktop Only) */}
+
                         <div className="hidden md:block absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-text-primary/20 rounded-br-[2rem] group-hover:border-text-primary/40 transition-colors duration-500" />
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
-                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">About Me</h2>
+                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">
+                            About Me
+                        </h2>
                     </div>
                 </div>
 
                 <div className="flex flex-col items-start text-left w-full">
-                    <h1 className="sr-only">Shubham Pathak | Software Engineer & Designer</h1>
-                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">About Me</h2>
-                    <div className="space-y-6 mb-8 md:mb-10">
+                    <h1 className="sr-only">
+                        Shubham Pathak | Software Engineer & Designer
+                    </h1>
+
+                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">
+                        About Me
+                    </h2>
+
+                    <div className="space-y-6 mb-8 md:mb-6">
                         <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm <span className="text-text-primary font-bold">Shubham</span>, a <span className="text-text-primary font-bold">full-stack developer</span> with a keen interest in <span className="text-text-primary font-bold">interaction design</span>. My work mainly revolves around <span className="text-text-primary font-bold">React</span>, <span className="text-text-primary font-bold">TypeScript</span>, and <span className="text-text-primary font-bold">Node.js</span>. I also have a deep appreciation for the <span className="text-text-primary font-bold">Linux ecosystem</span> and trying out new distros.
+                            I'm{" "}
+                            <span className="text-text-primary font-bold">
+                                Shubham
+                            </span>
+                            , a{" "}
+                            <span className="text-text-primary font-bold">
+                                full-stack developer
+                            </span>{" "}
+                            with a keen interest in{" "}
+                            <span className="text-text-primary font-bold">
+                                interaction design
+                            </span>
+                            . My work mainly revolves around{" "}
+                            <span className="text-text-primary font-bold">
+                                React
+                            </span>
+                            ,{" "}
+                            <span className="text-text-primary font-bold">
+                                TypeScript
+                            </span>
+                            , and{" "}
+                            <span className="text-text-primary font-bold">
+                                Node.js
+                            </span>
+                            . I also have a deep appreciation for the{" "}
+                            <span className="text-text-primary font-bold">
+                                Linux ecosystem
+                            </span>{" "}
+                            and trying out new distros.
                         </p>
                     </div>
 
-
-
-                    <div className="flex flex-col gap-10 md:gap-12 w-full">
+                    <div className="flex flex-col gap-10 md:gap-8 w-full">
                         <div className="flex flex-col gap-4 items-start">
-                            <span className="text-sm font-medium text-text-secondary">Core stack & tools</span>
+                            <span className="text-sm font-medium text-text-secondary">
+                                Core stack & tools
+                            </span>
+
                             <div className="flex flex-wrap gap-2.5 md:gap-4 items-center w-full">
                                 {skills.map((skill) => (
-                                    <div key={skill.id} className="relative group/skill z-0 hover:z-[100] focus-within:z-[100] w-10 h-10 flex items-center justify-center">
+                                    <div
+                                        key={skill.id}
+                                        className="relative group/skill z-0 hover:z-[100] focus-within:z-[100] w-10 h-10 flex items-center justify-center"
+                                    >
                                         <motion.button
                                             type="button"
                                             onMouseEnter={() => setHoveredSkill(skill.id)}
@@ -73,16 +131,20 @@ export const About = () => {
                                                 y: -5,
                                                 scale: 1.1,
                                                 zIndex: 50,
-                                                transition: { type: "spring", stiffness: 400, damping: 25 }
+                                                transition: {
+                                                    type: "spring",
+                                                    stiffness: 400,
+                                                    damping: 25
+                                                }
                                             }}
                                             aria-label={skill.name}
                                             className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
-                                            {skill.id === 'nextjs' ? (
-                                                <img 
-                                                    src={skill.icon} 
-                                                    alt={skill.name} 
-                                                    className="w-5 h-5 object-contain transition-all duration-300 dark:invert grayscale group-hover/skill:grayscale-0" 
+                                            {skill.id === "nextjs" ? (
+                                                <img
+                                                    src={skill.icon}
+                                                    alt={skill.name}
+                                                    className="w-5 h-5 object-contain transition-all duration-300 dark:invert grayscale group-hover/skill:grayscale-0"
                                                 />
                                             ) : (
                                                 <img
@@ -98,12 +160,25 @@ export const About = () => {
                                         <AnimatePresence>
                                             {hoveredSkill === skill.id && (
                                                 <motion.div
-                                                    initial={{ opacity: 0, y: 10, x: "-50%" }}
-                                                    animate={{ opacity: 1, y: 0, x: "-50%" }}
-                                                    exit={{ opacity: 0, y: 5, x: "-50%" }}
+                                                    initial={{
+                                                        opacity: 0,
+                                                        y: 10,
+                                                        x: "-50%"
+                                                    }}
+                                                    animate={{
+                                                        opacity: 1,
+                                                        y: 0,
+                                                        x: "-50%"
+                                                    }}
+                                                    exit={{
+                                                        opacity: 0,
+                                                        y: 5,
+                                                        x: "-50%"
+                                                    }}
                                                     className="absolute -top-12 left-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap z-[9999] pointer-events-none"
                                                 >
                                                     {skill.name}
+
                                                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-text-primary rotate-45" />
                                                 </motion.div>
                                             )}
@@ -113,7 +188,7 @@ export const About = () => {
                             </div>
                         </div>
 
-                        {/* Mobile-Only CTA Block (Relocated) */}
+                        {/* Mobile CTA */}
                         <div className="flex md:hidden items-center gap-3 w-full mb-10">
                             <a
                                 href="https://drive.google.com/file/d/12KIoZCeB7_BWNRpRyWUmXj2ica6L4b1w/view?usp=drive_link"
@@ -126,27 +201,27 @@ export const About = () => {
                                 Resume / CV
                             </a>
 
-                            {/* Minimal Social Row */}
                             <div className="flex items-center gap-4 px-2">
-                                <a
-                                    href="https://www.linkedin.com/in/shubham-pathak-05366b272/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Open LinkedIn profile"
-                                    className="text-text-secondary hover:text-text-primary transition-colors"
-                                >
-                                    <Linkedin size={22} />
-                                </a>
-                                <a
-                                    href="mailto:shubhamxkcd@gmail.com"
-                                    aria-label="Send an email"
-                                    className="text-text-secondary hover:text-text-primary transition-colors"
-                                >
-                                    <Mail size={22} />
-                                </a>
+                                {socials.map((social) => {
+                                    const Icon = social.icon;
+
+                                    return (
+                                        <a
+                                            key={social.href}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={social.label}
+                                            className="text-text-secondary hover:text-text-primary transition-colors"
+                                        >
+                                            <Icon size={22} />
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
 
+                        {/* Desktop CTA */}
                         <div className="hidden md:flex flex-wrap items-center justify-center md:justify-start gap-6">
                             <div className="flex items-center gap-3 flex-wrap justify-center">
                                 <a
@@ -162,22 +237,22 @@ export const About = () => {
                             </div>
 
                             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
-                                <a
-                                    href="https://www.linkedin.com/in/shubham-pathak-05366b272/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Open LinkedIn profile"
-                                    className="text-text-secondary hover:text-text-primary transition-all p-1.5"
-                                >
-                                    <Linkedin size={18} />
-                                </a>
-                                <a
-                                    href="mailto:shubhamxkcd@gmail.com"
-                                    aria-label="Send an email"
-                                    className="text-text-secondary hover:text-text-primary transition-all p-1.5"
-                                >
-                                    <Mail size={18} />
-                                </a>
+                                {socials.map((social) => {
+                                    const Icon = social.icon;
+
+                                    return (
+                                        <a
+                                            key={social.href}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={social.label}
+                                            className="text-text-secondary hover:text-text-primary transition-all p-1.5"
+                                        >
+                                            <Icon size={18} />
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
