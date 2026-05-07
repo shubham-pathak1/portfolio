@@ -8,7 +8,7 @@ const experiences = [
     company: "Redsparks",
     role: "MERN Stack Intern",
     location: "Vadodara (On-Site)",
-    duration: "January 2026 - Present",
+    duration: "January 2026 - May 2026",
     isCurrent: true,
     technologies: [
       {
@@ -140,11 +140,6 @@ export const Experience = () => {
                       </h3>
 
                       {/* Desktop Arrow */}
-                      {exp.isCurrent && (
-                        <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold text-text-primary uppercase tracking-wider shrink-0">
-                          Working
-                        </span>
-                      )}
                       <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/40 transition-all duration-300 shrink-0">
                         {isExpanded ? (
                           <ChevronDown size={14} />
