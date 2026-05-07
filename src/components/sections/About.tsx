@@ -59,9 +59,10 @@ export const About = () => {
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
-                        <h2 className="text-3xl font-bold text-text-primary tracking-tight">
-                            About Me
+                        <h2 className="text-2xl font-bold text-text-primary tracking-tight">
+                            Shubham Pathak
                         </h2>
+                        <p className="text-sm font-medium text-text-secondary">Full Stack Dev</p>
                     </div>
                 </div>
 
@@ -70,25 +71,18 @@ export const About = () => {
                         Shubham Pathak | Software Engineer & Designer
                     </h1>
 
-                    <h2 className="hidden md:block text-4xl md:text-5xl font-bold text-text-primary mb-8 leading-tight">
-                        About Me
-                    </h2>
+                    <div className="mb-4 md:mb-2">
+                        <h2 className="hidden md:block text-3xl md:text-4xl font-bold text-text-primary leading-tight whitespace-nowrap">
+                            Shubham Pathak
+                        </h2>
+                        <p className="hidden md:block text-lg font-medium text-text-secondary mt-1">
+                            Full Stack Dev
+                        </p>
+                    </div>
 
                     <div className="space-y-6 mb-8 md:mb-6">
-                        <p className="text-text-primary md:text-text-secondary text-base md:text-xl leading-relaxed">
-                            I'm{" "}
-                            <span className="text-text-primary font-bold">
-                                Shubham
-                            </span>
-                            , a{" "}
-                            <span className="text-text-primary font-bold">
-                                full-stack developer
-                            </span>{" "}
-                            with a keen interest in{" "}
-                            <span className="text-text-primary font-bold">
-                                interaction design
-                            </span>
-                            . My work mainly revolves around{" "}
+                        <p className="text-text-secondary text-base md:text-xl leading-relaxed">
+                            I build things for the web with{" "}
                             <span className="text-text-primary font-bold">
                                 React
                             </span>
@@ -100,17 +94,28 @@ export const About = () => {
                             <span className="text-text-primary font-bold">
                                 Node.js
                             </span>
-                            . I also have a deep appreciation for the{" "}
+                            . I'm also into{" "}
                             <span className="text-text-primary font-bold">
-                                Linux ecosystem
+                                interaction design
+                            </span>
+                            ,{" "}
+                            <span className="text-text-primary font-bold">
+                                open source
+                            </span>
+                            , {" "}
+                            <span className="text-text-primary font-bold">
+                                linux
                             </span>{" "}
-                            and trying out new distros.
+                            and yeah,{" "}
+                            <span className="text-text-primary font-bold">
+                                I use Arch btw :)
+                            </span>
                         </p>
                     </div>
 
                     <div className="flex flex-col gap-10 md:gap-8 w-full">
                         <div className="flex flex-col gap-4 items-start">
-                            <span className="text-sm font-medium text-text-secondary">
+                            <span className="text-sm md:text-base font-bold text-text-primary">
                                 Core stack & tools
                             </span>
 
