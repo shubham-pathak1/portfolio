@@ -43,15 +43,15 @@ export const About = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
             >
-                <div className="flex flex-row md:flex-col md:mx-0 gap-6 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
+                <div className="flex flex-row md:flex-col md:mx-0 gap-4 sm:gap-5 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
                     <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
-                        <div className="w-32 h-32 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
                             <img
                                 src={profileImage}
                                 alt="Shubham Pathak"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] transition-all duration-700 ease-out"
                             />
                         </div>
 
@@ -82,7 +82,7 @@ export const About = () => {
 
                     <div className="space-y-6 mb-8 md:mb-6">
                         <p className="text-text-secondary text-base md:text-xl leading-relaxed">
-                            I build things for the web with{" "}
+                            I build things for the web using{" "}
                             <span className="text-text-primary font-bold">
                                 React
                             </span>
@@ -94,19 +94,19 @@ export const About = () => {
                             <span className="text-text-primary font-bold">
                                 Node.js
                             </span>
-                            . I'm also into{" "}
+                            . I am also into{" "}
                             <span className="text-text-primary font-bold">
                                 interaction design
                             </span>
-                            ,{" "}
+                            , contributing to{" "}
                             <span className="text-text-primary font-bold">
                                 open source
                             </span>
-                            , {" "}
+                            , and spend a lot of time in{" "}
                             <span className="text-text-primary font-bold">
-                                linux
-                            </span>{" "}
-                            and yeah,{" "}
+                                Linux
+                            </span>
+                            {" "}and yeah,{" "}
                             <span className="text-text-primary font-bold">
                                 I use Arch btw :)
                             </span>

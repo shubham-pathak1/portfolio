@@ -73,7 +73,20 @@ export const ProjectDetail = () => {
                     {/* Hero Section */}
                     <header className="mb-16 fade-in">
                         <div className="mb-6">
-                            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{project.title}</h1>
+                            <div className="flex items-center gap-4 md:gap-5 mb-4">
+                                {['fenrir', 'orca'].includes(project.id) && (
+                                    <div className="w-14 h-14 md:w-16 md:h-16 shrink-0">
+                                        <motion.img
+                                            layoutId={`project-image-${project.id}`}
+                                            src={project.image}
+                                            alt={`${project.title} logo`}
+                                            className="w-full h-full object-contain"
+                                            transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                                        />
+                                    </div>
+                                )}
+                                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{project.title}</h1>
+                            </div>
                             <p className="text-xl text-text-secondary">{project.tagline}</p>
                         </div>
 
@@ -106,17 +119,19 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    <div className={`mb-20 rounded-2xl overflow-hidden border border-border aspect-video ${['fenrir', 'orca'].includes(project.id) ? 'bg-zinc-950 p-12 md:p-24' : 'bg-surface-hover'}`}>
-                        <motion.img
-                            layoutId={`project-image-${project.id}`}
-                            src={project.image}
-                            alt={project.title}
-                            loading="lazy"
-                            decoding="async"
-                            transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                            className={`w-full h-full ${['fenrir', 'orca'].includes(project.id) ? 'object-contain' : 'object-cover'}`}
-                        />
-                    </div>
+                    {!['fenrir', 'orca'].includes(project.id) && (
+                        <div className="mb-20 rounded-2xl overflow-hidden border border-border aspect-video bg-surface-hover">
+                            <motion.img
+                                layoutId={`project-image-${project.id}`}
+                                src={project.image}
+                                alt={project.title}
+                                loading="lazy"
+                                decoding="async"
+                                transition={{ type: "tween", duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    )}
 
                     {/* Content Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 fade-in" style={{ animationDelay: '0.2s' }}>

@@ -275,7 +275,7 @@ export const Experience = () => {
                               key={i}
                               className="text-[13px] text-text-secondary leading-relaxed flex items-start gap-3"
                             >
-                              <span className="mt-[7px] w-1 h-1 rounded-sm bg-text-secondary/30 shrink-0" />
+                              <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-text-primary shrink-0" />
                               {point}
                             </li>
                           ))}

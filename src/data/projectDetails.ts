@@ -274,27 +274,31 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A lightweight, performant desktop music player for local files, built with Rust and the Slint.",
+        tagline: "A lightweight, performant desktop music player for local files, built with Tauri, Rust, and Svelte.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
         status: "Alpha 0.1.0 in Development",
-        overview: "Orca is a high-performance desktop music player designed for audiophiles who value both quality and efficiency. Built with Rust, it features an ultra-low resource 'Phantom Mode' that minimizes system impact (<1% CPU) while hidden.",
+        overview: "Orca is a high-performance desktop music player designed for audiophiles who value both quality and efficiency. Built with Tauri and Rust, it features an ultra-low resource 'Phantom Mode' that minimizes system impact (<1% CPU) while hidden.",
         features: [
             "Phantom Mode: Extreme resource optimization (<1% CPU, <15MB RAM) when minimized to tray.",
             "Hi-Fi Support: Native playback of lossless formats including FLAC, WAV, ALAC, and AIFF.",
             "Lyrics Engine: Integrated support for synced (.lrc) and static text lyrics.",
+            "Metadata Editing: Seamless inline tag editing to update track and album metadata.",
+            "Automatic Lyrics: Automated lyrics fetching and synchronization directly from librc.",
             "Advanced Metadata: Real-time display of audio sample rates, bitrates, and bit depths.",
             "Global Shortcuts: System-wide playback and window management controls.",
             "Fast Indexing: Fast library scanning for large local music collections."
         ],
         whyBuilt: [
-            "To solve the excessive resource consumption of modern Electron/Tauri based music players and making something which is lightweight but doesnt compromise on features or uiux.",
+            "To solve the excessive resource consumption of modern Electron-based music players and making something which is lightweight but doesnt compromise on features or uiux.",
             "To provide a high-fidelity, native audio experience on Windows using Rust's safety and speed."
         ],
         techStack: [
+            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Slint", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/slint-logo-square-light.svg" },
+            { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
+            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
             { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
@@ -303,8 +307,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         futurePlans: [
             "Advanced EQ and DSP filter implementation.",
-            "Cloud metadata enrichment and album art fetching.",
-            "Playlist management and library organization tools."
+            "Cloud metadata enrichment and album art fetching."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
         screenshots: [
