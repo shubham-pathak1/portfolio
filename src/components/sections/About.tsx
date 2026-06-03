@@ -102,10 +102,6 @@ export const About = () => {
                             <span className="text-text-primary font-bold">
                                 open source
                             </span>
-                            , and spend a lot of time in{" "}
-                            <span className="text-text-primary font-bold">
-                                Linux
-                            </span>
                             {" "}and yeah,{" "}
                             <span className="text-text-primary font-bold">
                                 I use Arch btw :)
@@ -154,7 +150,7 @@ export const About = () => {
                                             ) : (
                                                 <img
                                                     src={skill.icon}
-                                                    className="w-5 h-5 transition-all duration-300 grayscale group-hover/skill:grayscale-0 group-hover/skill:scale-110"
+                                                    className="w-5 h-5 transition-all duration-300 group-hover/skill:grayscale-0 group-hover/skill:scale-110"
                                                     alt={skill.name}
                                                     loading="lazy"
                                                     decoding="async"
