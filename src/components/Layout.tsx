@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../hooks/useTheme";
 import { Dock } from "./ui/Dock";
-import { SuminagashiBg } from "./ui/SuminagashiBg";
+import { VintageBg } from "./ui/VintageBg";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
     const { theme, toggleTheme } = useTheme();
@@ -9,8 +9,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="min-h-screen relative isolate">
-            {/* Interactive Suminagashi Background */}
-            <SuminagashiBg theme={theme} />
+            {/* Tactile Vintage Paper Grain Overlay */}
+            <div className="paper-grain" />
+
+            {/* Generative Etched Background */}
+            <VintageBg theme={theme} />
 
             <main className="flex-grow pt-10 md:pt-12 pb-20 relative z-10">
                 <div className="container mx-auto px-6 max-w-[800px]">

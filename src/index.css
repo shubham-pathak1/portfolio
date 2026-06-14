@@ -19,24 +19,24 @@
     --spotlight-y: 50vh;
     
     /* Background Patterns */
-    --glow-color: rgba(0,0,0,0.03);
-    --grid-line-color: rgba(24, 24, 27, 0.08);
+    --glow-color: rgba(24, 24, 27, 0.02);
+    --grid-line-color: rgba(24, 24, 27, 0.04);
   }
 
   .dark {
-    --bg: #050505;
-    --surface: #0a0a0a;
-    --surface-hover: #171717;
-    --border: #27272a;
-    --text-primary: #f4f4f5;
-    --text-secondary: #a1a1aa;
+    --bg: #0c0c0d;
+    --surface: #121214;
+    --surface-hover: #1c1c1f;
+    --border: #242429;
+    --text-primary: #e6e5e3;
+    --text-secondary: #8c8a87;
     --accent: #ffffff;
     --shadow: none;
-    --shadow-hover: 0 0 0 1px #3f3f46;
+    --shadow-hover: 0 0 0 1px #2e2e33;
     
     /* Background Patterns Dark */
-    --glow-color: rgba(255,255,255,0.03);
-    --grid-line-color: rgba(244, 244, 245, 0.1);
+    --glow-color: rgba(255,255,255,0.01);
+    --grid-line-color: rgba(244, 244, 245, 0.04);
   }
 
   body {
@@ -135,3 +135,22 @@
     @apply opacity-100 translate-y-1;
   }
 }
+
+/* Tactile Vintage Paper Grain Overlay */
+.paper-grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025; /* Highly reduced for crisp light white mode */
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.dark .paper-grain {
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
