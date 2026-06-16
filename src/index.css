@@ -19,24 +19,24 @@
     --spotlight-y: 50vh;
     
     /* Background Patterns */
-    --glow-color: rgba(24, 24, 27, 0.02);
-    --grid-line-color: rgba(24, 24, 27, 0.04);
+    --glow-color: rgba(24, 24, 27, 0.04);
+    --grid-line-color: rgba(24, 24, 27, 0.08);
   }
 
   .dark {
-    --bg: #0c0c0d;
-    --surface: #121214;
-    --surface-hover: #1c1c1f;
-    --border: #242429;
+    --bg: #121214;
+    --surface: #1a1a1e;
+    --surface-hover: #222228;
+    --border: #2a2a30;
     --text-primary: #e6e5e3;
     --text-secondary: #8c8a87;
     --accent: #ffffff;
     --shadow: none;
-    --shadow-hover: 0 0 0 1px #2e2e33;
+    --shadow-hover: 0 0 0 1px #33333a;
     
     /* Background Patterns Dark */
-    --glow-color: rgba(255,255,255,0.01);
-    --grid-line-color: rgba(244, 244, 245, 0.04);
+    --glow-color: rgba(255,255,255,0.02);
+    --grid-line-color: rgba(244, 244, 245, 0.08);
   }
 
   body {

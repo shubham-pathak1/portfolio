@@ -44,6 +44,7 @@ export const About = () => {
                 className="group flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
             >
                 <div className="flex flex-row md:flex-col md:mx-0 gap-4 sm:gap-5 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
+                    {/* Clean double-border frame without offset lines */}
                     <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
                         <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
                             <img
@@ -51,11 +52,9 @@ export const About = () => {
                                 alt="Shubham Pathak"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-700 ease-out"
                             />
                         </div>
-
-                        <div className="hidden md:block absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-text-primary/20 rounded-br-[2rem] group-hover:border-text-primary/40 transition-colors duration-500" />
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
