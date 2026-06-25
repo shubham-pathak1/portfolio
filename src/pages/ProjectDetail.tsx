@@ -219,11 +219,11 @@ export const ProjectDetail = () => {
                         <aside className="space-y-10">
                             <div className="sticky top-10">
                                 {/* Tech Stack */}
-                                <div className="p-6 rounded-2xl bg-surface border border-border mb-8">
-                                    <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-text-secondary">Tech Stack</h3>
+                                <div className="mb-8">
+                                    <h3 className="text-2xl font-bold mb-6">Tech Stack</h3>
                                     <div className="flex flex-wrap gap-2">
                                         {project.techStack.map((tech) => (
-                                            <span key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-hover border border-border text-xs font-mono text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors cursor-default">
+                                            <span key={tech.name} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors cursor-default">
                                                 <img
                                                     src={tech.lightIcon && theme === 'light' ? tech.lightIcon : tech.icon}
                                                     alt={tech.name}
