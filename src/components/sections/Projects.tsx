@@ -73,7 +73,7 @@ export const Projects = () => {
                                         </motion.div>
                                     </div>
                                 </h3>
-                                <p className="text-sm text-text-secondary leading-relaxed max-w-2xl">
+                                <p className="text-sm text-text-secondary leading-relaxed max-w-3xl">
                                     {project.description}
                                 </p>
                             </div>

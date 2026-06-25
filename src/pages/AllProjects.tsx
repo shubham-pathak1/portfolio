@@ -84,8 +84,8 @@ export const AllProjects = () => {
                                     to={`/project/${project.id}`}
                                     className="group block py-8 border-b border-border/50 hover:border-text-primary/30 transition-all"
                                 >
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                        <div className="flex flex-col gap-1">
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                        <div className="flex-grow max-w-3xl">
                                             <h3 className="text-xl font-bold text-text-primary group-hover:text-text-primary transition-colors flex items-center gap-2">
                                                 {project.title}
                                                 <div className="flex gap-2">
@@ -97,12 +97,18 @@ export const AllProjects = () => {
                                                     )}
                                                 </div>
                                             </h3>
-                                            <p className="text-sm text-text-secondary leading-relaxed max-w-3xl">
+                                            <p className="text-sm text-text-secondary leading-relaxed mt-1">
                                                 {project.tagline}
                                             </p>
                                         </div>
-                                        <div className="flex items-center gap-4 text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center">
+                                        
+                                        {/* Right Side Metadata */}
+                                        <div className="flex items-center gap-8 shrink-0 self-start md:self-auto">
+                                            <div className="flex flex-col items-start md:items-end text-left md:text-right">
+                                                <span className="text-xs font-bold text-text-primary">{project.role}</span>
+                                                <span className="text-xs text-text-secondary mt-1 font-mono">{project.timeline}</span>
+                                            </div>
+                                            <div className="hidden md:flex w-8 h-8 rounded-full border border-border items-center justify-center text-text-secondary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
                                                 <ExternalLink size={14} />
                                             </div>
                                         </div>
