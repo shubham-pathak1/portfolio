@@ -50,9 +50,9 @@ const experiences = [
       },
     ],
     description: [
-      "Optimizing website and application performance, resulting in improved user experience and system efficiency.",
-      "Developing and maintaining internal tools and infrastructure to support business operations and team productivity.",
-      "Collaborating cross-functionally with development teams to design, implement, and deploy scalable internet solutions.",
+      "Built Shonen, a full-stack multi-vendor marketplace for manga and collectibles.",
+      "Designed and partially built a video upscaling platform, implemented the async job queue architecture using Redis and BullMQ, but couldn't complete GPU inference due to cost constraints.",
+      "Built Theo, a real-time AI chat app with streaming responses, an async image generation pipeline via BullMQ and Redis, Firebase Auth, and Razorpay payment integration.",
     ],
   },
   {
@@ -81,9 +81,8 @@ const experiences = [
       },
     ],
     description: [
-      "Architected and developed complex frontend infrastructure for the platform, ensuring maximum maintainability and scalability.",
-      "Designed and implemented user-friendly, responsive interfaces to improve client interaction and satisfaction.",
-      "Integrated RESTful APIs for real-time data updates and seamless user experience across the entire platform.",
+      "Completed a structured frontend training program covering HTML, CSS, JavaScript, and React.",
+      "Built practice projects on Bolt's internal learning platform as part of the curriculum.",
     ],
   },
 ];
