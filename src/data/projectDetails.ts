@@ -25,26 +25,26 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shonen": {
         id: "shonen",
         title: "Shonen",
-        tagline: "A multi-vendor marketplace designed for manga, comics, and collectible enthusiasts with dedicated Customer, Admin, and Seller dashboards.",
+        tagline: "A marketplace for manga, comics, and collectibles featuring dashboards for customers, admins, and sellers.",
         timeline: "2 months",
         role: "Full Stack Developer",
         team: "Solo",
         status: "Live",
-        overview: "Shonen is a multi-vendor marketplace designed for manga, comics, and collectible enthusiasts. This platform provides a specialized ecosystem for both sellers and consumers, featuring a high-performance architectural design and a focus on visual consistency. It was built for learning the MERN stack, Tailwind CSS, Firebase integration, and Razorpay payment gateway.",
+        overview: "Shonen is a multi-vendor marketplace for manga, comics, and collectibles. Built to explore MERN stack development, it integrates custom merchant workflows, payment flows, and authentication.",
         features: [
-            "Triple Dashboards: Dedicated interfaces for Customers, Admins, and Sellers.",
-            "Consolidated Marketplace: Integrated platform for manga, comics, and high-end action figures.",
-            "Advanced Navigation: Optimized search and category-based filtering.",
-            "Vendor Management: Infrastructure supporting individual merchants and enterprise stores.",
-            "Dispute Module: Integrated system for handling and resolving transaction issues.",
-            "Data Integrity: Backend-synchronized cart and wishlist with cross-device persistence.",
-            "Security: Robust JWT-based authentication with role-based permissions."
+            "Browse and purchase manga, comics, and action figures.",
+            "Access dedicated dashboards customized for customers, admins, or sellers.",
+            "Search items and filter products by category.",
+            "List items and manage store inventory as a merchant.",
+            "Open and resolve transaction disputes directly on the platform.",
+            "Synchronize your cart and wishlist across devices.",
+            "Log in securely using role-based JWT authentication."
         ],
         whyBuilt: [
-            "To build a production-grade MERN stack application from scratch.",
-            "Mastering complex multi-role authorization and dashboard architectures.",
-            "Implementing secure payment gateways and asset optimization using Cloudinary.",
-            "Creating a dedicated space for the niche collectible community."
+            "To build a complete MERN stack application from scratch.",
+            "To learn multi-role authorization and dashboard routing.",
+            "To implement payment gateways and Cloudinary asset management.",
+            "To create a storefront for the collectible community."
         ],
         techStack: [
             { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
@@ -74,18 +74,18 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "krishi-sangam": {
         id: "krishi-sangam",
         title: "Krishi Sangam",
-        tagline: "Digital B2B agricultural marketplace built on the MERN stack facilitating direct farmer-to-buyer trade, price analytics, and bilingual support.",
+        tagline: "A B2B agricultural marketplace connecting farmers directly with buyers, featuring price analytics.",
         timeline: "4 months",
         role: "Front End Developer",
         team: "Team of 4",
         status: "Beta",
-        overview: "Krishi Sangam is a digital marketplace improving the agricultural supply chain. It eliminates middlemen by allowing farmers to list their produce directly for wholesalers and retailers. The platform creates a fair trade ecosystem where farmers get better prices and buyers get fresh, traceable produce.",
+        overview: "Krishi Sangam connects farmers directly with wholesalers and retailers. It replaces traditional intermediaries to establish direct pricing and traceable produce sales.",
         features: [
-            "Direct Listing: Farmers can upload crop details, quantity, and expected price.",
-            "Bilingual Support: Interface available in English and regional languages.",
-            "Price Trends: Real-time market graphs based on mandi prices.",
-            "Secure Payments: Integrated escrow system for safe transactions.",
-            "Logistics Support: Connects with local transport providers for delivery."
+            "List crops, quantities, and expected prices as a farmer.",
+            "Switch between English and regional languages.",
+            "View real-time market price trend graphs from regional mandis.",
+            "Complete transactions safely using an escrow payment system.",
+            "Find and connect with local transport providers for crop delivery."
         ],
         whyBuilt: [
             "Farmers often lose up to 40% of their profit to intermediaries.",
@@ -120,18 +120,18 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "ciel": {
         id: "ciel",
         title: "Ciel",
-        tagline: "An all-in-one Tauri/Rust based download manager supporting HTTP, Torrent downloads.",
+        tagline: "An open-source download manager for HTTP and Torrent downloads, built with Tauri and Rust.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
         status: "v0.1.0 Alpha Released",
-        overview: "Ciel is a high-performance, open-source download manager for Windows built with Tauri and Rust.",
+        overview: "Ciel is an open-source download manager for Windows that handles multi-threaded HTTP downloads and torrent files.",
         features: [
-            "Parallel Downloading: Optimized multi-threaded HTTP engine with segment-based chunk management.",
-            "Torrent Support: Full magnet link support with content preview and metadata polling.",
-            "Clipboard Monitoring: Autocatches links from clipboard.",
-            "Smart Categorization: Automatically organizes files into Videos, Music, Archives, Software, Documents, and Other.",
-            "Download Scheduler: Plan your queue to start or pause at specific times for better bandwidth management."
+            "Download files faster using a multi-threaded HTTP engine.",
+            "Load magnet links and download torrents with content previews.",
+            "Monitor your clipboard to automatically capture download links.",
+            "Organize downloads automatically into categories like videos, music, and documents.",
+            "Schedule downloads to start or pause at specific times."
         ],
         whyBuilt: [
             "I wanted to build a download manager that is lightweight, fast, and has a good UI/UX.",
@@ -160,18 +160,18 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "kanha-salad": {
         id: "kanha-salad",
         title: "Kanha Salad",
-        tagline: "DTC cloud kitchen platform built with Next.js and MongoDB, featuring dynamic menu scheduling, Member workflows, and dual-slot delivery logic.",
+        tagline: "A subscription kitchen platform featuring dynamic menu scheduling and dual-slot delivery.",
         timeline: "1 month",
         role: "Full Stack Developer",
         team: "Team of 2",
         status: "Live",
-        overview: "Kanha Salad is a premium cloud kitchen initiative based in Vadodara, fueled by a simple obsession: making healthy food taste like a celebration. The platform serves as the digital storefront for their daily handcrafted salad subscriptions and orders. It features a custom ordering flow, subscription management for 'Green Heart' members, and a dual-slot delivery system ensuring salads arrive at peak freshness.",
+        overview: "Kanha Salad is the storefront and ordering system for a local healthy food delivery service, managing custom salad subscriptions and daily schedules.",
         features: [
-            "Dynamic Menu System: Daily rotating menu with 'Presets', 'Hand-Prepped', and 'Born & Raised' collections.",
-            "Subscription Management: Custom flows for 'Green Heart' membership and recurring orders.",
-            "Time-Slot Scheduling: Intelligent delivery slot selection (Morning/Evening) for peak freshness.",
-            "Order Archive: Users can track their 'Green Journey' and past orders.",
-            "Responsive Design: Seamless experience across mobile and desktop for on-the-go ordering."
+            "View a rotating menu featuring daily salad selections.",
+            "Subscribe to recurring salad meal plans.",
+            "Select morning or evening delivery slots.",
+            "Track active subscriptions and past orders.",
+            "Order and manage meals from mobile or desktop screens."
         ],
         whyBuilt: [
             "To digitize the operations of a local cloud kitchen scaling its customer base.",
@@ -202,14 +202,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shlok-datar": {
         id: "shlok-datar",
         title: "Shlok Datar's Portfolio",
-        tagline: "A portfolio website for a classical percussionist.",
+        tagline: "A showcase website for a classical percussion artist.",
         timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",
         status: "Live",
-        overview: "A portfolio website for Shlok Datar, a classical Tabla & Dholak artist. The site serves as a digital portfolio, showcasing his journey and skills. It features a media gallery, event listings.",
+        overview: "This website serves as a digital portfolio for Shlok Datar, showcasing his Tabla and Dholak performances, session work, and upcoming events.",
         features: [
-            "Properly showcases his journey and skills.",
+            "Read about the artist's musical background and training.",
+            "Browse performance videos and media galleries.",
+            "View upcoming live concert dates and performance locations.",
+            "Send inquiries for booking and collaboration."
         ],
         whyBuilt: [
             "To establish a digital presence for an artist.",
@@ -238,16 +241,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "fenrir": {
         id: "fenrir",
         title: "Fenrir",
-        tagline: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust, utilizing Slint for a lightweight cross-platform UI.",
+        tagline: "A live wallpaper engine for Windows, built with Rust and Slint.",
         timeline: "Recent",
         role: "Lead Developer",
         team: "Solo",
         status: "v0.1.0-alphaReleased",
-        overview: "Fenrir is a lightweight, high-performance live wallpaper engine for Windows, built entirely in Rust. It utilizes Slint for a modern, responsive user interface and focuses on minimal resource usage.",
+        overview: "Fenrir is a wallpaper manager for Windows. Built with Rust and Slint, it runs video and interactive scenes as desktop backgrounds with low CPU usage.",
         features: [
-            "Rust-Based Engine: Native performance with lower CPU usage comapared to currently available live wallpaper engines.",
-            "Slint UI: Responsive, touch-friendly interface for managing wallpapers.",
-            "Live Wallpapers: Support for video and interactive scenes.",
+            "Set videos and interactive files as live desktop backgrounds.",
+            "Manage your wallpaper library using a lightweight interface.",
+            "Minimize system resource draw during background playback."
         ],
         whyBuilt: [
             "Existing live wallpaper engines are kinda bloated and resource heavy.",
@@ -274,25 +277,25 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A lightweight, performant desktop music player for local files, built with Tauri, Rust, and Svelte.",
+        tagline: "A desktop music player for local files, built with Tauri, Rust, and Svelte.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "Alpha 0.1.0 in Development",
-        overview: "Orca is a high-performance desktop music player designed for audiophiles who value both quality and efficiency. Built with Tauri and Rust, it features an ultra-low resource 'Phantom Mode' that minimizes system impact (<1% CPU) while hidden.",
+        status: "v0.1.0 Alpha Released",
+        overview: "Orca is a desktop music player for local audio files. Built with Tauri and Rust, it includes a 'Phantom Mode' designed to minimize system resource usage when minimized to the system tray.",
         features: [
-            "Phantom Mode: Extreme resource optimization (<1% CPU, <15MB RAM) when minimized to tray.",
-            "Hi-Fi Support: Native playback of lossless formats including FLAC, WAV, ALAC, and AIFF.",
-            "Lyrics Engine: Integrated support for synced (.lrc) and static text lyrics.",
-            "Metadata Editing: Seamless inline tag editing to update track and album metadata.",
-            "Automatic Lyrics: Automated lyrics fetching and synchronization directly from librc.",
-            "Advanced Metadata: Real-time display of audio sample rates, bitrates, and bit depths.",
-            "Global Shortcuts: System-wide playback and window management controls.",
-            "Fast Indexing: Fast library scanning for large local music collections."
+            "Minimize the player to the system tray to run it in a low-resource 'Phantom Mode'.",
+            "Play lossless audio formats including FLAC, WAV, ALAC, and AIFF natively.",
+            "View synced and static lyrics as songs play.",
+            "Edit track and album metadata tags directly within your library.",
+            "Automatically fetch and sync lyrics from LRCLIB.",
+            "Monitor sample rates, bitrates, and bit depths in real time during playback.",
+            "Control audio playback using system-wide global shortcuts.",
+            "Scan and organize local directories to build your music collection quickly."
         ],
         whyBuilt: [
-            "To solve the excessive resource consumption of modern Electron-based music players and making something which is lightweight but doesnt compromise on features or uiux.",
-            "To provide a high-fidelity, native audio experience on Windows using Rust's safety and speed."
+            "To build a music player that uses fewer resources than Electron-based alternatives.",
+            "To create a native audio player for Windows using Rust."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -303,7 +306,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "to be launched, currently under development"
+            "Successfully released v0.1.0 Alpha for public testing."
         ],
         futurePlans: [
             "Advanced EQ and DSP filter implementation.",
@@ -311,10 +314,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
         screenshots: [
-            "https://ik.imagekit.io/shubhampathak/portfolio/main_screen.png?tr=f-auto,lo-true",
-            "https://ik.imagekit.io/shubhampathak/portfolio/main_player.png?tr=f-auto,lo-true"
+            "https://ik.imagekit.io/shubhampathak/portfolio/orca_fullplayer.png?updatedAt=1782366637638",
+            "https://ik.imagekit.io/shubhampathak/portfolio/orca_library.png?updatedAt=1782366595750",
+            "https://ik.imagekit.io/shubhampathak/portfolio/lyrics.png?updatedAt=1782366886607"
         ],
         github: "https://github.com/shubham-pathak1/orca",
+        liveLink: "https://github.com/shubham-pathak1/orca/releases/tag/v0.1.0-alpha",
+        ctaLabel: "Download Release",
         category: "personal"
     }
 };
