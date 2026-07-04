@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Download, Mail, Linkedin, Github } from "lucide-react";
-import profileImage from "../../assets/my_img.jpg";
+import profileImage from "../../assets/my_new_img.jpeg";
 import rustIcon from "../../assets/rust.png";
 
 export const About = () => {
@@ -52,7 +52,7 @@ export const About = () => {
                                 alt="Shubham Pathak"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-full object-cover object-center scale-[1.7] md:scale-[1.8] grayscale contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-[45%_58%] scale-[1.1] md:scale-[1.1] grayscale contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-700 ease-out"
                             />
                         </div>
                     </div>
