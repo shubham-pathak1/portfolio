@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Download, Mail, Linkedin, Github } from "lucide-react";
-import profileImage from "../../assets/my_new_img.jpeg";
 import rustIcon from "../../assets/rust.png";
+
+const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/my_new_img.jpeg?tr=w-800,q-80";
 
 export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
