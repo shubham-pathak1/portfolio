@@ -3,7 +3,7 @@ import { useTheme } from "../hooks/useTheme";
 import { Dock } from "./ui/Dock";
 
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+export const Layout = ({ children, className = "max-w-[800px]" }: { children: React.ReactNode; className?: string }) => {
     const { theme, toggleTheme } = useTheme();
     const pointerRef = React.useRef({ x: 0, y: 0 });
     const rafRef = React.useRef<number | null>(null);
@@ -67,7 +67,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                 }}
             />
             <main className="flex-grow pt-10 md:pt-12 pb-20 relative z-10">
-                <div className="container mx-auto px-6 max-w-[800px]">
+                <div className={`container mx-auto px-6 ${className}`}>
                     {children}
 
                     {/* Global Footer */}
