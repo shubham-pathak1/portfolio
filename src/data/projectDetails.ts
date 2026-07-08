@@ -16,6 +16,7 @@ export interface ProjectDetail {
     image: string;
     github: string;
     liveLink?: string;
+    downloadLink?: string;
     ctaLabel?: string;
     screenshots?: string[];
     category: 'personal' | 'freelance';
@@ -319,7 +320,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "https://ik.imagekit.io/shubhampathak/portfolio/lyrics.png?updatedAt=1782366886607"
         ],
         github: "https://github.com/shubham-pathak1/orca",
-        liveLink: "https://github.com/shubham-pathak1/orca/releases/tag/v0.1.0-alpha",
+        liveLink: "https://orca-music.vercel.app/",
+        downloadLink: "https://github.com/shubham-pathak1/orca/releases/tag/v0.1.0-alpha",
         ctaLabel: "Download Release",
         category: "personal"
     }

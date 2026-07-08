@@ -244,12 +244,23 @@ export const ProjectDetail = () => {
                                             rel="noopener noreferrer"
                                             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
                                         >
-                                            {project.ctaLabel?.includes("Download") ? (
+                                            {(!project.downloadLink && project.ctaLabel?.includes("Download")) ? (
                                                 <Download size={18} />
                                             ) : (
                                                 <ExternalLink size={18} />
                                             )}
-                                            {project.ctaLabel || "Visit Site"}
+                                            {!project.downloadLink && project.ctaLabel ? project.ctaLabel : "Visit Site"}
+                                        </a>
+                                    )}
+                                    {project.downloadLink && (
+                                        <a
+                                            href={project.downloadLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                        >
+                                            <Download size={18} />
+                                            {project.ctaLabel?.includes("Download") ? project.ctaLabel : "Download Release"}
                                         </a>
                                     )}
                                     {project.github && (
