@@ -4,52 +4,6 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import expressIcon from "../../assets/express.png";
 const experiences = [
   {
-    id: "inbox infotech",
-    company: "Inbox Infotech",
-    role: "Front-End Developer Intern",
-    location: "Vadodara (On-Site)",
-    duration: "July 2026 - Present",
-    isCurrent: true,
-    technologies: [
-      {
-        name: "MongoDB",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg",
-      },
-      {
-        name: "React",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg",
-      },
-      {
-        name: "Node.js",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg",
-      },
-      {
-        name: "Vercel",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/vercel-icon.svg",
-      },
-      {
-        name: "Bun",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/bun-original.svg",
-      },
-      {
-        name: "Postman",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/postman-original.svg",
-      },
-      {
-        name: "Razorpay",
-        icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/razorpay.png",
-      },
-    ],
-    description: [
-      "Working with the full stack team on client web applications.",
-      "Learning the company's development workflow and codebase.",
-    ],
-  },
-  {
     id: "redspark",
     company: "Redsparks",
     role: "MERN Stack Intern",
