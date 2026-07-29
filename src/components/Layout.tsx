@@ -66,7 +66,7 @@ export const Layout = ({ children, className = "max-w-[800px]" }: { children: Re
                     background: "radial-gradient(600px circle at var(--spotlight-x) var(--spotlight-y), var(--glow-color), transparent 40%)"
                 }}
             />
-            <main className="flex-grow pt-10 md:pt-12 pb-20 relative z-10">
+            <main className="flex-grow pt-10 md:pt-12 pb-36 md:pb-44 relative z-10">
                 <div className={`container mx-auto px-6 ${className}`}>
                     {children}
 

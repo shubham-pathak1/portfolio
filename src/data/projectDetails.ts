@@ -125,7 +125,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.0 Alpha Released",
+        status: "v0.1.3 Released",
         overview: "Ciel is an open-source download manager for Windows that handles multi-threaded HTTP downloads and torrent files.",
         features: [
             "Download files faster using a multi-threaded HTTP engine.",
@@ -278,25 +278,26 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A desktop music player for local files, built with Tauri, Rust, and Svelte.",
+        tagline: "A local music player built with Tauri, Rust, and Svelte.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
         status: "v0.1.0 Alpha Released",
-        overview: "Orca is a desktop music player for local audio files. Built with Tauri and Rust, it includes a 'Phantom Mode' designed to minimize system resource usage when minimized to the system tray.",
+        overview: "Orca is a desktop music player for local audio files. I started it because most players I used felt old, heavy, or locked to one platform. The idea was to build something cross-platform, lightweight, and easier to live with day to day.",
         features: [
-            "Minimize the player to the system tray to run it in a low-resource 'Phantom Mode'.",
-            "Play lossless audio formats including FLAC, WAV, ALAC, and AIFF natively.",
-            "View synced and static lyrics as songs play.",
-            "Edit track and album metadata tags directly within your library.",
-            "Automatically fetch and sync lyrics from LRCLIB.",
-            "Monitor sample rates, bitrates, and bit depths in real time during playback.",
-            "Control audio playback using system-wide global shortcuts.",
-            "Scan and organize local directories to build your music collection quickly."
+            "Tray support with a low-resource 'Phantom Mode' when the app is minimized.",
+            "Play local lossless formats like FLAC, WAV, ALAC, and AIFF.",
+            "Show synced and static lyrics while a track is playing.",
+            "Fetch lyrics automatically from LRCLIB.",
+            "Edit track and album metadata inside the app.",
+            "Fetch cover art for songs, albums, and artists from iTunes.",
+            "Show playback stats like sample rate, bitrate, and bit depth.",
+            "Use global shortcuts and scan local folders to build a library fast."
         ],
         whyBuilt: [
-            "To build a music player that uses fewer resources than Electron-based alternatives.",
-            "To create a native audio player for Windows using Rust."
+            "I wanted a music player that felt lighter than the Electron apps I kept comparing it to.",
+            "I wanted it to be open source and cross-platform instead of tied to one desktop stack.",
+            "I wanted a project that could later move toward GPUI if that makes the app feel even lighter."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -307,11 +308,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Successfully released v0.1.0 Alpha for public testing."
+            "Released v0.1.3 for public testing.",
+            "Proved the core stack can handle a real desktop app without feeling bloated."
         ],
         futurePlans: [
-            "Advanced EQ and DSP filter implementation.",
-            "Cloud metadata enrichment and album art fetching."
+            "Advanced EQ and DSP filters.",
+            "More metadata cleanup and smarter album art fetching.",
+            "A possible move from Svelte to GPUI if it makes the app simpler and lighter."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
         screenshots: [

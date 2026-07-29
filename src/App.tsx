@@ -8,6 +8,7 @@ import { About } from "./components/sections/About";
 import { Experience } from "./components/sections/Experience";
 import { Projects } from "./components/sections/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
+import { OrcaCaseStudy } from "./pages/OrcaCaseStudy";
 import { AllProjects } from "./pages/AllProjects";
 import { NotFound } from "./pages/NotFound";
 import { SmoothScroll } from "./components/ui/SmoothScroll";
@@ -104,6 +105,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<AllProjects />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/case-studies/orca" element={<OrcaCaseStudy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

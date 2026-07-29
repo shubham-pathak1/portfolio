@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SEO } from "../components/SEO";
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download, ArrowUpRight } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
 import { useTheme } from "../hooks/useTheme";
@@ -262,6 +262,15 @@ export const ProjectDetail = () => {
                                             <Download size={18} />
                                             {project.ctaLabel?.includes("Download") ? project.ctaLabel : "Download Release"}
                                         </a>
+                                    )}
+                                    {project.id === "orca" && (
+                                        <Link
+                                            to="/case-studies/orca"
+                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                        >
+                                            <ArrowUpRight size={18} />
+                                            Case Study
+                                        </Link>
                                     )}
                                     {project.github && (
                                         <a
