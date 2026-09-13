@@ -184,7 +184,7 @@ export const About = () => {
                         {/* Mobile CTA */}
                         <div className="flex md:hidden items-center gap-3 w-full mb-10">
                             <a
-                                href="https://drive.google.com/file/d/1_5uYCsKOiRhQugOqvhHoG6VwyCBMFi6I/view?usp=sharing"
+                                href="https://drive.google.com/file/d/13-PHPHpD2RY8jCCkL69jEJYeflOLA3TZ/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Open resume in a new tab"
@@ -218,7 +218,7 @@ export const About = () => {
                         <div className="hidden md:flex flex-wrap items-center justify-center md:justify-start gap-6">
                             <div className="flex items-center gap-3 flex-wrap justify-center">
                                 <a
-                                    href="https://drive.google.com/file/d/1_5uYCsKOiRhQugOqvhHoG6VwyCBMFi6I/view?usp=sharing"
+                                    href="https://drive.google.com/file/d/13-PHPHpD2RY8jCCkL69jEJYeflOLA3TZ/view?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Open resume in a new tab"
