@@ -35,9 +35,6 @@ export const OrcaCaseStudy = () => {
                 </Link>
 
                 <header className="mb-14">
-                    <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-text-secondary">
-                        Case study
-                    </div>
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Orca</h1>
                     <p className="text-xl text-text-secondary max-w-3xl leading-relaxed">
                         A local music player I started because the desktop players I kept using felt heavy, dated, or stuck on one platform.

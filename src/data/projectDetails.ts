@@ -72,50 +72,57 @@ export const projectDetails: Record<string, ProjectDetail> = {
         liveLink: "https://shonen-app.vercel.app/",
         category: "personal"
     },
-    "krishi-sangam": {
-        id: "krishi-sangam",
-        title: "Krishi Sangam",
-        tagline: "A B2B agricultural marketplace connecting farmers directly with buyers, featuring price analytics.",
-        timeline: "4 months",
-        role: "Front End Developer",
-        team: "Team of 4",
-        status: "Beta",
-        overview: "Krishi Sangam connects farmers directly with wholesalers and retailers. It replaces traditional intermediaries to establish direct pricing and traceable produce sales.",
+    "orca": {
+        id: "orca",
+        title: "Orca",
+        tagline: "A local music player built with Tauri, Rust, and Svelte.",
+        timeline: "Ongoing",
+        role: "Lead Developer",
+        team: "Solo",
+        status: "v0.1.5 Released",
+        overview: "Orca is a desktop music player for local audio files. I started it because most players I used felt old, heavy, or locked to one platform. The idea was to build something cross-platform, lightweight, and easier to live with day to day.",
         features: [
-            "List crops, quantities, and expected prices as a farmer.",
-            "Switch between English and regional languages.",
-            "View real-time market price trend graphs from regional mandis.",
-            "Complete transactions safely using an escrow payment system.",
-            "Find and connect with local transport providers for crop delivery."
+            "Tray support with a low-resource 'Phantom Mode' when the app is minimized.",
+            "Play local lossless formats like FLAC, WAV, ALAC, and AIFF.",
+            "Show synced and static lyrics while a track is playing.",
+            "Fetch lyrics automatically from LRCLIB.",
+            "Edit track and album metadata inside the app.",
+            "Fetch cover art for songs, albums, and artists from iTunes.",
+            "Show playback stats like sample rate, bitrate, and bit depth.",
+            "Use global shortcuts and scan local folders to build a library fast."
         ],
         whyBuilt: [
-            "Farmers often lose up to 40% of their profit to intermediaries.",
-            "Lack of price transparency in local mandis.",
-            "I wanted to use technology to solve a genuine grassroots problem.",
-            "To challenge myself with building a complex B2B marketplace architecture."
+            "I wanted a music player that felt lighter than the Electron apps I kept comparing it to.",
+            "I wanted it to be open source and cross-platform instead of tied to one desktop stack.",
+            "I wanted a project that could later move toward GPUI if that makes the app feel even lighter."
         ],
         techStack: [
-            { name: "React.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
-            { name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
-            { name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
-            { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
-            { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" }
+            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
+            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
+            { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
+            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
+            { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
+            { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Onboarded 50+ local farmers during the pilot phase.",
-            "Processed over 1,000 kg of fresh produce orders.",
-            "Reduced post-harvest wastage by 15% for participating farmers.",
-            "Received 'Best Social Impact' nomination at college hackathon.",
-            "Learned immense lessons about designing for low-literacy user groups."
+            "Released v0.1.3 for public testing.",
+            "Proved the core stack can handle a real desktop app without feeling bloated."
         ],
         futurePlans: [
-            "Integrate IoT sensors for soil quality monitoring.",
-            "Blockchain integration for supply chain immutability.",
-            "Voice-assisted listing for farmers who cannot type.",
-            "Expansion to 3 neighboring districts."
+            "Advanced EQ and DSP filters.",
+            "More metadata cleanup and smarter album art fetching.",
+            "A possible move from Svelte to GPUI if it makes the app simpler and lighter."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/krishi_sangam.png?tr=f-auto,lo-true",
-        github: "https://github.com/shubham-pathak1/krishi-sangam",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
+        screenshots: [
+            "https://ik.imagekit.io/shubhampathak/portfolio/orca_fullplayer.png?updatedAt=1782366637638",
+            "https://ik.imagekit.io/shubhampathak/portfolio/orca_library.png?updatedAt=1782366595750",
+            "https://ik.imagekit.io/shubhampathak/portfolio/lyrics.png?updatedAt=1782366886607"
+        ],
+        github: "https://github.com/shubham-pathak1/orca",
+        liveLink: "https://orca-music.vercel.app/",
+        downloadLink: "https://github.com/shubham-pathak1/orca/tags",
+        ctaLabel: "Download Release",
         category: "personal"
     },
     "ciel": {
@@ -234,7 +241,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Blog section for sharing indie music.",
             "Calendar integration for real-time availability checking."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar.png?tr=f-auto,lo-true",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar_portfolio?updatedAt=1789327562534",
         github: "", // Client project, no public repo
         liveLink: "https://shlokdatar.vercel.app/",
         category: "freelance"
@@ -272,59 +279,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
         image: "https://ik.imagekit.io/shubhampathak/portfolio/fenrir_logo.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/fenrir",
         liveLink: "https://github.com/shubham-pathak1/fenrir/releases/tag/v0.1.0-alpha.1",
-        ctaLabel: "Download Release",
-        category: "personal"
-    },
-    "orca": {
-        id: "orca",
-        title: "Orca",
-        tagline: "A local music player built with Tauri, Rust, and Svelte.",
-        timeline: "Ongoing",
-        role: "Lead Developer",
-        team: "Solo",
-        status: "v0.1.0 Alpha Released",
-        overview: "Orca is a desktop music player for local audio files. I started it because most players I used felt old, heavy, or locked to one platform. The idea was to build something cross-platform, lightweight, and easier to live with day to day.",
-        features: [
-            "Tray support with a low-resource 'Phantom Mode' when the app is minimized.",
-            "Play local lossless formats like FLAC, WAV, ALAC, and AIFF.",
-            "Show synced and static lyrics while a track is playing.",
-            "Fetch lyrics automatically from LRCLIB.",
-            "Edit track and album metadata inside the app.",
-            "Fetch cover art for songs, albums, and artists from iTunes.",
-            "Show playback stats like sample rate, bitrate, and bit depth.",
-            "Use global shortcuts and scan local folders to build a library fast."
-        ],
-        whyBuilt: [
-            "I wanted a music player that felt lighter than the Electron apps I kept comparing it to.",
-            "I wanted it to be open source and cross-platform instead of tied to one desktop stack.",
-            "I wanted a project that could later move toward GPUI if that makes the app feel even lighter."
-        ],
-        techStack: [
-            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
-            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
-            { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
-        ],
-        impact: [
-            "Released v0.1.3 for public testing.",
-            "Proved the core stack can handle a real desktop app without feeling bloated."
-        ],
-        futurePlans: [
-            "Advanced EQ and DSP filters.",
-            "More metadata cleanup and smarter album art fetching.",
-            "A possible move from Svelte to GPUI if it makes the app simpler and lighter."
-        ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
-        screenshots: [
-            "https://ik.imagekit.io/shubhampathak/portfolio/orca_fullplayer.png?updatedAt=1782366637638",
-            "https://ik.imagekit.io/shubhampathak/portfolio/orca_library.png?updatedAt=1782366595750",
-            "https://ik.imagekit.io/shubhampathak/portfolio/lyrics.png?updatedAt=1782366886607"
-        ],
-        github: "https://github.com/shubham-pathak1/orca",
-        liveLink: "https://orca-music.vercel.app/",
-        downloadLink: "https://github.com/shubham-pathak1/orca/releases/tag/v0.1.0-alpha",
         ctaLabel: "Download Release",
         category: "personal"
     }

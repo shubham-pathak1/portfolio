@@ -62,7 +62,7 @@ export const About = () => {
                         <h2 className="text-2xl font-bold text-text-primary tracking-tight">
                             Shubham Pathak
                         </h2>
-                        <p className="text-sm font-medium text-text-secondary">Full Stack Dev</p>
+                        <p className="text-sm font-medium text-text-secondary">Product & Full Stack Dev</p>
                     </div>
                 </div>
 
@@ -76,33 +76,25 @@ export const About = () => {
                             Shubham Pathak
                         </h2>
                         <p className="hidden md:block text-lg font-medium text-text-secondary mt-1">
-                            Full Stack Dev
+                            Product & Web Dev
                         </p>
                     </div>
 
                     <div className="space-y-6 mb-8 md:mb-6">
                         <p className="text-text-secondary text-base md:text-xl leading-relaxed">
-                            I build things for the web using{" "}
+                            I build things for the{" "}
                             <span className="text-text-primary font-bold">
-                                React
+                                web
                             </span>
-                            ,{" "}
+                            , am also interested into the{" "}
                             <span className="text-text-primary font-bold">
-                                TypeScript
+                                product
                             </span>
-                            , and{" "}
-                            <span className="text-text-primary font-bold">
-                                Node.js
-                            </span>
-                            . I am also into{" "}
-                            <span className="text-text-primary font-bold">
-                                interaction design
-                            </span>
-                            , contributing to{" "}
+                            {" "}side of things, and I also like exploring and contributing to{" "}
                             <span className="text-text-primary font-bold">
                                 open source
                             </span>
-                            {" "}and yeah,{" "}
+                            {" "}projects (I try :p) and yeah,{" "}
                             <span className="text-text-primary font-bold">
                                 I use Arch btw :)
                             </span>
@@ -192,7 +184,7 @@ export const About = () => {
                         {/* Mobile CTA */}
                         <div className="flex md:hidden items-center gap-3 w-full mb-10">
                             <a
-                                href="https://drive.google.com/file/d/1Wkf6o-0xPUCd4i9delwCCbdOFTkJnhM2/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1_5uYCsKOiRhQugOqvhHoG6VwyCBMFi6I/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Open resume in a new tab"
@@ -226,7 +218,7 @@ export const About = () => {
                         <div className="hidden md:flex flex-wrap items-center justify-center md:justify-start gap-6">
                             <div className="flex items-center gap-3 flex-wrap justify-center">
                                 <a
-                                    href="https://drive.google.com/file/d/1Wkf6o-0xPUCd4i9delwCCbdOFTkJnhM2/view?usp=sharing"
+                                    href="https://drive.google.com/file/d/1_5uYCsKOiRhQugOqvhHoG6VwyCBMFi6I/view?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Open resume in a new tab"

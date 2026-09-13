@@ -31,7 +31,7 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-max">
             <div
                 className={cn(
-                    "flex gap-3 p-2.5 rounded-[20px] border shadow-lg backdrop-blur-md",
+                    "flex gap-3 p-2 rounded-[20px] border shadow-lg backdrop-blur-md",
                     theme === "dark"
                         ? "bg-[rgba(15,15,15,0.8)] border-[rgba(255,255,255,0.1)]"
                         : "bg-[rgba(255,255,255,0.8)] border-[rgba(0,0,0,0.1)]"
@@ -46,7 +46,7 @@ export const Dock = ({ theme, toggleTheme }: DockProps) => {
                 </DockButton>
 
 
-                <div className="w-px bg-border mx-1 my-auto h-6" />
+                <div className="w-px bg-border mx-1 my-auto h-5" />
 
                 <AnimatedThemeToggler theme={theme} toggleTheme={toggleTheme} />
             </div>
@@ -60,7 +60,7 @@ const DockButton = ({ children, onClick, label }: { children: React.ReactNode; o
         type="button"
         aria-label={label}
         title={label}
-        className="w-11 h-11 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
+        className="w-10 h-10 rounded-xl grid place-items-center text-text-secondary transition-all duration-200 hover:bg-surface-hover hover:text-text-primary hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
     >
         {children}
     </button>

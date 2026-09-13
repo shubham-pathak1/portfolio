@@ -79,7 +79,7 @@ export function AnimatedThemeToggler({
             ref={ref}
             whileTap={{ scale: 0.95 }}
             onClick={handleToggle}
-            className={`relative w-11 h-11 rounded-xl grid place-items-center transition-all duration-200 hover:bg-surface-hover hover:-translate-y-1 ${theme === "dark"
+            className={`relative w-10 h-10 rounded-xl grid place-items-center transition-all duration-200 hover:bg-surface-hover hover:-translate-y-1 ${theme === "dark"
                 ? "text-text-primary"
                 : "text-text-secondary hover:text-text-primary"
                 }`}
