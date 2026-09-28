@@ -75,11 +75,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A local music player built with Tauri, Rust, and Svelte.",
+        tagline: "A local music player built with Tauri, Rust, and Svelte. Currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.5 Released",
+        status: "v0.1.5 Alpha Released",
         overview: "Orca is a desktop music player for local audio files. I started it because most players I used felt old, heavy, or locked to one platform. The idea was to build something cross-platform, lightweight, and easier to live with day to day.",
         features: [
             "Tray support with a low-resource 'Phantom Mode' when the app is minimized.",
@@ -105,7 +105,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Released v0.1.3 for public testing.",
+            "Currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads.",
             "Proved the core stack can handle a real desktop app without feeling bloated."
         ],
         futurePlans: [
@@ -132,7 +132,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.3 Released",
+        status: "v0.1.5 Alpha Released",
         overview: "Ciel is an open-source download manager for Windows that handles multi-threaded HTTP downloads and torrent files.",
         features: [
             "Download files faster using a multi-threaded HTTP engine.",
@@ -143,7 +143,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         whyBuilt: [
             "I wanted to build a download manager that is lightweight, fast, and has a good UI/UX.",
-            "I also wanted to be it open-source and free to use and support torrent downloads as well."
+            "I wanted it to be open-source, free to use, and capable of supporting torrent downloads."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -253,7 +253,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "Recent",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.0-alphaReleased",
+        status: "v0.1.0-alpha Released",
         overview: "Fenrir is a wallpaper manager for Windows. Built with Rust and Slint, it runs video and interactive scenes as desktop backgrounds with low CPU usage.",
         features: [
             "Set videos and interactive files as live desktop backgrounds.",
@@ -273,8 +273,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         futurePlans: [
             "Workshop integration for community-created wallpapers.",
-            "Adding web support(for yt videos)",
-            "Adding linux support"
+            "Adding web support for YouTube videos",
+            "Adding Linux support"
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/fenrir_logo.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/fenrir",

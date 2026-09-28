@@ -149,7 +149,7 @@ export const OrcaCaseStudy = () => {
                     <section>
                         <h2 className="text-2xl font-bold mb-5">What happened next</h2>
                         <p className="text-text-secondary leading-relaxed max-w-4xl mb-4">
-                            Orca reached v0.1.3 and I kept it open for testing. It is not finished, but it is far enough along to show the direction clearly.
+                            Orca is currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads. It is not finished, but it is far enough along to show the direction clearly.
                         </p>
                         <ul className="list-disc pl-5 space-y-2 text-text-secondary">
                             <li>Better UI polish so it feels less rough around the edges.</li>

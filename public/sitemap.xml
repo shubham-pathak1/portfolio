@@ -6,23 +6,21 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-<!--
   <url>
-    <loc>https://shubhampathak.vercel.app/project/throttle-talks</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
--->
-  <url>
-    <loc>https://shubhampathak.vercel.app/project/krishi-sangam</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://shubhampathak.vercel.app/project/orca</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shubhampathak.vercel.app/project/bastion</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://shubhampathak.vercel.app/case-studies/orca</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shubhampathak.vercel.app/project/fenrir</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -34,19 +32,13 @@
   </url>
   <url>
     <loc>https://shubhampathak.vercel.app/project/kanha-salad</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shubhampathak.vercel.app/project/shlok-datar</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://shubhampathak.vercel.app/project/mew</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

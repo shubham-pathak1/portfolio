@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO = ({
     title = "Shubham Pathak | Full Stack Developer",
     description = "Software Engineer and Full-stack Developer based in Vadodara, Gujarat. Specialized in React, TypeScript, and Rust. Engineering high-performance software systems.",
-    image = "/favicon.png",
+    image = "https://shubhampathak.vercel.app/favicon.png",
     url = "https://shubhampathak.vercel.app/",
     type = "website",
     children

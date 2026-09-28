@@ -5,11 +5,11 @@ import expressIcon from "../../assets/express.png";
 const experiences = [
   {
     id: "redspark",
-    company: "Redsparks",
+    company: "Redspark Technologies",
     role: "MERN Stack Intern",
     location: "Vadodara (On-Site)",
     duration: "January 2026 - May 2026",
-    isCurrent: true,
+    isCurrent: false,
     technologies: [
       {
         name: "MongoDB",
@@ -50,9 +50,9 @@ const experiences = [
       },
     ],
     description: [
-      "Built Shonen, a full-stack multi-vendor marketplace for manga and collectibles.",
-      "Designed and partially built a video upscaling platform, implemented the async job queue architecture using Redis and BullMQ, but couldn't complete GPU inference due to cost constraints.",
-      "Built Theo, a real-time AI chat app with streaming responses, an async image generation pipeline via BullMQ and Redis, Firebase Auth, and Razorpay payment integration.",
+      "Developed and maintained full-stack features for live web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Designed RESTful APIs and component-based frontend architecture; integrated Cloudinary/ImageKit for media delivery and Razorpay for payment processing.",
+      "Set up CI/CD pipelines using GitHub Actions, deployed to Vercel and Render, collaborated with developers and cross-functional teams, and participated in code reviews under senior developer guidance.",
     ],
   },
   {
