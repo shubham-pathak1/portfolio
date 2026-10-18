@@ -3,16 +3,16 @@ import { useState } from "react";
 import { Download, Mail, Linkedin, Github } from "lucide-react";
 import rustIcon from "../../assets/rust.png";
 
-const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/my_new_img.jpeg?tr=w-800,q-80";
+const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/me.jpeg";
 
 export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     const skills = [
+        { id: "javascript", name: "JavaScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/javascript-original.svg?updatedAt=1777358255855" },
         { id: "react", name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
-        { id: "typescript", name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
-        { id: "nextjs", name: "Next.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nextjs-original.svg" },
         { id: "nodejs", name: "Node.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nodejs-original.svg" },
+        { id: "expressjs", name: "Express.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/express.png?tr=f-auto,lo-true" },
         { id: "rust", name: "Rust", icon: rustIcon },
         { id: "linux", name: "Linux", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/linux-original.svg" }
     ];
@@ -42,18 +42,18 @@ export const About = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="group flex flex-col md:grid md:grid-cols-[320px_1fr] gap-4 md:gap-12 items-start"
+                className="group flex flex-col md:grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] gap-4 md:gap-10 items-start"
             >
                 <div className="flex flex-row md:flex-col md:mx-0 gap-4 sm:gap-5 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
                     {/* Clean double-border frame without offset lines */}
                     <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[260px] lg:w-[280px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
                             <img
                                 src={profileImage}
                                 alt="Shubham Pathak"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-full object-cover object-[45%_58%] scale-[1.1] md:scale-[1.1] grayscale contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-700 ease-out"
+                                className="w-full h-full object-cover object-[52%_46%] scale-[4.9] origin-[52%_46%] transition-transform duration-700 ease-out"
                             />
                         </div>
                     </div>
@@ -86,15 +86,15 @@ export const About = () => {
                             <span className="text-text-primary font-bold">
                                 web
                             </span>
-                            , am also interested into the{" "}
+                            {" "}and like working on the{" "}
                             <span className="text-text-primary font-bold">
                                 product
                             </span>
-                            {" "}side of things, and I also like exploring and contributing to{" "}
+                            {" "}side of things as well. I also like exploring and contributing to{" "}
                             <span className="text-text-primary font-bold">
                                 open source
                             </span>
-                            {" "}projects (I try :p) and yeah,{" "}
+                            {" "}projects (I try :p), and yeah,{" "}
                             <span className="text-text-primary font-bold">
                                 I use Arch btw :)
                             </span>
@@ -133,21 +133,13 @@ export const About = () => {
                                             aria-label={skill.name}
                                             className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
-                                            {skill.id === "nextjs" ? (
-                                                <img
-                                                    src={skill.icon}
-                                                    alt={skill.name}
-                                                    className="w-5 h-5 object-contain transition-all duration-300 dark:invert grayscale group-hover/skill:grayscale-0"
-                                                />
-                                            ) : (
-                                                <img
-                                                    src={skill.icon}
-                                                    className="w-5 h-5 transition-all duration-300 group-hover/skill:grayscale-0 group-hover/skill:scale-110"
-                                                    alt={skill.name}
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                />
-                                            )}
+                                            <img
+                                                src={skill.icon}
+                                                className="w-5 h-5 object-contain transition-all duration-300 group-hover/skill:grayscale-0 group-hover/skill:scale-110"
+                                                alt={skill.name}
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
                                         </motion.button>
 
                                         <AnimatePresence>
@@ -184,7 +176,7 @@ export const About = () => {
                         {/* Mobile CTA */}
                         <div className="flex md:hidden items-center gap-3 w-full mb-10">
                             <a
-                                href="https://drive.google.com/file/d/1rDGBajhgTIsGfXfJF-IsnX0Y0ZJWv1iO/view?usp=sharing"
+                                href="https://drive.google.com/file/d/13-PHPHpD2RY8jCCkL69jEJYeflOLA3TZ/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Open resume in a new tab"
@@ -218,7 +210,7 @@ export const About = () => {
                         <div className="hidden md:flex flex-wrap items-center justify-center md:justify-start gap-6">
                             <div className="flex items-center gap-3 flex-wrap justify-center">
                                 <a
-                                    href="https://drive.google.com/file/d/1rDGBajhgTIsGfXfJF-IsnX0Y0ZJWv1iO/view?usp=sharing"
+                                    href="https://drive.google.com/file/d/13-PHPHpD2RY8jCCkL69jEJYeflOLA3TZ/view?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Open resume in a new tab"

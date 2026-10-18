@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 const notes = [
     {
         title: "What I noticed",
-        body: "Most players I used felt old, heavy, or locked to one platform. That was the starting point for Orca."
+        body: "Most desktop players I used felt either visually dated or bundled with features and services I didn't need for everyday offline listening."
     },
     {
         title: "What I tried to fix",
-        body: "Orca is my attempt at a lighter local music player. I used Tauri, Rust, and Svelte because I wanted a smaller app, a cross-platform setup, and a stack I could keep improving without fighting the runtime too much."
+        body: "Orca is my attempt at a lighter local music player. I used Rust and Slint because I wanted a responsive native app with a clean UI, fast response, and minimal resource usage."
     },
     {
         title: "What I kept first",
-        body: "I started with the parts people actually use every day: tray mode, lyrics, metadata editing, cover art, shortcuts, and local library scanning. The idea was to keep it useful before trying to make it fancy."
+        body: "I started with the parts people actually use every day: tray integration, synchronized lyrics, metadata editing, cover art fetching, global shortcuts, and fast local library scanning."
     },
     {
         title: "What it shows",
-        body: "This kind of work is closer to product thinking than a learning demo. I looked at what already existed, noticed the tradeoffs, cut the scope, and built around the basics first."
+        body: "Building Orca required balancing native performance with modern UI design: narrowing scope to core playback features, keeping resource usage low, and focusing on everyday usability."
     }
 ];
 

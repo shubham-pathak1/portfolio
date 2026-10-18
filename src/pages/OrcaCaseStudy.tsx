@@ -35,53 +35,46 @@ export const OrcaCaseStudy = () => {
                 </Link>
 
                 <header className="mb-14">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Orca</h1>
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="w-12 h-12 md:w-14 md:h-14 shrink-0">
+                            <img
+                                src={project.image}
+                                alt="Orca logo"
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Orca</h1>
+                    </div>
                     <p className="text-xl text-text-secondary max-w-3xl leading-relaxed">
-                        A local music player I started because the desktop players I kept using felt heavy, dated, or stuck on one platform.
+                        A lightweight desktop music player for local audio files, built with Rust and Slint.
                     </p>
                 </header>
 
                 <section className="space-y-12">
                     <section>
-                        <h2 className="text-2xl font-bold mb-5">Problem</h2>
+                        <h2 className="text-2xl font-bold mb-5">Context & Motivation</h2>
                         <div className="space-y-4 text-text-secondary leading-relaxed">
                             <div className="flex gap-3 items-start">
                                 <span className="text-text-primary text-xl leading-none">•</span>
-                                <p>The players I kept comparing against all had a tradeoff I did not like: some felt old, some were too heavy, and some were tied to one platform.</p>
+                                <p>I wanted a local music player that is minimal, lightweight, and focused purely on offline listening.</p>
                             </div>
                             <div className="flex gap-3 items-start">
                                 <span className="text-text-primary text-xl leading-none">•</span>
-                                <p>I wanted something that still handled the everyday stuff people actually use, without turning into a big desktop app that eats memory for no good reason.</p>
+                                <p>Many existing players either felt visually outdated or came bundled with extra services and features I didn't need. The goal was to build a clean native player with thoughtful UI and UX that stays fast and unobtrusive.</p>
                             </div>
                         </div>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold mb-5">Who this was for</h2>
+                        <h2 className="text-2xl font-bold mb-5">Key Features</h2>
                         <div className="space-y-4 text-text-secondary leading-relaxed">
                             {[
-                                "People who keep a local music library and want a simple player for it.",
-                                "Users who care about lyrics, metadata, shortcuts, and quick library scanning.",
-                                "People who want a cross-platform app that does not feel like a heavy web wrapper.",
-                                "Mostly me first, but with a shape that could work for other people too.",
-                            ].map((item) => (
-                                <div key={item} className="flex gap-3 items-start">
-                                    <span className="text-text-primary text-xl leading-none">•</span>
-                                    <p>{item}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold mb-5">What I decided to build first</h2>
-                        <div className="space-y-4 text-text-secondary leading-relaxed">
-                            {[
-                                "Tray support and Phantom Mode, so the app can stay out of the way.",
-                                "Local playback for FLAC, WAV, ALAC, and AIFF.",
-                                "Lyrics through LRCLIB, plus metadata editing inside the app.",
-                                "Album, song, and artist cover fetching through iTunes.",
-                                "Global shortcuts and quick folder scanning, because that is the part that makes a local player useful.",
+                                "Native local playback for lossless and standard formats including FLAC, WAV, ALAC, and AIFF.",
+                                "Synchronized and static lyrics fetched automatically via LRCLIB.",
+                                "Built-in metadata editor for modifying track titles, artists, and album information.",
+                                "Automatic artwork retrieval for tracks and albums via iTunes API.",
+                                "System tray integration for unobtrusive background playback.",
+                                "Global keyboard shortcuts and fast local folder scanning.",
                             ].map((item) => (
                                 <div key={item} className="flex gap-3 items-start">
                                     <span className="text-text-primary text-xl leading-none">•</span>
@@ -93,85 +86,97 @@ export const OrcaCaseStudy = () => {
 
                     {screenshots.length > 0 && (
                         <section>
-                            <h2 className="text-2xl font-bold mb-5">Screens</h2>
+                            <h2 className="text-2xl font-bold mb-5">Interface</h2>
                             <div className="grid gap-4 md:gap-5">
                                 <figure className="rounded-2xl overflow-hidden border border-border/50 bg-surface/30">
                                     <img
                                         src={screenshots[0]}
-                                        alt="Orca player view"
+                                        alt="Orca player and lyrics view"
                                         loading="lazy"
                                         decoding="async"
                                         className="w-full h-auto object-cover"
                                     />
                                     <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
-                                        Main player view. This is the screen people would sit on the longest.
+                                        Full player view with album artwork and synchronized lyrics.
                                     </figcaption>
                                 </figure>
 
-                                <div className="grid gap-4 md:grid-cols-2">
-                                    <figure className="rounded-2xl overflow-hidden border border-border/50 bg-surface/30">
-                                        <img
-                                            src={screenshots[1]}
-                                            alt="Orca library view"
-                                            loading="lazy"
-                                            decoding="async"
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
-                                            Library view. I wanted scanning and browsing to stay simple.
-                                        </figcaption>
-                                    </figure>
+                                {screenshots.length > 2 && (
+                                    <div className="grid gap-4 md:grid-cols-2">
+                                        <figure className="rounded-2xl overflow-hidden border border-border/50 bg-surface/30">
+                                            <img
+                                                src={screenshots[1]}
+                                                alt="Orca library view"
+                                                loading="lazy"
+                                                decoding="async"
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
+                                                Library view with track search, sorting, and folder navigation.
+                                            </figcaption>
+                                        </figure>
 
+                                        <figure className="rounded-2xl overflow-hidden border border-border/50 bg-surface/30">
+                                            <img
+                                                src={screenshots[2]}
+                                                alt="Orca album collection view"
+                                                loading="lazy"
+                                                decoding="async"
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
+                                                Albums view displaying retrieved cover artwork in a clean grid.
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                )}
+
+                                {screenshots.length > 3 && (
                                     <figure className="rounded-2xl overflow-hidden border border-border/50 bg-surface/30">
                                         <img
-                                            src={screenshots[2]}
-                                            alt="Orca lyrics view"
+                                            src={screenshots[3]}
+                                            alt="Orca metadata editor"
                                             loading="lazy"
                                             decoding="async"
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-auto object-cover"
                                         />
                                         <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
-                                            Lyrics view. This was one of the first useful features to get working.
+                                            In-app metadata editor for editing audio tags without external software.
                                         </figcaption>
                                     </figure>
-                                </div>
+                                )}
                             </div>
                         </section>
                     )}
 
                     <section>
-                        <h2 className="text-2xl font-bold mb-5">Why this stack</h2>
-                        <p className="text-text-secondary leading-relaxed max-w-4xl">
-                            Tauri, Rust, and Svelte were the practical choice. I wanted the app to stay small, stay responsive, and not feel like the usual Electron route. GPUI is something I would only move to if it genuinely makes the app simpler or lighter.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold mb-5">What happened next</h2>
-                        <p className="text-text-secondary leading-relaxed max-w-4xl mb-4">
-                            Orca is currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads. It is not finished, but it is far enough along to show the direction clearly.
-                        </p>
-                        <ul className="list-disc pl-5 space-y-2 text-text-secondary">
-                            <li>Better UI polish so it feels less rough around the edges.</li>
-                            <li>More metadata cleanup and smarter cover fetching.</li>
-                            <li>Possible GPUI work if it actually gives me a lighter app.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold mb-5">What it says about my approach</h2>
+                        <h2 className="text-2xl font-bold mb-5">Tech Stack & Architecture</h2>
                         <div className="space-y-4 text-text-secondary leading-relaxed">
-                            {[
-                                "I start from the problem, not the stack.",
-                                "I narrow scope instead of trying to build everything at once.",
-                                "I care about tradeoffs, not just features.",
-                                "I can turn a rough idea into something usable.",
-                            ].map((item) => (
-                                <div key={item} className="flex gap-3 items-start">
-                                    <span className="text-text-primary text-xl leading-none">•</span>
-                                    <p>{item}</p>
-                                </div>
-                            ))}
+                            <p>
+                                Orca is built natively with <strong>Rust</strong> and <strong>Slint</strong>:
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 text-text-secondary">
+                                <li>
+                                    <strong>Rust</strong> handles audio decoding (via Rodio), audio metadata extraction and writing (via Lofty), filesystem scanning, and system tray integration. This keeps idle CPU usage near zero and guarantees memory safety.
+                                </li>
+                                <li>
+                                    <strong>Slint</strong> serves as the declarative GUI toolkit. It compiles directly into native machine code without bundling a web browser engine, maintaining snappy UI responsiveness and a compact binary size.
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold mb-5">Current Status & Roadmap</h2>
+                        <p className="text-text-secondary leading-relaxed max-w-4xl mb-4">
+                            Orca is currently at the latest <strong>v0.1.7 alpha</strong> release with <strong>60+ GitHub stars</strong> and 100+ cumulative downloads. It is currently limited to <strong>Windows</strong>.
+                        </p>
+                        <div className="space-y-2 text-text-secondary">
+                            <p className="font-medium text-text-primary">Planned improvements:</p>
+                            <ul className="list-disc pl-5 space-y-1.5">
+                                <li>Cross-platform support: Linux support planned first, followed by macOS.</li>
+                                <li>Advanced equalizer and DSP audio filters.</li>
+                            </ul>
                         </div>
                     </section>
                 </section>

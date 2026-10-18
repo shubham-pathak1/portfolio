@@ -74,7 +74,7 @@ export const ProjectDetail = () => {
                     <header className="mb-16 fade-in">
                         <div className="mb-6">
                             <div className="flex items-center gap-4 md:gap-5 mb-4">
-                                {['fenrir', 'orca'].includes(project.id) && (
+                                {project.id === 'orca' && (
                                     <div className="w-14 h-14 md:w-16 md:h-16 shrink-0">
                                         <motion.img
                                             layoutId={`project-image-${project.id}`}
@@ -119,7 +119,7 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    {!['fenrir', 'orca'].includes(project.id) && (
+                    {project.id !== 'orca' && (
                         <div className="mb-20 rounded-2xl overflow-hidden border border-border aspect-video bg-surface-hover">
                             <motion.img
                                 layoutId={`project-image-${project.id}`}
@@ -147,19 +147,19 @@ export const ProjectDetail = () => {
                                 </p>
                             </section>
 
-                            <section>
-                                <h2 className="text-2xl font-bold mb-6">What Users Can Do</h2>
-                                <ul className="space-y-4">
-                                    {project.features.map((feature, i) => (
-                                        <li key={i} className="flex gap-4 p-4 rounded-xl bg-surface border border-border hover:border-text-secondary/30 transition-colors">
-                                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-text-primary text-bg flex items-center justify-center text-xs font-bold mt-0.5">
-                                                {i + 1}
-                                            </span>
-                                            <span className="text-text-secondary">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
+                            {project.features && project.features.length > 0 && (
+                                <section>
+                                    <h2 className="text-2xl font-bold mb-4 pb-3 border-b border-border/50">Features</h2>
+                                    <ul className="space-y-2.5 text-text-secondary leading-relaxed">
+                                        {project.features.map((feature, i) => (
+                                            <li key={i} className="flex gap-3 items-start">
+                                                <span className="text-text-primary text-base leading-snug">•</span>
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            )}
 
                             {/* Screenshots Gallery (if available) */}
                             {project.screenshots && project.screenshots.length > 0 && (
@@ -182,7 +182,7 @@ export const ProjectDetail = () => {
                             )}
 
                             <section>
-                                <h2 className="text-2xl font-bold mb-6">Why I Built This</h2>
+                                <h2 className="text-2xl font-bold mb-6">Why I Built This?</h2>
                                 <div className="space-y-4 text-text-secondary leading-relaxed">
                                     {project.whyBuilt.map((reason, i) => (
                                         <div key={i} className="flex gap-3 items-start">
@@ -193,26 +193,30 @@ export const ProjectDetail = () => {
                                 </div>
                             </section>
 
-                            <section>
-                                <h2 className="text-2xl font-bold mb-6">After Launch & Impact</h2>
-                                <div className="space-y-4 text-text-secondary leading-relaxed">
-                                    {project.impact.map((item, i) => (
-                                        <div key={i} className="flex gap-3 items-start">
-                                            <span className="text-text-primary text-xl leading-none">•</span>
-                                            <p>{item}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                            {project.impact && project.impact.length > 0 && (
+                                <section>
+                                    <h2 className="text-2xl font-bold mb-6">After Launch & Impact</h2>
+                                    <div className="space-y-4 text-text-secondary leading-relaxed">
+                                        {project.impact.map((item, i) => (
+                                            <div key={i} className="flex gap-3 items-start">
+                                                <span className="text-text-primary text-xl leading-none">•</span>
+                                                <p>{item}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
-                            <section>
-                                <h2 className="text-2xl font-bold mb-6">Future Plans</h2>
-                                <ul className="list-disc pl-5 space-y-2 text-text-secondary">
-                                    {project.futurePlans.map((plan, i) => (
-                                        <li key={i}>{plan}</li>
-                                    ))}
-                                </ul>
-                            </section>
+                            {project.futurePlans && project.futurePlans.length > 0 && (
+                                <section>
+                                    <h2 className="text-2xl font-bold mb-6">Future Plans</h2>
+                                    <ul className="list-disc pl-5 space-y-2 text-text-secondary">
+                                        {project.futurePlans.map((plan, i) => (
+                                            <li key={i}>{plan}</li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            )}
                         </div>
 
                         {/* Sidebar */}

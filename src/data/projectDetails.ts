@@ -8,11 +8,11 @@ export interface ProjectDetail {
     team: string;
     status: string;
     overview: string;
-    features: string[];
+    features?: string[];
     whyBuilt: string[];
     techStack: { name: string; icon: string; isDarkIcon?: boolean; lightIcon?: string }[];
-    impact: string[];
-    futurePlans: string[];
+    impact?: string[];
+    futurePlans?: string[];
     image: string;
     github: string;
     liveLink?: string;
@@ -63,10 +63,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Optimized media delivery using Cloudinary for high-fidelity collectible visuals.",
             "Designed an intuitive dispute resolution system to ensure platform trust."
         ],
-        futurePlans: [
-            "Implementing a real-time auction system for rare collectibles.",
-            "Mobile app development for seamless on-the-go trading."
-        ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/shonen.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/shonen",
         liveLink: "https://shonen-app.vercel.app/",
@@ -75,49 +71,48 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A local music player built with Tauri, Rust, and Svelte. Currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads.",
+        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 100+ cumulative downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.5 Alpha Released",
-        overview: "Orca is a desktop music player for local audio files. I started it because most players I used felt old, heavy, or locked to one platform. The idea was to build something cross-platform, lightweight, and easier to live with day to day.",
+        status: "v0.1.7 Alpha Released",
+        overview: "Orca is a desktop music player for local audio files. I started it because I wanted a minimal player with a clean UI and UX that stays lightweight and focused on everyday offline listening.",
         features: [
-            "Tray support with a low-resource 'Phantom Mode' when the app is minimized.",
-            "Play local lossless formats like FLAC, WAV, ALAC, and AIFF.",
-            "Show synced and static lyrics while a track is playing.",
-            "Fetch lyrics automatically from LRCLIB.",
-            "Edit track and album metadata inside the app.",
-            "Fetch cover art for songs, albums, and artists from iTunes.",
-            "Show playback stats like sample rate, bitrate, and bit depth.",
-            "Use global shortcuts and scan local folders to build a library fast."
+            "Offline playback, search, alphabetical browsing and nested music folders",
+            "Songs, artists, albums, genres, playlists and one-click Liked Songs, with list and grid views",
+            "Gapless playback, shuffle, repeat, queue reordering and session restore",
+            "Synced and word-timed lyrics, click-to-seek, LRC import and online fetching",
+            "Waveform and classic seekbars, compact player and full-player lyrics",
+            "Song tags and embedded cover editing, bulk album, artist and genre tag updates",
+            "Online artwork lookup, custom collection covers and M3U playlist import/export",
+            "Light and dark themes, custom fonts, minimal mode, dynamic accents and cover backgrounds",
+            "Windows media controls, tray integration and keyboard shortcuts"
         ],
         whyBuilt: [
-            "I wanted a music player that felt lighter than the Electron apps I kept comparing it to.",
-            "I wanted it to be open source and cross-platform instead of tied to one desktop stack.",
-            "I wanted a project that could later move toward GPUI if that makes the app feel even lighter."
+            "I wanted a local music player that is minimal, lightweight, and focused purely on offline listening.",
+            "Many available desktop players felt either visually outdated or bundled with extra features and services I didn't need.",
+            "I wanted to build a native desktop app with Rust and Slint that combines a responsive interface with low resource usage."
         ],
         techStack: [
-            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
             { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
-            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" },
+            { name: "Slint", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/slint-icon.png", isDarkIcon: true },
             { name: "Rodio", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Currently at the latest v0.1.5 alpha version with 50+ GitHub stars and 100+ cumulative downloads.",
-            "Proved the core stack can handle a real desktop app without feeling bloated."
+            "Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 100+ cumulative downloads.",
+            "Demonstrated that a native Rust and Slint desktop application can deliver a fluid UI with a minimal memory footprint."
         ],
         futurePlans: [
-            "Advanced EQ and DSP filters.",
-            "More metadata cleanup and smarter album art fetching.",
-            "A possible move from Svelte to GPUI if it makes the app simpler and lighter."
+            "Cross-platform support: currently limited to Windows, with Linux support planned first, followed by macOS.",
+            "Advanced equalizer and DSP audio filters."
         ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/orca_logo.png?tr=f-auto,lo-true",
+        image: "https://ik.imagekit.io/shubhampathak/portfolio/orca-logo.png",
         screenshots: [
-            "https://ik.imagekit.io/shubhampathak/portfolio/orca_fullplayer.png?updatedAt=1782366637638",
-            "https://ik.imagekit.io/shubhampathak/portfolio/orca_library.png?updatedAt=1782366595750",
-            "https://ik.imagekit.io/shubhampathak/portfolio/lyrics.png?updatedAt=1782366886607"
+            "https://ik.imagekit.io/shubhampathak/orca-web/full_player_lyrics.png?updatedAt=1791553259099",
+            "https://ik.imagekit.io/shubhampathak/orca-web/library.png?updatedAt=1791553259613",
+            "https://ik.imagekit.io/shubhampathak/orca-web/album.png?updatedAt=1791553259221",
+            "https://ik.imagekit.io/shubhampathak/orca-web/metadata_editor.png?updatedAt=1791553259087"
         ],
         github: "https://github.com/shubham-pathak1/orca",
         liveLink: "https://orca-music.vercel.app/",
@@ -132,8 +127,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.5 Alpha Released",
-        overview: "Ciel is an open-source download manager for Windows that handles multi-threaded HTTP downloads and torrent files.",
+        status: "Daily Driver",
+        overview: "Ciel is a lightweight personal download manager built with Tauri and Rust to handle multi-threaded HTTP downloads and torrents for my daily workflow.",
         features: [
             "Download files faster using a multi-threaded HTTP engine.",
             "Load magnet links and download torrents with content previews.",
@@ -142,8 +137,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Schedule downloads to start or pause at specific times."
         ],
         whyBuilt: [
-            "I wanted to build a download manager that is lightweight, fast, and has a good UI/UX.",
-            "I wanted it to be open-source, free to use, and capable of supporting torrent downloads."
+            "I built Ciel as a personal download manager for my own daily use, focusing on speed, clean UI, and torrent support."
         ],
         techStack: [
             { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
@@ -151,14 +145,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
             { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" }
         ],
-        impact: [
-            "Successfully released v0.1.0 Alpha for public testing.",
-        ],
         futurePlans: [
-            "Browser extension support for seamless one-click download capturing.",
-            "Developing a 'Lite' version for users with manual binary installations.(might release a small tui utility for it)",
-            "Advanced bandwidth management and global speed limits.",
-            "Cross-platform support for Linux."
+            "Cross-platform support for my Arch Linux setup."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png?tr=f-auto,lo-true",
         github: "https://github.com/shubham-pathak1/ciel",
@@ -168,39 +156,26 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "kanha-salad": {
         id: "kanha-salad",
         title: "Kanha Salad",
-        tagline: "A subscription kitchen platform featuring dynamic menu scheduling and dual-slot delivery.",
+        tagline: "A subscription ordering platform for a local cloud kitchen with daily menu and slot management.",
         timeline: "1 month",
         role: "Full Stack Developer",
         team: "Team of 2",
-        status: "Live",
-        overview: "Kanha Salad is the storefront and ordering system for a local healthy food delivery service, managing custom salad subscriptions and daily schedules.",
+        status: "Completed",
+        overview: "A full-stack web application built for a local cloud kitchen, supporting recurring meal plan subscriptions, dynamic daily menus, and scheduled morning and evening delivery slots.",
         features: [
-            "View a rotating menu featuring daily salad selections.",
-            "Subscribe to recurring salad meal plans.",
-            "Select morning or evening delivery slots.",
-            "Track active subscriptions and past orders.",
-            "Order and manage meals from mobile or desktop screens."
+            "Recurring meal subscriptions with morning and evening delivery slot selection.",
+            "Dynamic daily menu management with rotating salad options.",
+            "User dashboard for tracking active subscriptions and order history.",
+            "Responsive ordering flow optimized for both mobile and desktop screens."
         ],
         whyBuilt: [
-            "To digitize the operations of a local cloud kitchen scaling its customer base.",
-            "Needed a robust system to handle complex subscription models and delivery slots.",
-            "To provide a premium, meaningful user experience that reflects the brand's 'organic conscience'."
+            "The client needed a dedicated platform to handle recurring meal subscriptions instead of manual phone or messaging coordination.",
+            "Built custom scheduling logic to manage morning and evening delivery windows alongside rotating menus."
         ],
         techStack: [
             { name: "Next.js", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/nextjs-original.svg", isDarkIcon: true },
             { name: "MongoDB", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/mongodb-original.svg" },
             { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" }
-        ],
-        impact: [
-            "Successfully launched and currently serving customers in Vadodara.",
-            "Streamlined order processing, reducing manual coordination time by 60%.",
-            "Enhanced brand visibility with a professional, high-end digital presence.",
-            "Positive customer feedback on the ease of ordering and subscription management."
-        ],
-        futurePlans: [
-            "Integration with third-party logistics partners for expanded delivery radius.",
-            "Advanced personalized nutrition tracking for subscribers.",
-            "Mobile app development for push notifications and instant re-ordering."
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/kanha_salad.png?tr=f-auto,lo-true",
         github: "", // Client project, no public repo
@@ -210,18 +185,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shlok-datar": {
         id: "shlok-datar",
         title: "Shlok Datar's Portfolio",
-        tagline: "A showcase website for a classical percussion artist.",
+        tagline: "A showcase website for a classical tabla player.",
         timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",
         status: "Live",
-        overview: "This website serves as a digital portfolio for Shlok Datar, showcasing his Tabla and Dholak performances, session work, and upcoming events.",
-        features: [
-            "Read about the artist's musical background and training.",
-            "Browse performance videos and media galleries.",
-            "View upcoming live concert dates and performance locations.",
-            "Send inquiries for booking and collaboration."
-        ],
+        overview: "This website serves as a digital portfolio for Shlok Datar, showcasing his Tabla and Navratri performances.",
         whyBuilt: [
             "To establish a digital presence for an artist.",
         ],
@@ -231,55 +200,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Tailwind CSS", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/tailwindcss-original.svg" },
             { name: "Framer Motion", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/framer-icon.svg" }
         ],
-        impact: [
-            "Increased booking inquiries post-launch.",
-            "Provided a shareable portfolio for collaborations.",
-            "Successfully showcased the artist's versatility across Classical, Garba, and Studio work."
-        ],
-        futurePlans: [
-            "Integration of an audio player for direct streaming of studio recordings.",
-            "Blog section for sharing indie music.",
-            "Calendar integration for real-time availability checking."
-        ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/shlok_datar_portfolio?updatedAt=1789327562534",
         github: "", // Client project, no public repo
         liveLink: "https://shlokdatar.vercel.app/",
         category: "freelance"
-    },
-    "fenrir": {
-        id: "fenrir",
-        title: "Fenrir",
-        tagline: "A live wallpaper engine for Windows, built with Rust and Slint.",
-        timeline: "Recent",
-        role: "Lead Developer",
-        team: "Solo",
-        status: "v0.1.0-alpha Released",
-        overview: "Fenrir is a wallpaper manager for Windows. Built with Rust and Slint, it runs video and interactive scenes as desktop backgrounds with low CPU usage.",
-        features: [
-            "Set videos and interactive files as live desktop backgrounds.",
-            "Manage your wallpaper library using a lightweight interface.",
-            "Minimize system resource draw during background playback."
-        ],
-        whyBuilt: [
-            "Existing live wallpaper engines are kinda bloated and resource heavy.",
-            "Wanted to build a purely native Rust application whilst also leveraging slint for making a true cross platform and lightweight UI.",
-        ],
-        techStack: [
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "Slint", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/slint-logo-square-light.svg" },
-        ],
-        impact: [
-            "v0.1.0-alpha release is now available for public testing.",
-        ],
-        futurePlans: [
-            "Workshop integration for community-created wallpapers.",
-            "Adding web support for YouTube videos",
-            "Adding Linux support"
-        ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/fenrir_logo.png?tr=f-auto,lo-true",
-        github: "https://github.com/shubham-pathak1/fenrir",
-        liveLink: "https://github.com/shubham-pathak1/fenrir/releases/tag/v0.1.0-alpha.1",
-        ctaLabel: "Download Release",
-        category: "personal"
     }
 };
