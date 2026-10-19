@@ -85,9 +85,9 @@ export const Projects = () => {
             <div className="mt-16 text-center">
                 <Link
                     to="/projects"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors uppercase tracking-widest"
+                    className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
                 >
-                    View All Projects
+                    all projects
                     <ArrowUpRight size={14} />
                 </Link>
             </div>
