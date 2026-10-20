@@ -263,10 +263,10 @@ export const Experience = () => {
                         </div>
                       </div>
 
-                      {/* What I've Done */}
+                      {/* What I Worked On */}
                       <div>
                         <div className="text-sm font-medium text-text-primary mb-4">
-                          What I've done
+                          What I Worked On
                         </div>
                         <ul className="space-y-3">
                           {exp.description.map((point, i) => (

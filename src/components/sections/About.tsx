@@ -42,20 +42,17 @@ export const About = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="group flex flex-col md:grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] gap-4 md:gap-10 items-start"
+                className="group flex flex-col md:grid md:grid-cols-[290px_1fr] lg:grid-cols-[320px_1fr] gap-4 md:gap-10 items-start"
             >
                 <div className="flex flex-row md:flex-col md:mx-0 gap-4 sm:gap-5 md:gap-8 items-center md:items-start shrink-0 w-full md:w-auto mb-2 md:mb-0">
-                    {/* Clean double-border frame without offset lines */}
-                    <div className="relative p-1 md:p-2 rounded-full md:rounded-[2rem] bg-surface/50 border border-border/50 backdrop-blur-sm transition-all duration-500 group-hover:border-text-primary/20 shrink-0">
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[260px] lg:w-[280px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.5rem] overflow-hidden bg-surface border border-border group-hover:border-text-primary/30 transition-colors duration-500">
-                            <img
-                                src={profileImage}
-                                alt="Shubham Pathak"
-                                loading="lazy"
-                                decoding="async"
-                                className="w-full h-full object-cover object-[52%_46%] scale-[4.9] origin-[52%_46%] transition-transform duration-700 ease-out"
-                            />
-                        </div>
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-[290px] lg:w-[320px] md:h-auto md:aspect-[4/5] rounded-full md:rounded-[1.75rem] overflow-hidden bg-surface shrink-0">
+                        <img
+                            src={profileImage}
+                            alt="Shubham Pathak"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover object-[52%_46%] scale-[4.9] origin-[52%_46%] transition-transform duration-700 ease-out"
+                        />
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
@@ -68,7 +65,7 @@ export const About = () => {
 
                 <div className="flex flex-col items-start text-left w-full">
                     <h1 className="sr-only">
-                        Shubham Pathak | Software Engineer & Designer
+                        Shubham Pathak | Software Engineer
                     </h1>
 
                     <div className="mb-4 md:mb-2">
