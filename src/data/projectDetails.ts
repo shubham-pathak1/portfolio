@@ -71,7 +71,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 100+ cumulative downloads.",
+        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
