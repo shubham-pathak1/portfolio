@@ -100,7 +100,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 100+ cumulative downloads.",
+            "Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
             "Demonstrated that a native Rust and Slint desktop application can deliver a fluid UI with a minimal memory footprint."
         ],
         futurePlans: [
