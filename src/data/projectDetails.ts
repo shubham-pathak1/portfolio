@@ -26,7 +26,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shonen": {
         id: "shonen",
         title: "Shonen",
-        tagline: "A marketplace for manga, comics, and collectibles featuring dashboards for customers, admins, and sellers.",
+        tagline: "A full-stack marketplace for manga and collectibles built with React, Node.js, and MongoDB, featuring multi-role dashboards.",
         timeline: "2 months",
         role: "Full Stack Developer",
         team: "Solo",
@@ -123,7 +123,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "tribunal": {
         id: "tribunal",
         title: "Tribunal",
-        tagline: "A phishing-detection browser extension with targeted DOM extraction for Gmail and Outlook, authentication, and an admin dashboard.",
+        tagline: "A phishing-detection browser extension built with React, Flask, and Firebase, featuring targeted DOM extraction for Gmail and Outlook.",
         timeline: "2 months",
         role: "Frontend & Integration Developer",
         team: "Team of 4",
@@ -179,7 +179,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "kanha-salad": {
         id: "kanha-salad",
         title: "Kanha Salad",
-        tagline: "A subscription ordering platform for a local cloud kitchen with daily menu and slot management.",
+        tagline: "A subscription ordering platform for a local cloud kitchen built with Next.js and MongoDB, featuring dynamic daily menus and slot management.",
         timeline: "1 month",
         role: "Full Stack Developer",
         team: "Team of 2",
@@ -208,7 +208,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "shlok-datar": {
         id: "shlok-datar",
         title: "Shlok Datar's Portfolio",
-        tagline: "A showcase website for a classical tabla player.",
+        tagline: "A showcase portfolio website built with Next.js, React, and Framer Motion for a classical tabla player.",
         timeline: "1 week",
         role: "Frontend Developer",
         team: "Solo",

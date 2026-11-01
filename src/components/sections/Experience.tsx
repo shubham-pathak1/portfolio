@@ -89,7 +89,7 @@ const experiences = [
 
 export const Experience = () => {
   const [showAll, setShowAll] = useState(false);
-  const [expandedJobs, setExpandedJobs] = useState<string[]>([]);
+  const [expandedJobs, setExpandedJobs] = useState<string[]>(["redspark"]);
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   const toggleJob = (id: string) => {
@@ -139,7 +139,7 @@ export const Experience = () => {
                       </h3>
 
                       {/* Desktop Arrow */}
-                      <div className="hidden md:flex opacity-0 group-hover:opacity-100 text-text-secondary/40 transition-all duration-300 shrink-0">
+                      <div className="hidden md:flex opacity-40 group-hover:opacity-100 text-text-secondary transition-all duration-300 shrink-0">
                         {isExpanded ? (
                           <ChevronDown size={14} />
                         ) : (
@@ -224,7 +224,7 @@ export const Experience = () => {
                                     damping: 25,
                                   },
                                 }}
-                                className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none"
+                                className="w-10 h-10 rounded-full border border-border/50 grid place-items-center cursor-pointer relative appearance-none"
                               >
                                 {tech.name === "Vercel" ? (
                                   <div

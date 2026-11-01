@@ -1,12 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Download, Mail, Linkedin, Github } from "lucide-react";
+import { Download, Mail, Linkedin, Github, Check } from "lucide-react";
 import rustIcon from "../../assets/rust.png";
 
 const profileImage = "https://ik.imagekit.io/shubhampathak/portfolio/me.jpeg";
 
 export const About = () => {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+    const [copiedEmail, setCopiedEmail] = useState(false);
+
+    const handleCopyEmail = (e: React.MouseEvent) => {
+        e.preventDefault();
+        navigator.clipboard.writeText("shubhamxkcd@gmail.com");
+        setCopiedEmail(true);
+        setTimeout(() => setCopiedEmail(false), 2000);
+    };
 
     const skills = [
         { id: "javascript", name: "JavaScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/javascript-original.svg?updatedAt=1777358255855" },
@@ -25,7 +33,7 @@ export const About = () => {
         },
         {
             href: "mailto:shubhamxkcd@gmail.com",
-            label: "Send an email",
+            label: "Copy email address",
             icon: Mail
         },
         {
@@ -56,7 +64,7 @@ export const About = () => {
                     </div>
 
                     <div className="flex md:hidden flex-col gap-1">
-                        <h2 className="text-2xl font-bold text-text-primary tracking-tight">
+                        <h2 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
                             Shubham Pathak
                         </h2>
                         <p className="text-sm font-medium text-text-secondary">Product & Full Stack Dev</p>
@@ -69,10 +77,10 @@ export const About = () => {
                     </h1>
 
                     <div className="mb-4 md:mb-2">
-                        <h2 className="hidden md:block text-3xl md:text-4xl font-bold text-text-primary leading-tight whitespace-nowrap">
+                        <h2 className="hidden md:block text-2xl md:text-3xl font-bold text-text-primary leading-tight whitespace-nowrap">
                             Shubham Pathak
                         </h2>
-                        <p className="hidden md:block text-lg font-medium text-text-secondary mt-1">
+                        <p className="hidden md:block text-base font-medium text-text-secondary mt-0.5">
                             Product & Web Dev
                         </p>
                     </div>
@@ -128,7 +136,7 @@ export const About = () => {
                                                 }
                                             }}
                                             aria-label={skill.name}
-                                            className="w-10 h-10 rounded-full bg-surface-hover border border-border/50 grid place-items-center shadow-sm cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
+                                            className="w-10 h-10 rounded-full border border-border/50 grid place-items-center cursor-pointer relative appearance-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-text-primary focus-visible:outline-offset-2"
                                         >
                                             <img
                                                 src={skill.icon}
@@ -157,7 +165,7 @@ export const About = () => {
                                                         y: 5,
                                                         x: "-50%"
                                                     }}
-                                                    className="absolute -top-12 left-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap z-[9999] pointer-events-none"
+                                                    className="absolute -top-12 left-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold whitespace-nowrap z-[9999] pointer-events-none"
                                                 >
                                                     {skill.name}
 
@@ -186,6 +194,40 @@ export const About = () => {
                             <div className="flex items-center gap-4 px-2">
                                 {socials.map((social) => {
                                     const Icon = social.icon;
+                                    const isEmail = social.href.startsWith("mailto:");
+
+                                    if (isEmail) {
+                                        return (
+                                            <button
+                                                key={social.href}
+                                                type="button"
+                                                onClick={handleCopyEmail}
+                                                aria-label="Copy email address"
+                                                title="Click to copy email address"
+                                                className="relative text-text-secondary hover:text-text-primary transition-colors cursor-pointer flex items-center justify-center z-[9999]"
+                                            >
+                                                {copiedEmail ? (
+                                                    <Check size={22} className="text-text-primary transition-colors" />
+                                                ) : (
+                                                    <Icon size={22} />
+                                                )}
+                                                <AnimatePresence>
+                                                    {copiedEmail && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 6, scale: 0.9 }}
+                                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                            exit={{ opacity: 0, y: 4, scale: 0.9 }}
+                                                            transition={{ duration: 0.15 }}
+                                                            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold whitespace-nowrap z-[9999] pointer-events-none"
+                                                        >
+                                                            Copied!
+                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-text-primary rotate-45" />
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </button>
+                                        );
+                                    }
 
                                     return (
                                         <a
@@ -218,9 +260,43 @@ export const About = () => {
                                 </a>
                             </div>
 
-                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50">
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-hover/50 border border-border/50 overflow-visible">
                                 {socials.map((social) => {
                                     const Icon = social.icon;
+                                    const isEmail = social.href.startsWith("mailto:");
+
+                                    if (isEmail) {
+                                        return (
+                                            <button
+                                                key={social.href}
+                                                type="button"
+                                                onClick={handleCopyEmail}
+                                                aria-label="Copy email address"
+                                                title="Click to copy email address"
+                                                className="relative text-text-secondary hover:text-text-primary transition-all p-1.5 cursor-pointer flex items-center justify-center rounded-lg z-[9999]"
+                                            >
+                                                {copiedEmail ? (
+                                                    <Check size={18} className="text-text-primary transition-colors" />
+                                                ) : (
+                                                    <Icon size={18} />
+                                                )}
+                                                <AnimatePresence>
+                                                    {copiedEmail && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 6, scale: 0.9 }}
+                                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                            exit={{ opacity: 0, y: 4, scale: 0.9 }}
+                                                            transition={{ duration: 0.15 }}
+                                                            className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold whitespace-nowrap z-[9999] pointer-events-none"
+                                                        >
+                                                            Copied!
+                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-text-primary rotate-45" />
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </button>
+                                        );
+                                    }
 
                                     return (
                                         <a

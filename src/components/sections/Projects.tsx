@@ -29,7 +29,7 @@ export const Projects = () => {
                 className="mb-2"
             >
                 <h2 className="text-2xl font-bold text-text-primary mb-2 tracking-tight">Projects</h2>
-                <p className="text-text-secondary text-sm">A few products and experiments I've shipped.</p>
+
             </motion.div>
 
             <div className="space-y-0">
@@ -51,7 +51,7 @@ export const Projects = () => {
                                     {isInDevelopmentStatus(project.status) && (
                                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/5 border border-white/10 text-text-primary uppercase tracking-widest">In Dev</span>
                                     )}
-                                    <div className="hidden md:flex opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
+                                    <div className="hidden md:flex opacity-40 group-hover:opacity-100 text-text-secondary group-hover:text-text-primary transition-all duration-300 pointer-events-none">
                                         <ArrowUpRight size={14} className="transition-all" />
                                     </div>
                                     <div className="md:hidden">

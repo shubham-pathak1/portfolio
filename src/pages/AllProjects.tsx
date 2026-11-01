@@ -86,7 +86,7 @@ export const AllProjects = () => {
                                                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/5 border border-white/10 text-text-primary uppercase tracking-widest">In Dev</span>
                                                 )}
                                             </div>
-                                            <div className="hidden md:flex opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
+                                            <div className="hidden md:flex opacity-40 group-hover:opacity-100 text-text-secondary group-hover:text-text-primary transition-all duration-300 pointer-events-none">
                                                 <ArrowUpRight size={14} />
                                             </div>
                                         </h3>

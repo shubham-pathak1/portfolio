@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SEO } from "../components/SEO";
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download, ArrowUpRight, Lock } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
 import { useTheme } from "../hooks/useTheme";
@@ -24,6 +24,8 @@ export const ProjectDetail = () => {
             </Layout>
         );
     }
+
+    const hasLinks = Boolean(project.liveLink || project.downloadLink || project.github || project.id === "orca");
 
     return (
         <>
@@ -242,54 +244,80 @@ export const ProjectDetail = () => {
                                 </div>
 
                                 {/* Links */}
-                                <div className="flex flex-col gap-3">
-                                    {project.liveLink && (
-                                        <a
-                                            href={project.liveLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
-                                        >
-                                            {(!project.downloadLink && project.ctaLabel?.includes("Download")) ? (
+                                {hasLinks ? (
+                                    <div className="flex flex-col gap-3">
+                                        {project.liveLink && (
+                                            <a
+                                                href={project.liveLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-text-primary text-bg font-bold hover:opacity-90 transition-opacity"
+                                            >
+                                                {(!project.downloadLink && project.ctaLabel?.includes("Download")) ? (
+                                                    <Download size={18} />
+                                                ) : (
+                                                    <ExternalLink size={18} />
+                                                )}
+                                                {!project.downloadLink && project.ctaLabel ? project.ctaLabel : "Visit Site"}
+                                            </a>
+                                        )}
+                                        {project.downloadLink && (
+                                            <a
+                                                href={project.downloadLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                            >
                                                 <Download size={18} />
-                                            ) : (
-                                                <ExternalLink size={18} />
-                                            )}
-                                            {!project.downloadLink && project.ctaLabel ? project.ctaLabel : "Visit Site"}
-                                        </a>
-                                    )}
-                                    {project.downloadLink && (
-                                        <a
-                                            href={project.downloadLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
-                                        >
-                                            <Download size={18} />
-                                            {project.ctaLabel?.includes("Download") ? project.ctaLabel : "Download Release"}
-                                        </a>
-                                    )}
-                                    {project.id === "orca" && (
-                                        <Link
-                                            to="/case-studies/orca"
-                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
-                                        >
-                                            <ArrowUpRight size={18} />
-                                            Case Study
-                                        </Link>
-                                    )}
-                                    {project.github && (
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
-                                        >
-                                            <Github size={18} />
-                                            View Source
-                                        </a>
-                                    )}
-                                </div>
+                                                {project.ctaLabel?.includes("Download") ? project.ctaLabel : "Download Release"}
+                                            </a>
+                                        )}
+                                        {project.id === "orca" && (
+                                            <Link
+                                                to="/case-studies/orca"
+                                                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                            >
+                                                <ArrowUpRight size={18} />
+                                                Case Study
+                                            </Link>
+                                        )}
+                                        {project.github && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-border text-text-primary font-bold hover:bg-surface-hover transition-colors"
+                                            >
+                                                <Github size={18} />
+                                                View Source
+                                            </a>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <div className="space-y-4">
+                                        <div className="p-3.5 rounded-xl border border-border/50 flex items-center justify-between text-xs">
+                                            <span className="font-medium text-text-primary flex items-center gap-2">
+                                                <Lock size={13} className="text-text-secondary" />
+                                                Private Repository
+                                            </span>
+                                            <span className="text-[11px] font-mono text-text-secondary">
+                                                Academic Project
+                                            </span>
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
+                                                Type: B.Tech Capstone
+                                            </span>
+                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
+                                                Team: {project.team}
+                                            </span>
+                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
+                                                Status: {project.status}
+                                            </span>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </aside>
                     </div>
