@@ -169,7 +169,7 @@ export const OrcaCaseStudy = () => {
                     <section>
                         <h2 className="text-2xl font-bold mb-5">Current Status & Roadmap</h2>
                         <p className="text-text-secondary leading-relaxed max-w-4xl mb-4">
-                            Orca is currently at the latest <strong>v0.1.7 alpha</strong> release with <strong>60+ GitHub stars</strong> and 100+ cumulative downloads. It is currently limited to <strong>Windows</strong>.
+                            Orca is currently at the latest <strong>v0.1.8 alpha</strong> release with <strong>60+ GitHub stars</strong> and 100+ cumulative downloads. It is currently limited to <strong>Windows</strong>.
                         </p>
                         <div className="space-y-2 text-text-secondary">
                             <p className="font-medium text-text-primary">Planned improvements:</p>

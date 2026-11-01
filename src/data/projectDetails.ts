@@ -9,11 +9,11 @@ export interface ProjectDetail {
     status: string;
     overview: string;
     features?: string[];
-    whyBuilt: string[];
+    whyBuilt?: string[];
     techStack: { name: string; icon: string; isDarkIcon?: boolean; lightIcon?: string }[];
     impact?: string[];
     futurePlans?: string[];
-    image: string;
+    image?: string;
     github: string;
     liveLink?: string;
     downloadLink?: string;
@@ -71,11 +71,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
+        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.8 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.7 Alpha Released",
+        status: "v0.1.8 Alpha Released",
         overview: "Orca is a desktop music player for local audio files. I started it because I wanted a minimal player with a clean UI and UX that stays lightweight and focused on everyday offline listening.",
         features: [
             "Offline playback, search, alphabetical browsing and nested music folders",
@@ -100,7 +100,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Currently at the latest v0.1.7 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
+            "Currently at the latest v0.1.8 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
             "Demonstrated that a native Rust and Slint desktop application can deliver a fluid UI with a minimal memory footprint."
         ],
         futurePlans: [
@@ -118,6 +118,29 @@ export const projectDetails: Record<string, ProjectDetail> = {
         liveLink: "https://orca-music.vercel.app/",
         downloadLink: "https://github.com/shubham-pathak1/orca/tags",
         ctaLabel: "Download Release",
+        category: "personal"
+    },
+    "tribunal": {
+        id: "tribunal",
+        title: "Tribunal",
+        tagline: "A phishing-detection browser extension with targeted DOM extraction for Gmail and Outlook, authentication, and an admin dashboard.",
+        timeline: "2 months",
+        role: "Frontend & Integration Developer",
+        team: "Team of 4",
+        status: "Completed",
+        overview: "Tribunal is a phishing-detection browser extension designed to protect users against malicious emails. It implements targeted email-content extraction from Gmail and Outlook web interfaces using DOM filtering, connects to a Flask authentication backend, and includes a landing page and an admin dashboard for user management and usage statistics.",
+        features: [
+            "Implemented email-content extraction from Gmail and Outlook using targeted DOM filtering for a phishing-detection browser extension.",
+            "Integrated Flask-based authentication and tested extraction across Chrome, Firefox, Gmail, and Outlook.",
+            "Developed the landing page and admin dashboard for user management and usage statistics."
+        ],
+        techStack: [
+            { name: "JavaScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/javascript-original.svg" },
+            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
+            { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", isDarkIcon: true },
+            { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/firebase-plain.svg" }
+        ],
+        github: "",
         category: "personal"
     },
     "ciel": {

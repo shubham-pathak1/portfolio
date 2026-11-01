@@ -50,9 +50,9 @@ const experiences = [
       },
     ],
     description: [
-      "Developed and maintained full-stack features for live web applications using React.js, Node.js, Express.js, and MongoDB.",
-      "Designed RESTful APIs and component-based frontend architecture; integrated Cloudinary/ImageKit for media delivery and Razorpay for payment processing.",
-      "Set up CI/CD pipelines using GitHub Actions, deployed to Vercel and Render, collaborated with developers and cross-functional teams, and participated in code reviews under senior developer guidance.",
+      "Developed and maintained features for live web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Worked on REST APIs and frontend components; integrated Cloudinary/ImageKit for media delivery and Razorpay for payments.",
+      "Set up GitHub Actions pipelines, deployed to Vercel and Render, and participated in code reviews under senior developer guidance.",
     ],
   },
   {

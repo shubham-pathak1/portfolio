@@ -119,7 +119,7 @@ export const ProjectDetail = () => {
                     </header>
 
                     {/* Hero Image */}
-                    {project.id !== 'orca' && (
+                    {project.image && project.id !== 'orca' && (
                         <div className="mb-20 rounded-2xl overflow-hidden border border-border aspect-video bg-surface-hover">
                             <motion.img
                                 layoutId={`project-image-${project.id}`}
@@ -181,17 +181,19 @@ export const ProjectDetail = () => {
                                 </section>
                             )}
 
-                            <section>
-                                <h2 className="text-2xl font-bold mb-6">Why I Built This?</h2>
-                                <div className="space-y-4 text-text-secondary leading-relaxed">
-                                    {project.whyBuilt.map((reason, i) => (
-                                        <div key={i} className="flex gap-3 items-start">
-                                            <span className="text-text-primary text-xl leading-none">•</span>
-                                            <p>{reason}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                            {project.whyBuilt && project.whyBuilt.length > 0 && (
+                                <section>
+                                    <h2 className="text-2xl font-bold mb-6">Why I Built This?</h2>
+                                    <div className="space-y-4 text-text-secondary leading-relaxed">
+                                        {project.whyBuilt.map((reason, i) => (
+                                            <div key={i} className="flex gap-3 items-start">
+                                                <span className="text-text-primary text-xl leading-none">•</span>
+                                                <p>{reason}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
                             {project.impact && project.impact.length > 0 && (
                                 <section>
