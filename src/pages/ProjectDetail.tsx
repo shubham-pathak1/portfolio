@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SEO } from "../components/SEO";
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download, ArrowUpRight, Lock } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Briefcase, CircleDot, Download, ArrowUpRight } from "lucide-react";
 import { projectDetails } from "../data/projectDetails";
 import { Layout } from "../components/Layout";
 import { useTheme } from "../hooks/useTheme";
@@ -293,31 +293,7 @@ export const ProjectDetail = () => {
                                             </a>
                                         )}
                                     </div>
-                                ) : (
-                                    <div className="space-y-4">
-                                        <div className="p-3.5 rounded-xl border border-border/50 flex items-center justify-between text-xs">
-                                            <span className="font-medium text-text-primary flex items-center gap-2">
-                                                <Lock size={13} className="text-text-secondary" />
-                                                Private Repository
-                                            </span>
-                                            <span className="text-[11px] font-mono text-text-secondary">
-                                                Academic Project
-                                            </span>
-                                        </div>
-
-                                        <div className="flex flex-wrap gap-2">
-                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
-                                                Type: B.Tech Capstone
-                                            </span>
-                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
-                                                Team: {project.team}
-                                            </span>
-                                            <span className="px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-text-secondary">
-                                                Status: {project.status}
-                                            </span>
-                                        </div>
-                                    </div>
-                                )}
+                                ) : null}
                             </div>
                         </aside>
                     </div>

@@ -125,7 +125,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         title: "Tribunal",
         tagline: "A phishing-detection browser extension built with React, Flask, and Firebase, featuring targeted DOM extraction for Gmail and Outlook.",
         timeline: "2 months",
-        role: "Frontend & Integration Developer",
+        role: "Frontend Developer",
         team: "Team of 4",
         status: "Completed",
         overview: "Tribunal is a phishing-detection browser extension designed to protect users against malicious emails. It implements targeted email-content extraction from Gmail and Outlook web interfaces using DOM filtering, connects to a Flask authentication backend, and includes a landing page and an admin dashboard for user management and usage statistics.",
@@ -141,39 +141,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Firebase", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/firebase-plain.svg" }
         ],
         github: "",
-        category: "personal"
-    },
-    "ciel": {
-        id: "ciel",
-        title: "Ciel",
-        tagline: "An open-source download manager for HTTP and Torrent downloads, built with Tauri and Rust.",
-        timeline: "Ongoing",
-        role: "Lead Developer",
-        team: "Solo",
-        status: "Daily Driver",
-        overview: "Ciel is a lightweight personal download manager built with Tauri and Rust to handle multi-threaded HTTP downloads and torrents for my daily workflow.",
-        features: [
-            "Download files faster using a multi-threaded HTTP engine.",
-            "Load magnet links and download torrents with content previews.",
-            "Monitor your clipboard to automatically capture download links.",
-            "Organize downloads automatically into categories like videos, music, and documents.",
-            "Schedule downloads to start or pause at specific times."
-        ],
-        whyBuilt: [
-            "I built Ciel as a personal download manager for my own daily use, focusing on speed, clean UI, and torrent support."
-        ],
-        techStack: [
-            { name: "Tauri", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tauri/tauri-original.svg" },
-            { name: "Rust", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" },
-            { name: "React", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/react-original.svg" },
-            { name: "TypeScript", icon: "https://ik.imagekit.io/shubhampathak/portfolio/icons/typescript-original.svg" }
-        ],
-        futurePlans: [
-            "Cross-platform support for my Arch Linux setup."
-        ],
-        image: "https://ik.imagekit.io/shubhampathak/portfolio/ciel.png?tr=f-auto,lo-true",
-        github: "https://github.com/shubham-pathak1/ciel",
-        liveLink: "https://ciel-app.vercel.app",
         category: "personal"
     },
     "kanha-salad": {

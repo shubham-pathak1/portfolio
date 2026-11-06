@@ -50,7 +50,7 @@ const experiences = [
       },
     ],
     description: [
-      "Developed and maintained features for live web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Built role-based access control (RBAC) admin dashboards and core features using React.js, Node.js, Express.js, and MongoDB.",
       "Worked on REST APIs and frontend components; integrated Cloudinary/ImageKit for media delivery and Razorpay for payments.",
       "Set up GitHub Actions pipelines, deployed to Vercel and Render, and participated in code reviews under senior developer guidance.",
     ],
@@ -88,7 +88,6 @@ const experiences = [
 ];
 
 export const Experience = () => {
-  const [showAll, setShowAll] = useState(false);
   const [expandedJobs, setExpandedJobs] = useState<string[]>(["redspark"]);
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
@@ -97,8 +96,6 @@ export const Experience = () => {
       prev.includes(id) ? prev.filter((jobId) => jobId !== id) : [...prev, id],
     );
   };
-
-  const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
   return (
     <section className="mb-20">
@@ -115,7 +112,7 @@ export const Experience = () => {
       </motion.div>
 
       <div className="space-y-0">
-        {displayedExperiences.map((exp, index) => {
+        {experiences.map((exp, index) => {
           const isExpanded = expandedJobs.includes(exp.id);
           return (
             <motion.div
@@ -251,7 +248,7 @@ export const Experience = () => {
                                     animate={{ opacity: 1, y: 0, x: "-50%" }}
                                     exit={{ opacity: 0, y: 5, x: "-50%" }}
                                     transition={{ duration: 0.15 }}
-                                    className="absolute -top-12 left-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap z-[9999] pointer-events-none"
+                                    className="absolute -top-12 left-1/2 px-3 py-1.5 rounded-lg bg-text-primary border border-text-primary shadow-2xl text-bg text-[10px] font-bold whitespace-nowrap z-[9999] pointer-events-none"
                                   >
                                     {tech.name}
                                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-text-primary rotate-45" />
@@ -288,17 +285,6 @@ export const Experience = () => {
           );
         })}
       </div>
-
-      {experiences.length > 3 && (
-        <div className="mt-16 text-center">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-surface-hover border border-border text-sm font-bold text-text-primary hover:border-text-primary transition-all active:scale-95"
-          >
-            {showAll ? "Show less" : "Show all work experiences"}
-          </button>
-        </div>
-      )}
     </section>
   );
 };
