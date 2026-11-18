@@ -71,11 +71,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
     "orca": {
         id: "orca",
         title: "Orca",
-        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.8 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
+        tagline: "A lightweight local music player built with Rust and Slint. Currently at the latest v0.1.9 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
         timeline: "Ongoing",
         role: "Lead Developer",
         team: "Solo",
-        status: "v0.1.8 Alpha Released",
+        status: "v0.1.9 Alpha Released",
         overview: "Orca is a desktop music player for local audio files. I started it because I wanted a minimal player with a clean UI and UX that stays lightweight and focused on everyday offline listening.",
         features: [
             "Offline playback, search, alphabetical browsing and nested music folders",
@@ -86,7 +86,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             "Song tags and embedded cover editing, bulk album, artist and genre tag updates",
             "Online artwork lookup, custom collection covers and M3U playlist import/export",
             "Light and dark themes, custom fonts, minimal mode, dynamic accents and cover backgrounds",
-            "Windows media controls, tray integration and keyboard shortcuts"
+            "Windows media controls, tray integration and keyboard shortcuts",
+            "Shared, exclusive and unprocessed WASAPI modes for supported devices and formats."
         ],
         whyBuilt: [
             "I wanted a local music player that is minimal, lightweight, and focused purely on offline listening.",
@@ -100,7 +101,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
             { name: "Lofty", icon: "https://ik.imagekit.io/shubhampathak/portfolio/rust.png?tr=f-auto,lo-true" }
         ],
         impact: [
-            "Currently at the latest v0.1.8 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
+            "Currently at the latest v0.1.9 alpha version with 60+ GitHub stars and 250+ cumulative downloads.",
             "Demonstrated that a native Rust and Slint desktop application can deliver a fluid UI with a minimal memory footprint."
         ],
         futurePlans: [
@@ -109,10 +110,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
         ],
         image: "https://ik.imagekit.io/shubhampathak/portfolio/orca-logo.png",
         screenshots: [
-            "https://ik.imagekit.io/shubhampathak/orca-web/full_player_lyrics.png?updatedAt=1791553259099",
-            "https://ik.imagekit.io/shubhampathak/orca-web/library.png?updatedAt=1791553259613",
-            "https://ik.imagekit.io/shubhampathak/orca-web/album.png?updatedAt=1791553259221",
-            "https://ik.imagekit.io/shubhampathak/orca-web/metadata_editor.png?updatedAt=1791553259087"
+            "https://ik.imagekit.io/shubhampathak/orca-web/library.png?updatedAt=1794917862701",
+            "https://ik.imagekit.io/shubhampathak/orca-web/fullplayer_lyrics.png?updatedAt=1794918403553",
+            "https://ik.imagekit.io/shubhampathak/orca-web/artist.png?updatedAt=1794918403464",
+            "https://ik.imagekit.io/shubhampathak/orca-web/album.png?updatedAt=1794918403384",
+            "https://ik.imagekit.io/shubhampathak/orca-web/fullplayer_gradientbg.png?updatedAt=1794918403538",
+            "https://ik.imagekit.io/shubhampathak/orca-web/metadata_editor.png?updatedAt=1794918403291"
+
         ],
         github: "https://github.com/shubham-pathak1/orca",
         liveLink: "https://orca-music.vercel.app/",

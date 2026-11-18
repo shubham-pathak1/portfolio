@@ -75,6 +75,7 @@ export const OrcaCaseStudy = () => {
                                 "Automatic artwork retrieval for tracks and albums via iTunes API.",
                                 "System tray integration for unobtrusive background playback.",
                                 "Global keyboard shortcuts and fast local folder scanning.",
+                                "Shared, exclusive and unprocessed WASAPI modes for supported devices and formats.",
                             ].map((item) => (
                                 <div key={item} className="flex gap-3 items-start">
                                     <span className="text-text-primary text-xl leading-none">•</span>
@@ -96,9 +97,7 @@ export const OrcaCaseStudy = () => {
                                         decoding="async"
                                         className="w-full h-auto object-cover"
                                     />
-                                    <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
-                                        Full player view with album artwork and synchronized lyrics.
-                                    </figcaption>
+
                                 </figure>
 
                                 {screenshots.length > 2 && (
@@ -140,9 +139,7 @@ export const OrcaCaseStudy = () => {
                                             decoding="async"
                                             className="w-full h-auto object-cover"
                                         />
-                                        <figcaption className="px-4 py-3 text-xs text-text-secondary border-t border-border/50">
-                                            In-app metadata editor for editing audio tags without external software.
-                                        </figcaption>
+
                                     </figure>
                                 )}
                             </div>
@@ -169,7 +166,7 @@ export const OrcaCaseStudy = () => {
                     <section>
                         <h2 className="text-2xl font-bold mb-5">Current Status & Roadmap</h2>
                         <p className="text-text-secondary leading-relaxed max-w-4xl mb-4">
-                            Orca is currently at the latest <strong>v0.1.8 alpha</strong> release with <strong>60+ GitHub stars</strong> and 100+ cumulative downloads. It is currently limited to <strong>Windows</strong>.
+                            Orca is currently at the latest <strong>v0.1.9 alpha</strong> release with <strong>60+ GitHub stars</strong> and 100+ cumulative downloads. It is currently limited to <strong>Windows</strong>.
                         </p>
                         <div className="space-y-2 text-text-secondary">
                             <p className="font-medium text-text-primary">Planned improvements:</p>
